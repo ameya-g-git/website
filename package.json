@@ -12,6 +12,7 @@
     "start": "npm run dev & npm run watch && fg"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "react": "^18.2.0",
