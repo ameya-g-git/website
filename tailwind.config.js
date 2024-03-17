@@ -12,7 +12,6 @@ export default {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 3s linear infinite',
-        'infinite-scroll-rev': 'infinite-scroll 3s linear infinite'
       },
       keyframes: {
         'infinite-scroll': {

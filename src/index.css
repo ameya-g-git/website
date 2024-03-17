@@ -4,26 +4,26 @@
 
 @layer base {
     @font-face {
-      font-family: 'PP Neue Montreal';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(./assets/fonts/PPNeueMontreal-Book.otf) format('otf');
+        font-family: 'PP Neue Montreal';
+        font-style: normal;
+        font-weight: 400;
+        /* font-display: swap; */
+        src: url(./assets/fonts/PPNeueMontreal-Book.otf);
     }
 
     @font-face {
         font-family: 'PP Neue Montreal Italic';
         font-style: italic;
         font-weight: 400;
-        font-display: swap;
-        src: url(./assets/fonts/PPNeueMontreal-Italic.otf) format('otf');
+        /* font-display: swap; */
+        src: url(./assets/fonts/PPNeueMontreal-Italic.otf);
     }
 
     @font-face {
         font-family: 'Fraternite';
-        font-style: italic;
+        font-style: normal;
         font-weight: 400;
-        font-display: swap;
-        src: url(./assets/fonts/Fraternite.ttf) format('ttf');
+        /* font-display: swap; */
+        src: url(./assets/fonts/Fraternite.ttf);
     }
 }
