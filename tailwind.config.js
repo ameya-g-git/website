@@ -12,6 +12,7 @@ export default {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 3s linear infinite',
+        'infinite-scroll-slow': 'infinite-scroll 5s linear infinite',
       },
       keyframes: {
         'infinite-scroll': {
@@ -20,7 +21,7 @@ export default {
         }
       },
       colors: {
-        'yellow': '#FFF855',
+        'yellow': '#FFF813',
       }
     },
   },

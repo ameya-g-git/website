@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
-import StarBar from "./StarBar";
 import { clsx } from "clsx";
 import useScrollLength from "../hooks/useScrollLength";
+import ScrollingImage from "./ScrollingImage";
+import starbar from "../assets/starbar.png"
 
 export default function Navbar() {
     const scrollLength : number = useScrollLength();
@@ -27,13 +28,13 @@ export default function Navbar() {
 
     return (
         <div className={`z-[999] transition-all ease-in-out fixed inline-flex justify-around w-full p-3 bg-black h-14 ${scrollLength > 0 ? '-top-14' : 'top-0'}`}>
-            <StarBar ltr={true} />
+            <ScrollingImage ltr={true} width="starbar" img={starbar} />
             <nav className="relative inline-flex items-center justify-around w-full mx-8 text-lg transition-all border-b-0 mb text-yellow font-body">
                 {navLinkElements}
                 <a className={navElementClasses}>resume</a>
                 <a className={navElementClasses}>contact</a>
             </nav>
-            <StarBar ltr={false} />
+            <ScrollingImage ltr={false} width="starbar" img={starbar} />
         </div>
     )
 }
