@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 export default function Root() {
     return (
-        <div className="bg-yellow h-fit">
+        <div className="w-full bg-yellow h-fit">
             <Navbar />
             <Outlet />
         </div>

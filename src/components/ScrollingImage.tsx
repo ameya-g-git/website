@@ -8,7 +8,7 @@ interface props {
 
 export default function ScrollingImage({ ltr, width, img } : props) {
     const elementWidth = clsx({
-        'w-[100vw]': width === 'full',
+        'w-full': width === 'full',
         'w-60': width === 'starbar'
     })
 
@@ -17,15 +17,15 @@ export default function ScrollingImage({ ltr, width, img } : props) {
     )
 
     const imageStyles = clsx(
-        `relative flex flex-row justify-end ${elementWidth} animate-infinite-scroll-slow`
+        `relative flex flex-row justify-end ${elementWidth} animate-infinite-scroll`
     )
 
     return (
         <div className={containerStyles}>
-            <div className='relative w-full'>
+            <div className="relative w-full">
                 <div className={imageStyles}>
-                    <img src={img} alt="" className='object-cover max-w-full '/>
-                    <img src={img} alt="" className='object-cover max-w-full '/>
+                    <img src={img} className='object-cover h-full'/>
+                    <img src={img} className='object-cover h-full'/>
                 </div>
             </div>
         </div>

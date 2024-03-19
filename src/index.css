@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        margin: 0;
+    }
+
     @font-face {
         font-family: 'PP Neue Montreal';
         font-style: normal;
@@ -25,5 +29,9 @@
         font-weight: 400;
         /* font-display: swap; */
         src: url(./assets/fonts/Fraternite.ttf);
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 }
