@@ -111,11 +111,11 @@ export default function Home() {
                     <div>
                         {width > 768 && <img src={starCurve} alt="" className='absolute max-h-[32vh] -mt-[7vh] -ml-[1vw]' />}
                         <div className='flex flex-row items-baseline h-full'>
-                            <h1 className={nameStyles}>ameya</h1>
+                            <h1 className={nameStyles}>nreby</h1>
                             <p className='text-sm'>:3</p>
                         </div>
                         <div className="inline-flex items-end gap-2">
-                            <h1 className={lastNameStyles}>gupta</h1>
+                            <h1 className={lastNameStyles}>oops</h1>
                             <h2 className="text-sm md:text-lg md:mb-[2vh]">(he/him)</h2>
                         </div>
                     </div>
