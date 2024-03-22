@@ -1,11 +1,13 @@
 import clsx from 'clsx'
 import { Player } from '@lottiefiles/react-lottie-player';
+import { useLoaderData } from 'react-router-dom';
 
 import useWindowSize from '../hooks/useWindowSize'
-import useScrollLength from '../hooks/useScrollLength';
+import { getRepoDetails } from '../getRepoDetails';
 
 import ScrollingImage from '../components/ScrollingImage';
 import Shape from '../components/Shape';
+import ProjectCard, { props as cardProps } from '../components/ProjectCard';
 
 import starCurve from '../assets/star_curve.svg'
 import wave from '../assets/wave.svg'
@@ -21,6 +23,7 @@ import squiggle from '../assets/hero_shapes/squiggle.svg'
 import star from '../assets/hero_shapes/star.svg'
 import triangle from '../assets/hero_shapes/triangle.svg'
 import triangle2 from '../assets/hero_shapes/triangle2.svg'
+import glaggle from '../assets/hero_shapes/glaggle.svg'
 
 // ok so im gonna need to research what css units mean again so that this entire layout doesnt fuck up on resizing
 // TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages
@@ -32,11 +35,35 @@ interface windowSize {
     height: number
 }
 
+export async function loader() {
+    const repoNames = ['mirrormult-figma-plugin', 'website', 'mc-quantization']
+
+    const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName))
+
+    const repoDetails = Promise.all(repoDetailsPromises)
+    
+    // const details = 
+    //     await octokit.request(
+    //         'GET /repos/{owner}/{repo}/contents/{path}', {
+    //             owner: 'ameya-g-git',
+    //             repo: repoName,
+    //             path: 'promotional_stuff/mirrormult_plugin_banner.png'
+    //         }).then((res: any) => {          
+    //             return ({
+    //                 img: res.data.download_url,
+    //                 name: repoName,
+    //             })
+    //         }).catch(err => console.log(err))
+        
+    return repoDetails
+}
+
 export default function Home() {
     const { width } : windowSize = useWindowSize();
-    const scrollLength : number = useScrollLength();
+    const loaderData : any = useLoaderData();
+    const cardData = loaderData
 
-    console.log(scrollLength)
+    console.log(cardData)
     
     const nameStyles = clsx(
         'relative font-page-heading leading-none',
@@ -51,23 +78,25 @@ export default function Home() {
     return (
         <>
             <section id='banner' className='relative w-screen h-screen overflow-hidden'>
-                <div id='shapes' className='w-screen h-screen overflow-x-hidden [perspective:12px]'>
-                    <Shape src={circle} top="8rem" right="0" z="3" width="325px" delay={9} />
-                    <Shape src={circle2} top="6rem" right="0" z="2" width="75px" delay={4} />
-                    <Shape src={curve} top="27rem" right="0.5rem" z="1" width="325px" delay={3} />
-                    <Shape src={curve2} top="12rem" right="12.5rem" z="1" width="400px" delay={6}/>
-                    <Shape src={curve3} top="39rem" right="55rem" width="500px" delay={2} />
-                    <Shape src={hex} top="38rem" right="40rem" width="170px" delay={7}/>
-                    <Shape src={nanner} top="32rem" right="16rem" width="100px" delay={1} />
-                    <Shape src={square} top="7rem" right="25rem" width="170px" delay={4}/>
-                    <Shape src={squiggle} top="37rem" right="22rem" width="250px" />
-                    <Shape src={star} top="5rem" right="12rem" z="4" width="100px" delay={9} />
-                    <Shape src={triangle} top="24rem" right="22rem" width="150px" delay={2} />
-                    <Shape src={triangle2} top="26rem" right="36rem" z="60" width="70px" delay={3} />
-                </div>
+                { width >= 1200 &&
+                    <div id='shapes' className='w-screen h-screen overflow-hidden [perspective:12px]'>
+                        <Shape src={circle} top="15vh" right="0" z="3" width="24vw" delay={9} />
+                        <Shape src={circle2} top="12vh" right="0" z="2" width="5vw" delay={4} />
+                        <Shape src={curve} top="53vh" right="0.5vw" z="1" width="18vw" delay={3} />
+                        <Shape src={curve2} top="20vh" right="16vw" z="1" width="24vw" delay={6}/>
+                        <Shape src={curve3} top="72vh" right="70vw" width="25vw" delay={2} />
+                        <Shape src={hex} top="70vh" right="55vw" width="10vw" delay={7}/>
+                        <Shape src={nanner} top="58vh" right="16vw" width="7.5vw" delay={1} />
+                        <Shape src={square} top="9vh" right="25vw" width="10vw" delay={4}/>
+                        <Shape src={squiggle} top="67vh" right="36vw" width="15vw" />
+                        <Shape src={star} top="10vh" right="10vw" z="4" width="8vw" delay={7} />
+                        <Shape src={triangle} top="42vh" right="25vw" width="10vw" delay={2} />
+                        <Shape src={triangle2} top="45vh" right="40vw" z="60" width="5vw" delay={3} />
+                        <Shape src={glaggle} top="70vh" right="18vw" width="18vw" delay={6} />
+                    </div>
+                }
                 
                 <div className='box-border absolute px-8 -translate-y-1/2 md:pt-4 py-18 top-1/2 md:py-32 md:px-20'>
-
 
                     <div className='inline-flex items-center gap-1'>
                         <Player 
@@ -103,14 +132,21 @@ export default function Home() {
                     
                 </div>
 
-                <div className='absolute bottom-0 scale-150 md:scale-100 z-[999]'>
+                <div className='absolute bottom-0 scale-150 md:scale-100'>
                     <ScrollingImage ltr={true} img={wave} width='full'/>
                 </div>
 
             </section>
 
-            <section className='flex flex-col w-full h-screen bg-gradient-to-b from-[#0A0A00] via-[#222222] to-[#0A0A00] '>
-
+            <section className='py-16 flex flex-col w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#222222] to-[#0A0A00] '>
+                <h3>hello</h3>
+                <div className='box-border flex flex-row items-stretch w-full gap-8 px-8 h-72 min-h-60'>
+                    {cardData.map( (card : cardProps) => {
+                        return (
+                            <ProjectCard {...card} top={50} />
+                        )
+                    })}
+                </div>
             </section>
         </>
     )

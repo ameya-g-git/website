@@ -26,6 +26,7 @@ export default {
       },
       colors: {
         'yellow': '#FFF813',
+        'card-black': '#19191980',
       }
     },
   },
