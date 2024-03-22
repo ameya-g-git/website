@@ -143,7 +143,7 @@ export default function Home() {
                 <div className='box-border flex flex-row items-stretch w-full gap-8 px-8 h-72 min-h-60'>
                     {cardData.map( (card : cardProps) => {
                         return (
-                            <ProjectCard {...card} top={50} />
+                            <ProjectCard {...card} top={27} />
                         )
                     })}
                 </div>
