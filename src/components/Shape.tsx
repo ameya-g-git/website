@@ -24,7 +24,7 @@ export default function Shape( {src, top, right, z, width, delay} : props ) {
     })
 
     return (
-        <div className={`absolute animate-float ${delays}`} style={{
+        <div className={`absolute animate-float pointer-events-none select-none ${delays}`} style={{
             top: top,
             right: right,
             zIndex: z}}>

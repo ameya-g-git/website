@@ -26,7 +26,10 @@ export default {
       },
       colors: {
         'yellow': '#FFF813',
-        'card-black': '#19191980',
+        'card-black': '#191919',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },
   },

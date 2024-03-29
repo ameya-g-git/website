@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { Player } from '@lottiefiles/react-lottie-player';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 import useWindowSize from '../hooks/useWindowSize'
-import { getRepoDetails } from '../getRepoDetails';
+import { getRepoDetails } from '../hooks/getRepoDetails';
 
 import ScrollingImage from '../components/ScrollingImage';
 import Shape from '../components/Shape';
@@ -24,10 +24,11 @@ import star from '../assets/hero_shapes/star.svg'
 import triangle from '../assets/hero_shapes/triangle.svg'
 import triangle2 from '../assets/hero_shapes/triangle2.svg'
 import glaggle from '../assets/hero_shapes/glaggle.svg'
+import dev_icon from '../assets/dev_icon.svg'
+import tech_icon from '../assets/technologies_icon.svg'
+import pen_icon from '../assets/pen_icon.svg'
 
-// ok so im gonna need to research what css units mean again so that this entire layout doesnt fuck up on resizing
 // TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages
-// TODO: ok so    turns out a shit ton of images is really hard to load So   i will try to host all my assets in an S3 bucket and see if that improves load times !!
 // TODO: deploy this on github pages just to see how things go :D
 
 interface windowSize {
@@ -37,24 +38,10 @@ interface windowSize {
 
 export async function loader() {
     const repoNames = ['mirrormult-figma-plugin', 'website', 'mc-quantization']
-
-    const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName))
-
+    const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
+    console.log(repoDetailsPromises)
     const repoDetails = Promise.all(repoDetailsPromises)
     
-    // const details = 
-    //     await octokit.request(
-    //         'GET /repos/{owner}/{repo}/contents/{path}', {
-    //             owner: 'ameya-g-git',
-    //             repo: repoName,
-    //             path: 'promotional_stuff/mirrormult_plugin_banner.png'
-    //         }).then((res: any) => {          
-    //             return ({
-    //                 img: res.data.download_url,
-    //                 name: repoName,
-    //             })
-    //         }).catch(err => console.log(err))
-        
     return repoDetails
 }
 
@@ -62,9 +49,8 @@ export default function Home() {
     const { width } : windowSize = useWindowSize();
     const loaderData : any = useLoaderData();
     const cardData = loaderData
+    const navigate = useNavigate()
 
-    console.log(cardData)
-    
     const nameStyles = clsx(
         'relative font-page-heading leading-none',
         (width >= 768 ? 'text-[33vh] -my-[10vh] -mb-[8vh]' : 'text-[33vw] -my-[5vh] -mb-[3vh]')
@@ -96,7 +82,7 @@ export default function Home() {
                     </div>
                 }
                 
-                <div className='box-border absolute px-8 -translate-y-1/2 md:pt-4 py-18 top-1/2 md:py-32 md:px-20'>
+                <div className='box-border absolute px-8 text-black -translate-y-1/2 md:pt-4 py-18 top-1/2 md:py-32 md:px-20'>
 
                     <div className='inline-flex items-center gap-1'>
                         <Player 
@@ -111,11 +97,11 @@ export default function Home() {
                     <div>
                         {width > 768 && <img src={starCurve} alt="" className='absolute max-h-[32vh] -mt-[7vh] -ml-[1vw]' />}
                         <div className='flex flex-row items-baseline h-full'>
-                            <h1 className={nameStyles}>nreby</h1>
+                            <h1 className={nameStyles}>ameya</h1>
                             <p className='text-sm'>:3</p>
                         </div>
                         <div className="inline-flex items-end gap-2">
-                            <h1 className={lastNameStyles}>oops</h1>
+                            <h1 className={lastNameStyles}>gupta</h1>
                             <h2 className="text-sm md:text-lg md:mb-[2vh]">(he/him)</h2>
                         </div>
                     </div>
@@ -137,15 +123,24 @@ export default function Home() {
                 </div>
 
             </section>
-
-            <section className='py-16 flex flex-col w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#222222] to-[#0A0A00] '>
-                <h3>hello</h3>
-                <div className='box-border flex flex-row items-stretch w-full gap-8 px-8 h-72 min-h-60'>
-                    {cardData.map( (card : cardProps) => {
-                        return (
-                            <ProjectCard {...card} top={27} />
-                        )
-                    })}
+            
+            {/* TODO: make this section gradient a tailwind variable since im using this on every page */}
+            <section className='p-12 flex flex-col w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#222222] to-[#0A0A00] '>
+                <div id='projects' className='flex flex-col items-end gap-4'>
+                    <span className='flex flex-row items-center w-full h-8 gap-4'>
+                        <img className='h-full' src={dev_icon} alt="React fragment element icon" />
+                        <h2 className='h-full text-3xl'>here's what i've been working on!</h2>
+                    </span>
+                    <div className='box-border flex flex-row items-stretch w-full gap-4 h-80 min-h-60'>
+                        {cardData.map( (card : cardProps) => {
+                            return (
+                                <ProjectCard {...card} top={50} />
+                            )
+                        })}
+                    </div>
+                    <button className='w-[32.5%] mt-4 text-lg' onClick={_e => navigate('/projects')} >
+                        check out more of what i’ve done! →
+                    </button>
                 </div>
             </section>
         </>
