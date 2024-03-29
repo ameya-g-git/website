@@ -37,7 +37,7 @@ interface windowSize {
 }
 
 export async function loader() {
-    const repoNames = ['mirrormult-figma-plugin', 'website', 'mc-quantization']
+    const repoNames = ['mirrormult-figma-plugin', 'webste', 'mc-quantization']
     const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
     console.log(repoDetailsPromises)
     const repoDetails = Promise.all(repoDetailsPromises)

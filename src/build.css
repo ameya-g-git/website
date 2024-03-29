@@ -623,8 +623,8 @@ button:hover {
   inset: 1.25rem;
 }
 
-.-bottom-6 {
-  bottom: -1.5rem;
+.-bottom-4 {
+  bottom: -1rem;
 }
 
 .-top-14 {
@@ -649,14 +649,6 @@ button:hover {
 
 .top-\[1\%\] {
   top: 1%;
-}
-
-.-bottom-5 {
-  bottom: -1.25rem;
-}
-
-.-bottom-4 {
-  bottom: -1rem;
 }
 
 .z-20 {
@@ -720,18 +712,6 @@ button:hover {
   margin-top: 1rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -752,8 +732,8 @@ button:hover {
   height: 50%;
 }
 
-.h-12 {
-  height: 3rem;
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-14 {
@@ -785,10 +765,6 @@ button:hover {
   height: 100vh;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .max-h-\[32vh\] {
   max-height: 32vh;
 }
@@ -797,12 +773,12 @@ button:hover {
   min-height: 15rem;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
+.w-10 {
+  width: 2.5rem;
 }
 
-.w-12 {
-  width: 3rem;
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .w-60 {
@@ -823,14 +799,6 @@ button:hover {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .-translate-y-1\/2 {

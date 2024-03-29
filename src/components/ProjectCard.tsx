@@ -18,6 +18,7 @@ export interface props {
 
 export default function ProjectCard({img, name, description, languages, top = 0, newLanguages} : props) {
     const [mousePos, setMousePos] = useState<position>({ x: null, y: null });
+    let languageCards;
   
     function handleMouseMove(e : MouseEvent) {
         setMousePos({ x: e.clientX, y: e.clientY })
@@ -27,11 +28,13 @@ export default function ProjectCard({img, name, description, languages, top = 0,
     
     languages = newLanguages ? languages.concat(newLanguages) : languages
 
-    const languageCards = languages.map( language => 
-        <div className="box-border flex items-center justify-center w-10 h-10 p-2 bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
-            <img src={`/src/assets/icons/${language}.png`} alt={language} className="m-auto"/>
-        </div> 
-    )
+    if (languages) {
+        languageCards = languages.map( language => 
+            <div className="box-border flex items-center justify-center w-10 h-10 p-2 bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
+                <img src={`/src/assets/icons/${language}.png`} alt={language} className="m-auto"/>
+            </div> 
+        )
+    }
 
     return ( 
         <>
@@ -60,7 +63,7 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                     </div>
                 </div>
                 <div className="absolute z-20 flex flex-row items-center justify-center w-full gap-2 -bottom-4">
-                    {languageCards}
+                    {languageCards ? languageCards : null}
                 </div>
                 <svg rx={24} className="absolute w-full h-full pointer-events-none">
                     <defs>

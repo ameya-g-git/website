@@ -13,13 +13,13 @@ export async function getRepoDetails(repoName : string) {
         const languages : any = await octokit.request('GET /repos/{owner}/{repo}/languages', {
             owner: 'ameya-g-git',
             repo: repoName
-        }).then( res => {return Object.keys(res.data).map( (item : string) => item.toLowerCase()).sort()
+        }).then(res => {return Object.keys(res.data).map( (item : string) => item.toLowerCase()).sort()
         }).catch(err => {console.log(err); return null})
 
         const description : any = await octokit.request('GET /repos/{owner}/{repo}', {
             owner: 'ameya-g-git',
             repo: repoName
-        }).then((res : any) => { return res.data.description
+        }).then(res => {return res.data.description
         }).catch(err => {console.log(err); return null})
 
         return (
