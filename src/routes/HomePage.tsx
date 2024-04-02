@@ -28,6 +28,7 @@ import dev_icon from '../assets/dev_icon.svg'
 import tech_icon from '../assets/technologies_icon.svg'
 import pen_icon from '../assets/pen_icon.svg'
 import localforage from 'localforage';
+import ToolCard from '../components/ToolCard';
 
 // TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages
 // TODO: deploy this on github pages just to see how things go :D
@@ -38,15 +39,14 @@ interface windowSize {
 }
 
 export async function loader() {
-    // const repoNames = ['repo-1', 'repo-2 ', 'repo-3']
-    const repoNames = ['mirrormult-figma-plugin', 'mc-quantization ', 'repo-3'] // repositories to load
-    let makeRequest : boolean = false // boolean to hold whether or not a request needs to be made
+    const repoNames : string[] = ['mirrormult-figma-plugin', 'mc-quantization', 'website'] // repositories to load
+    let makeRequest : boolean = true // boolean to hold whether or not a request needs to be made
     
     const repoDetails = await localforage.keys().then(async keys => {
         let details : (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
         details = [] // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
         
-        if (keys.length >= 1) { // if localforage is not empty
+        if (keys.length >= 1 && !makeRequest) { // if localforage is not empty and request doesn't need to be made
             const result : cardProps[] | null = await localforage.getItem('key', (err) => { if (err) {console.log(err)} })
             if (result) {
                 details = result
@@ -56,6 +56,7 @@ export async function loader() {
                 for (let i = 0; i < repoNames.length; i++) { // iterate through each list to see if the repo names match
                     if (details[i]!.name != repoNames[i]) {
                         makeRequest = true // if the repo names don't match, a new request must be made
+                        break;
                     }
                 }
             } else { // if the number of repos don't match, a new request must be made
@@ -66,11 +67,9 @@ export async function loader() {
         if (makeRequest) { // code to make the request
             const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
             details = await Promise.all(repoDetailsPromises)
-            await localforage.setItem('key', repoDetails, (err) => { if (err) {console.log(err)} })
+            await localforage.setItem('key', details, (err) => { if (err) {console.log(err)} })
         }
 
-        // TODO: all this code is good, i just need to fix the request for mc-quantization since its not loading the banner img for some reason
-        
         return details // return the repo details
     })
     
@@ -82,6 +81,10 @@ export default function Home() {
     const loaderData : any = useLoaderData();
     const cardData = loaderData
     const navigate = useNavigate()
+
+    const languages = ['python', 'c++', 'html', 'css', 'typescript']
+    const tools = ['git', 'vite', 'npm', 'pip', 'figma']
+    const frameworks = ['react', 'vue', 'tailwind', 'bootstrap', 'flask', 'numpy', 'matplotlib']
 
     const nameStyles = clsx(
         'relative font-page-heading leading-none',
@@ -150,29 +153,62 @@ export default function Home() {
                     
                 </div>
 
-                <div className='absolute bottom-0 scale-150 md:scale-100'>
+                <div className='absolute bottom-0 scale-150 pointer-events-none md:scale-100'>
                     <ScrollingImage ltr={true} img={wave} width='full'/>
                 </div>
 
             </section>
             
             {/* TODO: make this section gradient a tailwind variable since im using this on every page */}
-            <section className='p-12 flex flex-col w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#222222] to-[#0A0A00] '>
+            <section className='p-12 flex flex-col gap-16 w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] '>
                 <div id='projects' className='flex flex-col items-end gap-4'>
                     <span className='flex flex-row items-center w-full h-8 gap-4'>
                         <img className='h-full' src={dev_icon} alt="React fragment element icon" />
                         <h2 className='h-full text-3xl'>here's what i've been working on!</h2>
                     </span>
                     <div className='box-border flex flex-row items-stretch w-full gap-4 h-80 min-h-60'>
-                        {cardData.map( (card : cardProps) => {
-                            return (
-                                <ProjectCard {...card} top={50} />
-                            )
-                        })}
+                        <ProjectCard {...cardData[0]} top={50} />
+                        <ProjectCard {...cardData[1]} top={50} newLanguages={['matplotlib', 'numpy']}/>
+                        <ProjectCard {...cardData[2]} top={50} newLanguages={['react', 'tailwind']}/>
                     </div>
                     <button className='w-[32.5%] mt-4 text-lg' onClick={_e => navigate('/projects')} >
                         check out more of what i’ve done! →
                     </button>
+                </div>
+                
+                <div id='technologies' className='flex flex-col items-baseline gap-4'>
+                    <span className='flex flex-row-reverse items-center w-full h-8 gap-4'>
+                        <img className='h-full' src={tech_icon} alt="Stack icon" />
+                        <h2 className='h-full text-3xl'>here are some of the technologies i know!</h2>
+                    </span>
+                    <div className='box-border flex flex-col items-stretch w-full gap-4 md:flex-row'>
+                        <div id='languages' className='flex flex-col flex-grow gap-2'>
+                            <h2 className='my-2 text-2xl text-white opacity-50'>languages</h2>
+                            <div className='grid grid-flow-col grid-rows-5 gap-2'>
+                                {languages.map(lang => (
+                                    <ToolCard name={lang} />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div id='tools' className='flex flex-col flex-grow gap-2'>
+                            <h2 className='my-2 text-2xl text-white opacity-50'>tools</h2>
+                            <div className='grid grid-flow-col grid-rows-5 gap-2'>
+                                {tools.map(tool => (
+                                    <ToolCard name={tool} icon={tool == "pip" ? "python" : undefined}/>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div id='frameworks' className='flex flex-col flex-grow-[2] gap-2'>
+                            <h2 className='my-2 text-2xl text-white opacity-50'>frameworks</h2>
+                            <div className='grid grid-flow-col grid-rows-5 gap-2'>
+                                {frameworks.map(framework => (
+                                    <ToolCard name={framework} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

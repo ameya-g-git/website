@@ -7,7 +7,7 @@ export async function getRepoDetails(repoName : string) {
             owner: 'ameya-g-git',
             repo: repoName,
             path: 'banner.png'
-        }).then(res => {return res.data.download_url
+        }).then(res => { return res.data.download_url
         }).catch(err => {console.log(err); return null})
         
         const languages : any = await octokit.request('GET /repos/{owner}/{repo}/languages', {
