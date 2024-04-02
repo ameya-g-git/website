@@ -34,6 +34,12 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                 <img src={`/src/assets/icons/${language}.png`} alt={language} className="m-auto"/>
             </div> 
         )
+    } else {
+        languageCards = Array(Math.floor(Math.random() * 8) + 1).fill(':D').map( i =>
+            <div className="box-border flex items-center justify-center w-10 h-10 p-2 text-[#FFFFFF80] bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
+                {i}
+            </div> 
+        )
     }
 
     return ( 

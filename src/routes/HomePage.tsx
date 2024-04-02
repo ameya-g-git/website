@@ -27,6 +27,7 @@ import glaggle from '../assets/hero_shapes/glaggle.svg'
 import dev_icon from '../assets/dev_icon.svg'
 import tech_icon from '../assets/technologies_icon.svg'
 import pen_icon from '../assets/pen_icon.svg'
+import localforage from 'localforage';
 
 // TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages
 // TODO: deploy this on github pages just to see how things go :D
@@ -37,10 +38,41 @@ interface windowSize {
 }
 
 export async function loader() {
-    const repoNames = ['mirrormult-figma-plugin', 'webste', 'mc-quantization']
-    const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
-    console.log(repoDetailsPromises)
-    const repoDetails = Promise.all(repoDetailsPromises)
+    // const repoNames = ['repo-1', 'repo-2 ', 'repo-3']
+    const repoNames = ['mirrormult-figma-plugin', 'mc-quantization ', 'repo-3'] // repositories to load
+    let makeRequest : boolean = false // boolean to hold whether or not a request needs to be made
+    
+    const repoDetails = await localforage.keys().then(async keys => {
+        let details : (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
+        details = [] // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
+        
+        if (keys.length >= 1) { // if localforage is not empty
+            const result : cardProps[] | null = await localforage.getItem('key', (err) => { if (err) {console.log(err)} })
+            if (result) {
+                details = result
+            }
+
+            if (details.length === repoNames.length) { // run code below if the number of repos match
+                for (let i = 0; i < repoNames.length; i++) { // iterate through each list to see if the repo names match
+                    if (details[i]!.name != repoNames[i]) {
+                        makeRequest = true // if the repo names don't match, a new request must be made
+                    }
+                }
+            } else { // if the number of repos don't match, a new request must be made
+               makeRequest = true
+            }
+        }
+
+        if (makeRequest) { // code to make the request
+            const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
+            details = await Promise.all(repoDetailsPromises)
+            await localforage.setItem('key', repoDetails, (err) => { if (err) {console.log(err)} })
+        }
+
+        // TODO: all this code is good, i just need to fix the request for mc-quantization since its not loading the banner img for some reason
+        
+        return details // return the repo details
+    })
     
     return repoDetails
 }
