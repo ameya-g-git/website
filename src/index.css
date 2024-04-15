@@ -18,6 +18,11 @@
         filter: none;
     }
 
+    img {
+        pointer-events: none;
+        user-select: none;
+    }
+
     button:hover {
         filter: drop-shadow(0 0 8px #FFF81380);
     }
@@ -44,6 +49,13 @@
         font-weight: 400;
         /* font-display: swap; */
         src: url(./assets/fonts/Fraternite.ttf);
+    }
+
+    @font-face {
+        font-family: 'Illusion Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: url(./assets/fonts/IllusionSerif-Regular.otf)
     }
 
     ::-webkit-scrollbar {

@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { Player } from '@lottiefiles/react-lottie-player';
 import { useLoaderData, useNavigate } from 'react-router-dom';
+import localforage from 'localforage';
 
 import useWindowSize from '../hooks/useWindowSize'
 import { getRepoDetails } from '../hooks/getRepoDetails';
@@ -8,6 +9,8 @@ import { getRepoDetails } from '../hooks/getRepoDetails';
 import ScrollingImage from '../components/ScrollingImage';
 import Shape from '../components/Shape';
 import ProjectCard, { props as cardProps } from '../components/ProjectCard';
+import ToolCard from '../components/ToolCard';
+import DesignCard from '../components/DesignCard';
 
 import starCurve from '../assets/star_curve.svg'
 import wave from '../assets/wave.svg'
@@ -27,8 +30,11 @@ import glaggle from '../assets/hero_shapes/glaggle.svg'
 import dev_icon from '../assets/dev_icon.svg'
 import tech_icon from '../assets/technologies_icon.svg'
 import pen_icon from '../assets/pen_icon.svg'
-import localforage from 'localforage';
-import ToolCard from '../components/ToolCard';
+import pencil from '../assets/pencil.svg'
+import paintbrush from '../assets/paintbrush.svg'
+import gd_card from '../assets/gd_card.png'
+import ui_card from '../assets/ui_card.png'
+
 
 // TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages
 // TODO: deploy this on github pages just to see how things go :D
@@ -107,12 +113,12 @@ export default function Home() {
                         <Shape src={curve2} top="20vh" right="16vw" z="1" width="24vw" delay={6}/>
                         <Shape src={curve3} top="72vh" right="70vw" width="25vw" delay={2} />
                         <Shape src={hex} top="70vh" right="55vw" width="10vw" delay={7}/>
-                        <Shape src={nanner} top="58vh" right="16vw" width="7.5vw" delay={1} />
+                        <Shape src={nanner} top="57vh" right="22vw" width="7.5vw" delay={1} />
                         <Shape src={square} top="9vh" right="25vw" width="10vw" delay={4}/>
                         <Shape src={squiggle} top="67vh" right="36vw" width="15vw" />
                         <Shape src={star} top="10vh" right="10vw" z="4" width="8vw" delay={7} />
-                        <Shape src={triangle} top="42vh" right="25vw" width="10vw" delay={2} />
-                        <Shape src={triangle2} top="45vh" right="40vw" z="60" width="5vw" delay={3} />
+                        <Shape src={triangle} top="42vh" right="30vw" width="10vw" delay={2} />
+                        <Shape src={triangle2} top="45vh" right="45vw" z="60" width="5vw" delay={3} />
                         <Shape src={glaggle} top="70vh" right="18vw" width="18vw" delay={6} />
                     </div>
                 }
@@ -153,7 +159,7 @@ export default function Home() {
                     
                 </div>
 
-                <div className='absolute bottom-0 scale-150 pointer-events-none md:scale-100'>
+                <div className='absolute bottom-0 scale-150 md:scale-100'>
                     <ScrollingImage ltr={true} img={wave} width='full'/>
                 </div>
 
@@ -161,29 +167,29 @@ export default function Home() {
             
             {/* TODO: make this section gradient a tailwind variable since im using this on every page */}
             <section className='p-12 flex flex-col gap-16 w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] '>
-                <div id='projects' className='flex flex-col items-end gap-4'>
+                <section id='projects' className='flex flex-col items-end gap-4'>
                     <span className='flex flex-row items-center w-full h-8 gap-4'>
                         <img className='h-full' src={dev_icon} alt="React fragment element icon" />
                         <h2 className='h-full text-3xl'>here's what i've been working on!</h2>
                     </span>
-                    <div className='box-border flex flex-row items-stretch w-full gap-4 h-80 min-h-60'>
+                    <div className='box-border flex flex-row items-stretch w-full gap-4 h-96 min-h-60'>
                         <ProjectCard {...cardData[0]} top={50} />
-                        <ProjectCard {...cardData[1]} top={50} newLanguages={['matplotlib', 'numpy']}/>
+                        <ProjectCard {...cardData[1]} top={0} newLanguages={['matplotlib', 'numpy']}/>
                         <ProjectCard {...cardData[2]} top={50} newLanguages={['react', 'tailwind']}/>
                     </div>
                     <button className='w-[32.5%] mt-4 text-lg' onClick={_e => navigate('/projects')} >
                         check out more of what i’ve done! →
                     </button>
-                </div>
+                </section>
                 
-                <div id='technologies' className='flex flex-col items-baseline gap-4'>
+                <section id='technologies' className='flex flex-col items-baseline gap-4'>
                     <span className='flex flex-row-reverse items-center w-full h-8 gap-4'>
                         <img className='h-full' src={tech_icon} alt="Stack icon" />
-                        <h2 className='h-full text-3xl'>here are some of the technologies i know!</h2>
+                        <h2 className='h-full text-3xl'>take a look at what i know!</h2>
                     </span>
-                    <div className='box-border flex flex-col items-stretch w-full gap-4 md:flex-row'>
+                    <div className='box-border flex flex-col items-stretch w-full gap-3 md:flex-row'>
                         <div id='languages' className='flex flex-col flex-grow gap-2'>
-                            <h2 className='my-2 text-2xl text-white opacity-50'>languages</h2>
+                            <h2 className='my-2 text-2xl text-white/50'>languages</h2>
                             <div className='grid grid-flow-col grid-rows-5 gap-2'>
                                 {languages.map(lang => (
                                     <ToolCard name={lang} />
@@ -192,7 +198,7 @@ export default function Home() {
                         </div>
 
                         <div id='tools' className='flex flex-col flex-grow gap-2'>
-                            <h2 className='my-2 text-2xl text-white opacity-50'>tools</h2>
+                            <h2 className='my-2 text-2xl text-white/50'>tools</h2>
                             <div className='grid grid-flow-col grid-rows-5 gap-2'>
                                 {tools.map(tool => (
                                     <ToolCard name={tool} icon={tool == "pip" ? "python" : undefined}/>
@@ -201,7 +207,7 @@ export default function Home() {
                         </div>
 
                         <div id='frameworks' className='flex flex-col flex-grow-[2] gap-2'>
-                            <h2 className='my-2 text-2xl text-white opacity-50'>frameworks</h2>
+                            <h2 className='my-2 text-2xl text-white/50'>frameworks</h2>
                             <div className='grid grid-flow-col grid-rows-5 gap-2'>
                                 {frameworks.map(framework => (
                                     <ToolCard name={framework} />
@@ -209,7 +215,21 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+
+                <section id='design' className='flex flex-col items-baseline gap-4'>
+                    <span className='flex flex-row items-center w-full h-8 gap-4'>
+                        <img className='h-full' src={pen_icon} alt="Pen icon" />
+                        <h2 className='h-full text-3xl'>check out some of my design work too!</h2>
+                    </span>
+                    <div className='flex flex-row w-full gap-4 justify-stretch'>
+                        <DesignCard img={gd_card} title='graphic design' icon={pencil} />
+                        <DesignCard img={ui_card} title='ui design' icon={paintbrush} />
+                    </div>
+                    <button className='w-[32.5%] mt-4 text-lg' onClick={_e => navigate('/projects')} >
+                        take a look at the whole gallery! →
+                    </button>
+                </section>        
             </section>
         </>
     )

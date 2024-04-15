@@ -6,9 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'footer': 'inset 0 -20px 30px 0 rgb(255 248 19 / 0.25)'
+      },
       fontFamily: {
         'page-heading': ['Fraternite', 'serif'],
-        'sans': ['PP Neue Montreal', 'system-ui', 'sans-serif']
+        'sans': ['PP Neue Montreal', 'system-ui', 'sans-serif'],
+        'footer': ['Illusion Serif', 'mono']
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 7s linear infinite',
@@ -27,6 +31,7 @@ export default {
       colors: {
         'yellow': '#FFF813',
         'card-black': '#191919',
+        'card-hover': '#252525',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

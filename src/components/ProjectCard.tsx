@@ -18,7 +18,6 @@ export interface props {
 
 export default function ProjectCard({img, name, description, languages, top = 0, newLanguages} : props) {
     const [mousePos, setMousePos] = useState<position>({ x: null, y: null });
-    let languageCards;
   
     function handleMouseMove(e : MouseEvent) {
         setMousePos({ x: e.clientX, y: e.clientY })
@@ -28,19 +27,11 @@ export default function ProjectCard({img, name, description, languages, top = 0,
     
     languages = newLanguages ? languages.concat(newLanguages) : languages
 
-    if (languages) {
-        languageCards = languages.map( language => 
-            <div className="box-border flex items-center justify-center w-10 h-10 p-2 bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
-                <img src={`/src/assets/icons/${language}.png`} alt={language} className="m-auto"/>
-            </div> 
-        )
-    } else {
-        languageCards = Array(Math.floor(Math.random() * 8) + 1).fill(':D').map( i =>
-            <div className="box-border flex items-center justify-center w-10 h-10 p-2 text-[#FFFFFF80] bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
-                {i}
-            </div> 
-        )
-    }
+    const languageCards = languages.map( language => 
+        <div className="box-border flex items-center justify-center w-10 h-10 p-2 bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
+            <img src={`/src/assets/icons/${language}.png`} alt={language} className="m-auto"/>
+        </div> 
+    )
 
     return ( 
         <>
@@ -56,13 +47,13 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                         background: (mousePos.x ? `#252525` : '#191919'),
                         transition: 'all 0.1s ease-out'
                     }}>
-                    <img className="object-cover pointer-events-none rounded-2xl h-1/2" src={img ? img : no_img} alt={`Banner image of  ${name}`}
+                    <img className="object-cover rounded-2xl h-1/2" src={img ? img : no_img} alt={`Banner image of  ${name}`}
                         style={{
                             objectPosition: `center ${top}%`
                         }} />
                     <div className='flex flex-col gap-1'>
                         <span>
-                            <h2 className="inline text-3xl text-white opacity-25 select-none">/</h2>
+                            <h2 className="inline text-3xl select-none text-white/25">/</h2>
                             <h2 className="inline text-3xl text-white ">{name ? name : 'no-repo-found'}</h2>
                         </span>
                         <p className="text-lg leading-tight text-white">{description ? description : 'lorem ipsum and such'}</p>
@@ -71,7 +62,7 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                 <div className="absolute z-20 flex flex-row items-center justify-center w-full gap-2 -bottom-4">
                     {languageCards ? languageCards : null}
                 </div>
-                <svg rx={24} className="absolute w-full h-full pointer-events-none">
+                <svg rx={24} className="absolute w-full h-full pointer-events-none select-none">
                     <defs>
                         <linearGradient id="gradient" y1={0} y2={1}>
                             <stop stopColor="#FFFFFF80" offset={0} />
