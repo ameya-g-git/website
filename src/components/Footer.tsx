@@ -77,7 +77,7 @@ export default function Footer() {
         
 
     return (
-        <footer className="overflow-x-hidden bg-black h-fit">
+        <footer className="overflow-x-hidden bg-[#0A0A00] h-fit">
             <div className='w-[120%] shadow-footer flex flex-col items-center -ml-[10%]'>
                 <img src={arrow_smiley} className='my-2 mt-8 w-28' alt="" />
                 <div className='flex flex-col [&>*]:-my-0.5'>

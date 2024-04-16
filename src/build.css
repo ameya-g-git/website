@@ -1339,6 +1339,11 @@ button:hover {
   background-color: rgb(25 25 25 / 0.5);
 }
 
+.bg-\[\#0A0A00\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 0 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1364,6 +1369,10 @@ button:hover {
 
 .fill-none {
   fill: none;
+}
+
+.fill-white\/50 {
+  fill: rgb(255 255 255 / 0.5);
 }
 
 .stroke-2 {
@@ -1568,6 +1577,10 @@ button:hover {
 
 .opacity-20 {
   opacity: 0.2;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .shadow-footer {

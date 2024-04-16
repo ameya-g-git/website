@@ -29,7 +29,7 @@ export default function ProjectCard({img, name, description, languages, top = 0,
 
     const languageCards = languages.map( language => 
         <div className="box-border flex items-center justify-center w-10 h-10 p-2 bg-opacity-50 border-2 rounded-lg bg-card-black backdrop-blur-md border-white/40">
-            <img src={`/src/assets/icons/${language}.png`} alt={language} className="m-auto"/>
+            <img src={`/src/assets/icons/${language}.svg`} alt={language} className="m-auto"/>
         </div> 
     )
 
