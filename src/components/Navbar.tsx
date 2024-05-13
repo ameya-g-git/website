@@ -7,18 +7,18 @@ import starbar from "../assets/starbar.png"
 export default function Navbar() {
     const scrollLength : number = useScrollLength();
     const routes : string[] = ['', 'projects', 'portfolio'];
-    const navElementClasses = clsx("content-box m-4 border-b-0 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5")
+    const navElementClasses = clsx("content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5")
 
     const navLinkElements = routes.map( item => (
         <NavLink 
             key={item}
             to={`/${item}`}
-            className={({ isActive, isPending, isTransitioning }) =>
+            className={({ isActive, isPending, isTransitioning }) => // TODO: adjust the styles based on these booleans so that the user knows which page they're on  : D
                 [
                 isPending ? "pending" : "",
                 isActive ? "active" : "",
                 isTransitioning ? "transitioning" : "",
-                ].join(" ") + navElementClasses
+                ].join(navElementClasses)
             }
             >
             {item ? item : 'home'}
@@ -31,8 +31,8 @@ export default function Navbar() {
             <ScrollingImage ltr={true} width="starbar" img={starbar} />
             <nav className="relative inline-flex items-center justify-around w-full mx-8 text-lg transition-all border-b-0 mb text-yellow font-body">
                 {navLinkElements}
-                <a className={navElementClasses}>resume</a>
-                <a className={navElementClasses}>contact</a>
+                <a className={navElementClasses} href="../src/assets/AG_fullresume.pdf" target="_blank">resume</a>
+                <a className={navElementClasses} href="#footer">contact</a>
             </nav>
             <ScrollingImage ltr={false} width="starbar" img={starbar} />
         </div>

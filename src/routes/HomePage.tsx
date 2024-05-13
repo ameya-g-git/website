@@ -40,12 +40,12 @@ import ui_card from '../assets/ui_card.png'
 // TODO: deploy this on github pages just to see how things go :D
 
 interface windowSize {
-    width: number,
-    height: number
+    screenWidth: number,
+    screenHeight: number
 }
 
 export async function loader() {
-    const repoNames : string[] = ['mirrormult-figma-plugin', 'mc-quantization', 'website'] // repositories to load
+    const repoNames : string[] = ['mirrormult-figma-plugin', 'mc-quantization', 'keep-it-real'] // repositories to load
     let makeRequest : boolean = true // boolean to hold whether or not a request needs to be made
     
     const repoDetails = await localforage.keys().then(async keys => {
@@ -83,7 +83,7 @@ export async function loader() {
 }
 
 export default function Home() {
-    const { width } : windowSize = useWindowSize();
+    const { screenWidth } : windowSize = useWindowSize();
     const loaderData : any = useLoaderData();
     const cardData = loaderData
     const navigate = useNavigate()
@@ -94,18 +94,18 @@ export default function Home() {
 
     const nameStyles = clsx(
         'relative font-page-heading leading-none',
-        (width >= 768 ? 'text-[33vh] -my-[10vh] -mb-[8vh]' : 'text-[33vw] -my-[5vh] -mb-[3vh]')
+        (screenWidth >= 768 ? 'text-[33vh] -my-[10vh] -mb-[8vh]' : 'text-[33vw] -my-[5vh] -mb-[3vh]')
     )
     
     const lastNameStyles = clsx([
         'font-page-heading leading-none -my-[2vh]',
-        (width >= 768 ? 'text-[22vh]' : 'text-[22vw]')
+        (screenWidth >= 768 ? 'text-[22vh]' : 'text-[22vw]')
     ])
 
     return (
         <>
-            <section id='banner' className='relative w-screen h-screen overflow-hidden'>
-                { width >= 1200 &&
+            <section id='banner' className='relative w-full h-full overflow-hidden'>
+                { screenWidth >= 1200 &&
                     <div id='shapes' className='w-screen h-screen overflow-hidden [perspective:12px]'>
                         <Shape src={circle} top="15vh" right="0" z="3" width="24vw" delay={9} />
                         <Shape src={circle2} top="12vh" right="0" z="2" width="5vw" delay={4} />
@@ -122,9 +122,7 @@ export default function Home() {
                         <Shape src={glaggle} top="70vh" right="18vw" width="18vw" delay={6} />
                     </div>
                 }
-                
-                <div className='box-border absolute px-8 text-black -translate-y-1/2 md:pt-4 py-18 top-1/2 md:py-32 md:px-20'>
-
+                <div className='box-border absolute px-8 text-black -translate-y-1/2 top-1/2 md:pt-8 md:py-48 md:px-20 py-18'>
                     <div className='inline-flex items-center gap-1'>
                         <Player 
                             src="https://lottie.host/1dd41cb5-2633-4dc5-99ba-03b545ea86ce/5x9D1FO1SB.json"
@@ -134,9 +132,8 @@ export default function Home() {
                             />
                         <h2 className="text-xl md:text-4xl">hi! i'm</h2>
                     </div>
-
                     <div>
-                        {width > 768 && <img src={starCurve} alt="" className='absolute max-h-[32vh] -mt-[7vh] -ml-[1vw]' />}
+                        {screenWidth > 768 && <img src={starCurve} alt="" className='absolute max-h-[32vh] -mt-[7vh] -ml-[1vw]' />}
                         <div className='flex flex-row items-baseline h-full'>
                             <h1 className={nameStyles}>ameya</h1>
                             <p className='text-sm'>:3</p>
@@ -146,8 +143,7 @@ export default function Home() {
                             <h2 className="text-sm md:text-lg md:mb-[2vh]">(he/him)</h2>
                         </div>
                     </div>
-
-                    <div className='my-[4vh] md:my-[6vh] [&>*]:my-1 [&>h3]:text-[2vh] [&>h3]:md:text-lg'>
+                    <div className='my-[4vh] md:my-[6vh] [&>*]:my-1 [&>h3]:text-[2vh] [&>h3]:md:text-xl'>
                         <h3>
                             aspiring software developer | multidisciplinary creative | graphic designer | 3d artist | ui designer
                         </h3>
@@ -156,26 +152,25 @@ export default function Home() {
                             passionate about bringing bold, unique design to software solutions
                         </h3>
                     </div>
-                    
-                </div>
 
+                </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
                     <ScrollingImage ltr={true} img={wave} width='full'/>
                 </div>
-
             </section>
             
             {/* TODO: make this section gradient a tailwind variable since im using this on every page */}
-            <section className='p-12 flex flex-col gap-16 w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] '>
+            <section className='p-12 flex flex-col gap-16 w-full h-fit bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] [&_h2]:h-full [&_h2]:text-3xl'>
                 <section id='projects' className='flex flex-col items-end gap-4'>
-                    <span className='flex flex-row items-center w-full h-8 gap-4'>
+                    <span className='flex flex-row items-end w-full h-8 gap-2'>
+                        <h2>here's what i've been</h2>
                         <img className='h-full' src={dev_icon} alt="React fragment element icon" />
-                        <h2 className='h-full text-3xl'>here's what i've been working on!</h2>
+                        <h2>working on!</h2>
                     </span>
                     <div className='box-border flex flex-row items-stretch w-full gap-4 h-96 min-h-60'>
                         <ProjectCard {...cardData[0]} top={50} />
                         <ProjectCard {...cardData[1]} top={0} newLanguages={['matplotlib', 'numpy']}/>
-                        <ProjectCard {...cardData[2]} top={50} newLanguages={['react', 'tailwind']}/>
+                        <ProjectCard {...cardData[2]} top={50} newLanguages={['flask', 'tailwind']}/>
                     </div>
                     <button className='w-[32.5%] mt-4 text-lg' onClick={_e => navigate('/projects')} >
                         check out more of what i’ve done! →
@@ -183,9 +178,10 @@ export default function Home() {
                 </section>
                 
                 <section id='technologies' className='flex flex-col items-baseline gap-4'>
-                    <span className='flex flex-row-reverse items-center w-full h-8 gap-4'>
+                    <span className='flex flex-row items-center justify-end w-full h-8 gap-2'>
+                        <h2>here are the</h2>
                         <img className='h-full' src={tech_icon} alt="Stack icon" />
-                        <h2 className='h-full text-3xl'>take a look at what i know!</h2>
+                        <h2>skills i've gained!</h2>
                     </span>
                     <div className='box-border flex flex-col items-stretch w-full gap-3 md:flex-row'>
                         <div id='languages' className='flex flex-col flex-grow gap-2'>
@@ -218,9 +214,10 @@ export default function Home() {
                 </section>
 
                 <section id='design' className='flex flex-col items-baseline gap-4'>
-                    <span className='flex flex-row items-center w-full h-8 gap-4'>
+                    <span className='flex flex-row items-center w-full h-8 gap-2'>
+                        <h2>check out some of my</h2>
                         <img className='h-full' src={pen_icon} alt="Pen icon" />
-                        <h2 className='h-full text-3xl'>check out some of my design work too!</h2>
+                        <h2>design work too!</h2>
                     </span>
                     <div className='flex flex-row w-full gap-4 justify-stretch'>
                         <DesignCard img={gd_card} title='graphic design' icon={pencil} />

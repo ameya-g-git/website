@@ -2,10 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    margin-right: 5px !important;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: black
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff40; 
+}
+::-webkit-scrollbar-thumb {
+    width: 4px;
+    background: #FFFFFF60;
+    border-radius: 5px;
+}
+
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         color: white;
+        background-color: #FFF813;
         margin: 0;
+        overflow: overlay;
     }
     
     button {
@@ -25,6 +49,11 @@
 
     button:hover {
         filter: drop-shadow(0 0 8px #FFF81380);
+    }
+
+    #orbit object svg path {
+        stroke: #FFF813;
+        stroke-width: 5px;
     }
 
     @font-face {
@@ -56,9 +85,5 @@
         font-style: normal;
         font-weight: 400;
         src: url(./assets/fonts/IllusionSerif-Regular.otf)
-    }
-
-    ::-webkit-scrollbar {
-        display: none;
     }
 }

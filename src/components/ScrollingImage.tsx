@@ -17,16 +17,14 @@ export default function ScrollingImage({ ltr, width, img } : props) {
     )
 
     const imageStyles = clsx(
-        `relative flex flex-row justify-end ${elementWidth} animate-infinite-scroll`
+        `relative flex flex-row justify-end ${elementWidth} animate-infinite-scroll w-[200%]`
     )
 
     return (
         <div className={containerStyles}>
-            <div className="relative w-full">
-                <div className={imageStyles}>
-                    <img src={img} className='object-cover h-full'/>
-                    <img src={img} className='object-cover h-full'/>
-                </div>
+            <div className={imageStyles}>
+                <img src={img} className='object-cover w-full' />
+                <img src={img} className='object-cover w-full'/>
             </div>
         </div>
     )
