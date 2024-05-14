@@ -37,7 +37,7 @@ export default function ProjectCard({img, name, description, languages, top = 0,
     languages = newLanguages ? languages.concat(newLanguages) : languages
 
     const languageCards = languages.map( language => 
-        <div className="box-border flex items-center justify-center w-10 h-10 p-2 border-2 rounded-lg bg-card-black backdrop-blur-xl border-white/40">
+        <div className="box-border flex items-center justify-center w-10 h-10 p-2 border-2 rounded-lg bg-card-black backdrop-blur-xl border-white/30">
             <img src={`/src/assets/icons/${language}.svg`} alt={language} className="m-auto opacity-50"/>
         </div> 
     )
@@ -54,7 +54,7 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                     <div className="absolute top-[1%] left-[1%] flex flex-col w-[98%] h-[98%] gap-2 p-4 bg-opacity-50 rounded-3xl backdrop-blur-md inset-5"
                         style={{
                             // TODO: either figure this out or just change a boolean on hover
-                            background: (mousePos.x ? `#252525` : '#191919'),
+                            background: (mousePos.x ? `#252525` : '#101010'),
                             transition: 'all 0.1s ease-out'
                         }}>
                         <motion.div 

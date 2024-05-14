@@ -2,57 +2,106 @@ import planet_curve from "../assets/planet_curve.svg"
 import wave from "../assets/wave.svg"
 import ScrollingImage from "../components/ScrollingImage"
 import useWindowSize from "../hooks/useWindowSize"
-import clsx from "clsx"
+
+import create from "../assets/create_icon.svg"
+import explore from "../assets/explore_icon.svg"
+import discover from "../assets/discover_icon.svg"
+import localforage from "localforage"
+import ProjectCard, { props as cardProps } from "../components/ProjectCard"
+import { getRepoDetails } from "../hooks/getRepoDetails"
+import { useLoaderData } from "react-router-dom"
+
+export async function loader() {
+    const repoNames : string[] = ['mirrormult-figma-plugin', 'mc-quantization', 'keep-it-real'] // repositories to load
+    let makeRequest : boolean = true // boolean to hold whether or not a request needs to be made
+    
+    const repoDetails = await localforage.keys().then(async keys => {
+        let details : (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
+        details = [] // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
+        
+        if (keys.length >= 1 && !makeRequest) { // if localforage is not empty and request doesn't need to be made
+            const result : cardProps[] | null = await localforage.getItem('key', (err) => { if (err) {console.log(err)} })
+            if (result) {
+                details = result
+            }
+
+            if (details.length === repoNames.length) { // run code below if the number of repos match
+                for (let i = 0; i < repoNames.length; i++) { // iterate through each list to see if the repo names match
+                    if (details[i]!.name != repoNames[i]) {
+                        makeRequest = true // if the repo names don't match, a new request must be made
+                        break;
+                    }
+                }
+            } else { // if the number of repos don't match, a new request must be made
+               makeRequest = true
+            }
+        }
+
+        if (makeRequest) { // code to make the request
+            const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
+            details = await Promise.all(repoDetailsPromises)
+            await localforage.setItem('key', details, (err) => { if (err) {console.log(err)} })
+        }
+
+        return details // return the repo details
+    })
+    
+    return repoDetails
+}
 
 export default function Projects() {
     const {screenWidth} = useWindowSize()
+    const loaderData : any = useLoaderData();
 
-    const languages = ['javascript', 'python', 'c++', 'html', 'css', 'typescript']
-    const tools = ['git', 'vite', 'npm', 'python', 'figma']
-    const frameworks = ['react', 'vue', 'tailwind', 'bootstrap', 'flask', 'numpy', 'matplotlib']
+    const languages = Array(2).fill(['javascript', 'python', 'c++', 'html', 'css', 'typescript']).flat()
+    const tools = Array(2).fill(['git', 'vite', 'npm', 'python', 'figma']).flat()
+    const frameworks = Array(2).fill(['react', 'vue', 'tailwind', 'bootstrap', 'flask', 'numpy', 'matplotlib']).flat()
 
-    const widths = [1400, 1625, 1850]
+    const widths = [screenWidth * 0.75, screenWidth * 0.85, screenWidth * 0.95]
     const strokeWidth = 5
 
     const languageIcons = languages.map((lang, i) => {
-        const delays = clsx({
-            'absolute brightness-0 [--radius:700px] <stroke-yellow></stroke-yellow> -ml-6 -mt-6 animate-orbit-rev': true,
-            '[--delay:3333ms]': i === 1,
-            '[--delay:6666ms]': i === 2,
-            '[--delay:9999ms]': i === 3,
-            '[--delay:13332ms]': i === 4,
-            '[--delay:16665ms]': i === 5,
-        })
         return (
-            <object key={lang} width={50} height={50} className={delays} data={`./src/assets/icons/${lang}.svg`} />
+            <object 
+                key={lang} 
+                width={50} 
+                height={50} 
+                className="absolute -mt-6 -ml-6 brightness-0 stroke-yellow animate-orbit-rev"
+                data={`./src/assets/icons/${lang}.svg`}
+                style={{
+                    "--radius": `${widths[0] / 2}px`,
+                    "--delay": `${Math.round((30000 / languages.length) * i)}ms`
+                } as React.CSSProperties} />
         )
     })
 
     const toolIcons = tools.map((tool, i) => {
-        const delays = clsx({
-            'absolute brightness-0 [--radius:812.5px] <stroke-yellow></stroke-yellow> -ml-6 -mt-6 animate-orbit': true,
-            '[--delay:4000ms]': i === 1,
-            '[--delay:8000ms]': i === 2,
-            '[--delay:12000ms]': i === 3,
-            '[--delay:16000ms]': i === 4,
-        })
         return (
-            <object key={tool} width={50} height={50} className={delays} data={`./src/assets/icons/${tool}.svg`} />
+            <object 
+                key={tool} 
+                width={50} 
+                height={50} 
+                className="absolute -mt-6 -ml-6 brightness-0 animate-orbit"
+                data={`./src/assets/icons/${tool}.svg`}
+                style={{
+                    "--radius": `${widths[1] / 2}px`,
+                    "--delay": `${Math.round((30000 / tools.length) * i)}ms`
+                } as React.CSSProperties} />
         )
     })
 
     const frameworkIcons = frameworks.map((framework, i) => {
-        const delays = clsx({
-            'absolute brightness-0 [--radius:925px] <stroke-yellow></stroke-yellow> -ml-6 -mt-6 animate-orbit-rev': true,
-            '[--delay:2850ms]': i === 1,
-            '[--delay:5700ms]': i === 2,
-            '[--delay:8550ms]': i === 3,
-            '[--delay:11400ms]': i === 4,
-            '[--delay:13990ms]': i === 5,
-            '[--delay:17100ms]': i === 6,
-        })
         return (
-            <object key={framework} width={50} height={50} className={delays} data={`./src/assets/icons/${framework}.svg`} />
+            <object 
+                key={framework} 
+                width={50} 
+                height={50} 
+                className="absolute -mt-6 -ml-6 brightness-0 animate-orbit-rev"
+                data={`./src/assets/icons/${framework}.svg`}
+                style={{
+                    "--radius": `${widths[2] / 2}px`,
+                    "--delay": `${Math.round((30000 / frameworks.length) * i)}ms`
+                } as React.CSSProperties} />
         )
     })
 
@@ -67,7 +116,7 @@ export default function Projects() {
     return (
         <>
             <section id="banner" className="relative flex items-center justify-center w-full h-screen overflow-hidden">
-                <div id="orbit" className="absolute flex items-center justify-center w-full h-full">
+                <div id="orbit" className="absolute flex items-center justify-center visible w-full h-full select-none">
                     {circleElements}
                     <div id="languages">
                         {languageIcons}
@@ -79,12 +128,34 @@ export default function Projects() {
                         {frameworkIcons}
                     </div>
                 </div>
-                <div className="bg-yellow z-50 flex justify-center items-center text-[20rem] font-page-heading text-black">
-                    <h1>projects</h1>
-                    <img src={planet_curve} className="absolute h-56 mr-20"/>
+                <div className="z-50 flex items-center justify-center text-black bg-yellow font-page-heading">
+                    <h1 className="md:text-[20rem] text-[30vw]">projects</h1>
+                    <img src={planet_curve} className="absolute h-[20vw] mr-8 md:h-56 md:mr-20"/>
                 </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
                     <ScrollingImage ltr={true} img={wave} width='full'/>
+                </div>
+            </section>
+            <section className="flex flex-col items-center gap-2 bg-black">
+                <h2 className="text-2xl">i like to make projects that help people</h2>
+                <div className="flex flex-row gap-8 rounded-full">
+                    <div className="flex flex-row items-center gap-4 pr-8 border-r-4">
+                        <img src={explore} alt="explore icon" />
+                        <h1 className="text-4xl">explore</h1>
+                    </div>
+                    <div className="flex flex-row items-center gap-4 pr-8 border-r-4">
+                        <img src={create} alt="create icon" />
+                        <h1 className="text-4xl">create</h1>
+                    </div>
+                    <div className="flex flex-row items-center gap-4">
+                        <img src={discover} alt="discover icon" />
+                        <h1 className="text-4xl">discover</h1>
+                    </div>
+                </div>
+                <div className='box-border flex flex-row items-stretch w-full gap-4 px-12 my-8 h-96 min-h-60'>
+                    <ProjectCard {...loaderData[0]} top={50} />
+                    <ProjectCard {...loaderData[1]} top={0} newLanguages={['matplotlib', 'numpy']}/>
+                    <ProjectCard {...loaderData[2]} top={50} newLanguages={['flask', 'tailwind']}/>
                 </div>
             </section>
         </>

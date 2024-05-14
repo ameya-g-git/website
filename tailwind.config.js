@@ -17,8 +17,8 @@ export default {
       animation: {
         'infinite-scroll': 'infinite-scroll 7s linear infinite',
         'float': 'float 5s ease-in-out var(--delay, 0ms) infinite',
-        'orbit': 'orbit 20s linear var(--delay, 0ms) infinite',
-        'orbit-rev': 'orbit 20s linear var(--delay, 0ms) infinite reverse'
+        'orbit': 'orbit 30s linear var(--delay, 0ms) infinite',
+        'orbit-rev': 'orbit 30s linear var(--delay, 0ms) infinite reverse'
       },
       keyframes: {
         'infinite-scroll': {
@@ -36,7 +36,7 @@ export default {
       },
       colors: {
         'yellow': '#FFF813',
-        'card-black': '#191919',
+        'card-black': '#101010',
         'card-hover': '#252525',
       },
       backgroundImage: {

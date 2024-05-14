@@ -481,6 +481,12 @@ button:hover {
   stroke-width: 5px;
 }
 
+object {
+  --radius: 0s,
+        --delay: 0s,
+    
+}
+
 @font-face {
   font-family: 'PP Neue Montreal';
 
@@ -631,6 +637,10 @@ button:hover {
   pointer-events: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -728,6 +738,11 @@ button:hover {
   margin-bottom: 0.5rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .my-\[4vh\] {
   margin-top: 4vh;
   margin-bottom: 4vh;
@@ -773,8 +788,8 @@ button:hover {
   margin-bottom: 3.5rem;
 }
 
-.mr-20 {
-  margin-right: 5rem;
+.mr-8 {
+  margin-right: 2rem;
 }
 
 .mt-4 {
@@ -829,16 +844,16 @@ button:hover {
   height: 8rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
 .h-8 {
   height: 2rem;
 }
 
 .h-96 {
   height: 24rem;
+}
+
+.h-\[20vw\] {
+  height: 20vw;
 }
 
 .h-\[46\%\] {
@@ -872,6 +887,10 @@ button:hover {
 
 .min-h-60 {
   min-height: 15rem;
+}
+
+.w-1\/6 {
+  width: 16.666667%;
 }
 
 .w-10 {
@@ -988,8 +1007,8 @@ button:hover {
   }
 }
 
-.animate-orbit-rev {
-  animation: orbit 20s linear var(--delay, 0ms) infinite reverse;
+.animate-orbit {
+  animation: orbit 30s linear var(--delay, 0ms) infinite;
 }
 
 @keyframes orbit {
@@ -1002,8 +1021,8 @@ button:hover {
   }
 }
 
-.animate-orbit {
-  animation: orbit 20s linear var(--delay, 0ms) infinite;
+.animate-orbit-rev {
+  animation: orbit 30s linear var(--delay, 0ms) infinite reverse;
 }
 
 .select-none {
@@ -1084,8 +1103,16 @@ button:hover {
   gap: 1rem;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .gap-\[17rem\] {
   gap: 17rem;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .overflow-hidden {
@@ -1108,6 +1135,10 @@ button:hover {
   border-radius: 1.5rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1122,6 +1153,10 @@ button:hover {
 
 .border-b-0 {
   border-bottom-width: 0px;
+}
+
+.border-r-4 {
+  border-right-width: 4px;
 }
 
 .border-black {
@@ -1147,6 +1182,10 @@ button:hover {
   border-color: rgb(255 248 19 / var(--tw-border-opacity));
 }
 
+.border-white\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
 .border-opacity-25 {
   --tw-border-opacity: 0.25;
 }
@@ -1163,11 +1202,11 @@ button:hover {
 
 .bg-card-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(25 25 25 / var(--tw-bg-opacity));
+  background-color: rgb(16 16 16 / var(--tw-bg-opacity));
 }
 
 .bg-card-black\/50 {
-  background-color: rgb(25 25 25 / 0.5);
+  background-color: rgb(16 16 16 / 0.5);
 }
 
 .bg-yellow {
@@ -1231,14 +1270,14 @@ button:hover {
   padding: 1rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-56 {
-  padding-left: 14rem;
-  padding-right: 14rem;
 }
 
 .px-8 {
@@ -1251,8 +1290,20 @@ button:hover {
   padding-bottom: 0.75rem;
 }
 
+.pl-56 {
+  padding-left: 14rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .font-footer {
@@ -1273,6 +1324,11 @@ button:hover {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1283,16 +1339,16 @@ button:hover {
   line-height: 1;
 }
 
-.text-\[20rem\] {
-  font-size: 20rem;
-}
-
 .text-\[22vh\] {
   font-size: 22vh;
 }
 
 .text-\[22vw\] {
   font-size: 22vw;
+}
+
+.text-\[30vw\] {
+  font-size: 30vw;
 }
 
 .text-\[33vh\] {
@@ -1347,6 +1403,10 @@ button:hover {
 .text-yellow {
   --tw-text-opacity: 1;
   color: rgb(255 248 19 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .opacity-20 {
@@ -1415,20 +1475,12 @@ button:hover {
   --delay: 1200ms;
 }
 
-.\[--delay\:13332ms\] {
-  --delay: 13332ms;
-}
-
 .\[--delay\:1400ms\] {
   --delay: 1400ms;
 }
 
 .\[--delay\:1600ms\] {
   --delay: 1600ms;
-}
-
-.\[--delay\:16665ms\] {
-  --delay: 16665ms;
 }
 
 .\[--delay\:1800ms\] {
@@ -1443,10 +1495,6 @@ button:hover {
   --delay: 200ms;
 }
 
-.\[--delay\:3333ms\] {
-  --delay: 3333ms;
-}
-
 .\[--delay\:400ms\] {
   --delay: 400ms;
 }
@@ -1455,92 +1503,12 @@ button:hover {
   --delay: 600ms;
 }
 
-.\[--delay\:6666ms\] {
-  --delay: 6666ms;
-}
-
 .\[--delay\:800ms\] {
   --delay: 800ms;
 }
 
-.\[--delay\:9999ms\] {
-  --delay: 9999ms;
-}
-
-.\[--radius\:700px\] {
-  --radius: 700px;
-}
-
 .\[perspective\:12px\] {
   perspective: 12px;
-}
-
-.\[--delay\:12000ms\] {
-  --delay: 12000ms;
-}
-
-.\[--delay\:16000ms\] {
-  --delay: 16000ms;
-}
-
-.\[--delay\:4000ms\] {
-  --delay: 4000ms;
-}
-
-.\[--delay\:8000ms\] {
-  --delay: 8000ms;
-}
-
-.\[--radius\:825px\] {
-  --radius: 825px;
-}
-
-.\[--delay\:11400ms\] {
-  --delay: 11400ms;
-}
-
-.\[--delay\:13990ms\] {
-  --delay: 13990ms;
-}
-
-.\[--delay\:17100ms\] {
-  --delay: 17100ms;
-}
-
-.\[--delay\:2850ms\] {
-  --delay: 2850ms;
-}
-
-.\[--delay\:5700ms\] {
-  --delay: 5700ms;
-}
-
-.\[--delay\:8550ms\] {
-  --delay: 8550ms;
-}
-
-.\[--radius\:950px\] {
-  --radius: 950px;
-}
-
-.\[--radius\:800px\] {
-  --radius: 800px;
-}
-
-.\[--radius\:900px\] {
-  --radius: 900px;
-}
-
-.\[--radius\:925px\] {
-  --radius: 925px;
-}
-
-.\[--radius\:px\] {
-  --radius: px;
-}
-
-.\[--radius\:812\.5px\] {
-  --radius: 812.5px;
 }
 
 ::-webkit-scrollbar {
@@ -1591,8 +1559,16 @@ button:hover {
     margin-bottom: 2vh;
   }
 
+  .md\:mr-20 {
+    margin-right: 5rem;
+  }
+
   .md\:h-16 {
     height: 4rem;
+  }
+
+  .md\:h-56 {
+    height: 14rem;
   }
 
   .md\:scale-100 {
@@ -1622,6 +1598,10 @@ button:hover {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-\[20rem\] {
+    font-size: 20rem;
   }
 
   .md\:text-lg {

@@ -56,6 +56,11 @@
         stroke-width: 5px;
     }
 
+    object {
+        --radius: 0s,
+        --delay: 0s,
+    }
+
     @font-face {
         font-family: 'PP Neue Montreal';
         font-style: normal;

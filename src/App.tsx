@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './build.css'
 import Root from './routes/Root'
 import Home, { loader as HomeLoader } from './routes/HomePage'
-import Projects from './routes/ProjectsPage'
+import Projects, { loader as ProjectsLoader } from './routes/ProjectsPage'
 import Portfolio from './routes/PortfolioPage'
 
 const router = createBrowserRouter([
@@ -13,7 +13,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home />, loader: HomeLoader },
       {
         path: "/projects",
-        element: <Projects />
+        element: <Projects />,
+        loader: ProjectsLoader
       },
       {
         path: "/portfolio",
