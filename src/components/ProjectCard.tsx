@@ -1,11 +1,5 @@
-import { useState  } from 'react';
 import { motion } from 'framer-motion';
 import no_img from '../assets/no_repo_img.png'
-
-interface position {
-    x: number | null,
-    y: number | null
-}
 
 export interface props {
     img: string,
@@ -17,14 +11,17 @@ export interface props {
     newLanguages?: string[]
 }
 
-export default function ProjectCard({img, name, description, languages, top = 0, newLanguages} : props) {
-    const [mousePos, setMousePos] = useState<position>({ x: null, y: null });
-  
-    function handleMouseMove(e : MouseEvent) {
-        setMousePos({ x: e.clientX, y: e.clientY })
+export default function ProjectCard({img, name, description, languages, top = 0, newLanguages} : props) {  
+    const card = {
+        start: {
+            backgroundColor: "#101010"
+        },
+        end: {
+            backgroundColor: "#252525"
+        }
     }
 
-    const card = { 
+    const image = { 
         start: {
             opacity: 0, backdropFilter: "blur(0px)", backgroundColor: "#00000000", paddingRight: "10rem"},
         end: {
@@ -47,20 +44,13 @@ export default function ProjectCard({img, name, description, languages, top = 0,
             <a className='relative w-full h-full' href={`https://github.com/ameya-g-git/${name}`}>
                 <div 
                     id={`${name}-card`} 
-                    className="" 
-                    onMouseMove={e => handleMouseMove(e.nativeEvent)} 
-                    onMouseLeave={_e => setMousePos({x: null, y: null})}
                     >
-                    <div className="absolute top-[1%] left-[1%] flex flex-col w-[98%] h-[98%] gap-2 p-4 bg-opacity-50 rounded-3xl backdrop-blur-md inset-5"
-                        style={{
-                            // TODO: either figure this out or just change a boolean on hover
-                            background: (mousePos.x ? `#252525` : '#101010'),
-                            transition: 'all 0.1s ease-out'
-                        }}>
+                    <motion.div className="absolute top-[1%] left-[1%] flex flex-col w-[98%] h-[98%] gap-2 p-4 bg-opacity-50 rounded-3xl backdrop-blur-md inset-5"
+                        initial="start" 
+                        whileHover="end"
+                        variants={card}>
                         <motion.div 
-                            initial="start" 
-                            whileHover="end"
-                            variants={card}
+                            variants={image}
                             className='absolute inline-flex items-center justify-center w-[95%] gap-2 rounded-2xl h-[46%]'>
                             <p className='text-3xl'>→</p>
                             <p className='text-2xl'>go to repository</p>
@@ -76,19 +66,19 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                             </span>
                             <p className="text-lg leading-tight text-white">{description ? description : 'lorem ipsum and such'}</p>
                         </div>
+                    </motion.div>
+                    <div className="absolute z-20 flex flex-row items-center justify-center w-full gap-2 -bottom-4">
+                        {languageCards ? languageCards : null}
                     </div>
-                <div className="absolute z-20 flex flex-row items-center justify-center w-full gap-2 -bottom-4">
-                    {languageCards ? languageCards : null}
-                </div>
-                <svg rx={24} className="absolute w-full h-full pointer-events-none select-none">
-                    <defs>
-                        <linearGradient id="gradient" y1={0} y2={1}>
-                            <stop stopColor="#FFFFFF80" offset={0} />
-                            <stop stopColor="#FFFFFF20" offset={1} />
-                        </linearGradient>
-                    </defs>
-                    <rect className="stroke-2 fill-none" x='1%' y='1%' width='98%' height='98%' rx={24} stroke="url(#gradient)" />
-                </svg>
+                    <svg rx={24} className="absolute w-full h-full pointer-events-none select-none">
+                        <defs>
+                            <linearGradient id="gradient" y1={0} y2={1}>
+                                <stop stopColor="#FFFFFF80" offset={0} />
+                                <stop stopColor="#FFFFFF20" offset={1} />
+                            </linearGradient>
+                        </defs>
+                        <rect className="stroke-2 fill-none" x='1%' y='1%' width='98%' height='98%' rx={24} stroke="url(#gradient)" />
+                    </svg>
                 </div>
             </a>
         </>

@@ -88,15 +88,17 @@ export default function Footer() {
                     {secondLayer}
                     {thirdLayer}
                 </div>
-                <div className='flex flex-row items-center w-full pl-56 my-2 mb-14 gap-[17rem]'>
-                    <p>looking for entry-level positions to expand my skillset and make valuable connections!</p>
-                    <div className='flex flex-row items-center gap-1 '>
-                        <FooterButton icon={email} link='mailto:ameya.guptag@gmail.com?subject=hi%20from%20your%20website!' alt='email'/>
-                        <FooterButton icon={github} link='https://github.com/ameya-g-git' alt='github'/>
-                        <FooterButton icon={linkedin} link='https://linkedin.com/in/ameya-g' alt='linkedin'/>
-                        <FooterButton icon={resume} link='../src/assets/AG_fullresume.pdf' alt='resume'/>
+                <div className='flex flex-row items-center justify-between w-full px-56 mb-8 h-fit'>
+                    <div className='flex flex-row items-center w-full my-2 gap-[17rem]'>
+                        <p>looking for entry-level positions to expand my skillset and make valuable connections!</p>
+                        <div className='flex flex-row items-center gap-1 '>
+                            <FooterButton icon={email} link='mailto:ameya.guptag@gmail.com?subject=hi%20from%20your%20website!' alt='email'/>
+                            <FooterButton icon={github} link='https://github.com/ameya-g-git' alt='github'/>
+                            <FooterButton icon={linkedin} link='https://linkedin.com/in/ameya-g' alt='linkedin'/>
+                            <FooterButton icon={resume} link='../src/assets/AG_fullresume.pdf' alt='resume'/>
+                        </div>
                     </div>
-                    <p className='w-1/6 text-right justify-self-end'>created with ❤︎/✒︎ on <a className='underline' href='https://github.com/ameya-g-git/website'>github</a></p>
+                    <p className='w-56 mr-4'>created with ❤︎/✒︎ on <a className='underline' href='https://github.com/ameya-g-git/website'>github</a></p>
                 </div>
             </div>
         </footer>
