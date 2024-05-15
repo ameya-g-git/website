@@ -28,7 +28,6 @@ export default function ProjectCard({img, name, description, languages, top = 0,
             opacity: 1, backdropFilter: "blur(8px)", backgroundColor: "#19191940", paddingRight: 0},
     }
 
-    // TODO: on hover, link the card to the respective repository with a cool hover arrow effect on the image   will maybe make a custom Image component that can do this for all images 
     // TODO: figure out this circle gradient bullshit lma o     if not then just reconfigure the code to change the colour and delete all mouse-related hooks
     
     languages = newLanguages ? languages.concat(newLanguages) : languages

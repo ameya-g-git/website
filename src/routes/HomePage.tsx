@@ -12,7 +12,7 @@ import ProjectCard, { props as cardProps } from '../components/ProjectCard';
 import ToolCard from '../components/ToolCard';
 import DesignCard from '../components/DesignCard';
 
-import starCurve from '../assets/star_curve.svg'
+import starCurve from '../assets/home_icons/star_curve.svg'
 import wave from '../assets/wave.svg'
 import circle from '../assets/hero_shapes/circle.svg'
 import circle2 from '../assets/hero_shapes/circle2.svg'
@@ -27,13 +27,14 @@ import star from '../assets/hero_shapes/star.svg'
 import triangle from '../assets/hero_shapes/triangle.svg'
 import triangle2 from '../assets/hero_shapes/triangle2.svg'
 import glaggle from '../assets/hero_shapes/glaggle.svg'
-import dev_icon from '../assets/dev_icon.svg'
-import tech_icon from '../assets/technologies_icon.svg'
-import pen_icon from '../assets/pen_icon.svg'
+
+import dev_icon from '../assets/home_icons/dev_icon.svg'
+import tech_icon from '../assets/home_icons/technologies_icon.svg'
+import pen_icon from '../assets/home_icons/pen_icon.svg'
+import gd_card from '../assets/home_icons/gd_card.png'
+import ui_card from '../assets/home_icons/ui_card.png'
 import pencil from '../assets/pencil.svg'
 import paintbrush from '../assets/paintbrush.svg'
-import gd_card from '../assets/gd_card.png'
-import ui_card from '../assets/ui_card.png'
 
 
 // TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages

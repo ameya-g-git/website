@@ -3,9 +3,10 @@ import wave from "../assets/wave.svg"
 import ScrollingImage from "../components/ScrollingImage"
 import useWindowSize from "../hooks/useWindowSize"
 
-import create from "../assets/create_icon.svg"
-import explore from "../assets/explore_icon.svg"
-import discover from "../assets/discover_icon.svg"
+import create from "../assets/projects_icons/create_icon.svg"
+import explore from "../assets/projects_icons/explore_icon.svg"
+import discover from "../assets/projects_icons/discover_icon.svg"
+
 import localforage from "localforage"
 import ProjectCard, { props as cardProps } from "../components/ProjectCard"
 import { getRepoDetails } from "../hooks/getRepoDetails"
@@ -107,7 +108,7 @@ export default function Projects() {
 
     const circleElements = widths.map(width => {
         return (
-            <svg key={width} className="absolute select-none" width={Math.min(width, screenWidth) + (strokeWidth * 2)} height={width + (strokeWidth * 2)} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" strokeWidth={strokeWidth}>
+            <svg key={width} className="absolute select-none" width={width + (strokeWidth * 2)} height={width + (strokeWidth * 2)} xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" strokeWidth={strokeWidth}>
                 <circle r={width / 2} cx={width / 2 + strokeWidth} cy={(width / 2) + strokeWidth} />
             </svg>
         )
@@ -129,8 +130,8 @@ export default function Projects() {
                     </div>
                 </div>
                 <div className="z-50 flex items-center justify-center text-black bg-yellow font-page-heading">
-                    <h1 className="md:text-[20rem] text-[30vw]">projects</h1>
-                    <img src={planet_curve} className="absolute h-[20vw] mr-8 md:h-56 md:mr-20"/>
+                    <h1 className="md:text-[18rem] text-[25vw]">projects</h1>
+                    <img src={planet_curve} className="absolute mr-8 h-72 md:h-[12.5rem] md:mr-[4.5rem]"/>
                 </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
                     <ScrollingImage ltr={true} img={wave} width='full'/>
@@ -154,8 +155,8 @@ export default function Projects() {
                 </div>
                 <div className='box-border flex flex-row items-stretch w-full gap-4 px-12 my-8 h-96 min-h-60'>
                     <ProjectCard {...loaderData[0]} top={50} />
-                    <ProjectCard {...loaderData[1]} top={0} newLanguages={['matplotlib', 'numpy']}/>
-                    <ProjectCard {...loaderData[2]} top={50} newLanguages={['flask', 'tailwind']}/>
+                    <ProjectCard {...loaderData[1]} newLanguages={['matplotlib', 'numpy']}/>
+                    <ProjectCard {...loaderData[2]} newLanguages={['flask', 'tailwind']}/>
                 </div>
             </section>
         </>
