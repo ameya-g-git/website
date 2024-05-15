@@ -134,7 +134,9 @@ export default function Projects() {
                     <img src={planet_curve} className="absolute mr-8 h-72 md:h-[12.5rem] md:mr-[4.5rem]"/>
                 </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
-                    <ScrollingImage ltr={true} img={wave} width='full'/>
+                    <ScrollingImage ltr={true} width='full'>
+                        <img src={wave} alt="" className="object-cover w-full"/>
+                    </ScrollingImage>
                 </div>
             </section>
             <section className="flex flex-col items-center gap-2 bg-black">

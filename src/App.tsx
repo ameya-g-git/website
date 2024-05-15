@@ -3,7 +3,7 @@ import './build.css'
 import Root from './routes/Root'
 import Home, { loader as HomeLoader } from './routes/HomePage'
 import Projects, { loader as ProjectsLoader } from './routes/ProjectsPage'
-import Portfolio from './routes/PortfolioPage'
+import PortfolioPage from './routes/PortfolioPage'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/portfolio",
-        element: <Portfolio />
+        element: <PortfolioPage />
       }
     ]
   }

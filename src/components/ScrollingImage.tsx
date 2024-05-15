@@ -6,7 +6,7 @@ interface props {
     img : string
 }
 
-export default function ScrollingImage({ ltr, width, img } : props) {
+export default function ScrollingImage({ ltr, width, children }) {
     const elementWidth = clsx({
         'w-full': width === 'full',
         'w-60': width === 'starbar'
@@ -23,8 +23,8 @@ export default function ScrollingImage({ ltr, width, img } : props) {
     return (
         <div className={containerStyles}>
             <div className={imageStyles}>
-                <img src={img} className='object-cover w-full' />
-                <img src={img} className='object-cover w-full'/>
+                {children}
+                {children}
             </div>
         </div>
     )

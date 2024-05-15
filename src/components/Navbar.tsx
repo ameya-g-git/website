@@ -28,13 +28,17 @@ export default function Navbar() {
 
     return (
         <div className={`z-[9999] transition-all ease-in-out fixed inline-flex justify-around w-full p-3 bg-black h-14 ${scrollLength > 0 ? '-top-14' : 'top-0'}`}>
-            <ScrollingImage ltr={true} width="starbar" img={starbar} />
+            <ScrollingImage ltr={true} width="starbar">
+                <img src={starbar} alt="" className="object-cover w-full" />
+            </ScrollingImage>
             <nav className="relative inline-flex items-center justify-around w-full mx-8 text-lg transition-all border-b-0 mb text-yellow font-body">
                 {navLinkElements}
                 <a className={navElementClasses} href="../src/assets/AG_fullresume.pdf" target="_blank">resume</a>
                 <a className={navElementClasses} href="#footer">contact</a>
             </nav>
-            <ScrollingImage ltr={false} width="starbar" img={starbar} />
+            <ScrollingImage ltr={false} width="starbar">
+                <img src={starbar} alt="" className="object-cover w-full" />
+            </ScrollingImage>
         </div>
     )
 }
