@@ -5,12 +5,12 @@ interface position {
     y: number | null
 }
 
-export default function useMousePosition({e} : {e : Event}) {
+export default function useMousePosition() {
     const [mousePosition, setMousePosition] = useState<position>({ x: null, y: null });
   
     useEffect(() => {
         const updateMousePosition = (e : MouseEvent) => {
-            setMousePosition({ x: e.offsetX, y: e.offsetY });
+            setMousePosition({ x: e.clientX, y: e.clientY });
         };
     
         window.addEventListener('mousemove', updateMousePosition);

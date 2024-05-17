@@ -1,15 +1,19 @@
 import { clsx } from "clsx"
+import useMousePosition from "../hooks/useMousePosition"
 
 interface props {
     src: string,
     top: string,
     right: string
     width: string
-    z?: string
+    z?: number
     delay?: number
 }
 
-export default function Shape( {src, top, right, z, width, delay} : props ) {
+export default function Shape( {src, top, right, z = 1, width, delay} : props ) {
+    const mousePosition = useMousePosition()
+    console.log(mousePosition)
+
     const delays = clsx({
         '[--delay:200ms]': delay === 0,
         '[--delay:400ms]': delay === 1,
@@ -25,8 +29,8 @@ export default function Shape( {src, top, right, z, width, delay} : props ) {
 
     return (
         <div className={`absolute animate-float ${delays}`} style={{
-            top: top,
-            right: right,
+            top: `calc(${top} + ${(mousePosition.y * z / 150)}px`,
+            right: `calc(${right} - ${(mousePosition.x * z / 150)}px`,
             zIndex: z}}>
             <img src={src} style={{
                 width: (width || 'auto')}}/>

@@ -108,18 +108,18 @@ export default function Home() {
             <section id='banner' className='relative w-full h-full overflow-hidden'>
                 { screenWidth >= 1200 &&
                     <div id='shapes' className='w-screen h-screen overflow-hidden [perspective:12px]'>
-                        <Shape src={circle} top="15vh" right="0" z="3" width="24vw" delay={9} />
-                        <Shape src={circle2} top="12vh" right="0" z="2" width="5vw" delay={4} />
-                        <Shape src={curve} top="53vh" right="0.5vw" z="1" width="18vw" delay={3} />
-                        <Shape src={curve2} top="20vh" right="16vw" z="1" width="24vw" delay={6}/>
-                        <Shape src={curve3} top="72vh" right="70vw" width="25vw" delay={2} />
-                        <Shape src={hex} top="70vh" right="55vw" width="10vw" delay={7}/>
-                        <Shape src={nanner} top="57vh" right="22vw" width="7.5vw" delay={1} />
+                        <Shape src={circle} top="13vh" right="0px" z={3} width="24vw" delay={9} />
+                        <Shape src={circle2} top="10vh" right="0px" width="5vw" delay={4} />
+                        <Shape src={curve} top="53vh" right="0.5vw" z={2} width="18vw" delay={3} />
+                        <Shape src={curve2} top="20vh" right="16vw" width="24vw" delay={6}/>
+                        <Shape src={curve3} top="70vh" right="72vw" z={4} width="25vw" delay={2} />
+                        <Shape src={hex} top="70vh" right="56vw" z={3} width="10vw" delay={7}/>
+                        <Shape src={nanner} top="57vh" right="22vw" z={4} width="7.5vw" delay={1} />
                         <Shape src={square} top="9vh" right="25vw" width="10vw" delay={4}/>
-                        <Shape src={squiggle} top="67vh" right="36vw" width="15vw" />
-                        <Shape src={star} top="10vh" right="10vw" z="4" width="8vw" delay={7} />
-                        <Shape src={triangle} top="42vh" right="30vw" width="10vw" delay={2} />
-                        <Shape src={triangle2} top="45vh" right="45vw" z="60" width="5vw" delay={3} />
+                        <Shape src={squiggle} top="67vh" right="36vw" z={2} width="15vw" />
+                        <Shape src={star} top="10vh" right="10vw" z={4} width="8vw" delay={7} />
+                        <Shape src={triangle} top="42vh" right="30vw" z={3} width="10vw" delay={2} />
+                        <Shape src={triangle2} top="45vh" right="45vw" z={5} width="5vw" delay={3} />
                         <Shape src={glaggle} top="70vh" right="18vw" width="18vw" delay={6} />
                     </div>
                 }
@@ -156,7 +156,9 @@ export default function Home() {
 
                 </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
-                    <ScrollingImage ltr={true} img={wave} width='full'/>
+                    <ScrollingImage ltr={true} width='full'>
+                        <img src={wave} alt="" />
+                    </ScrollingImage>
                 </div>
             </section>
             
