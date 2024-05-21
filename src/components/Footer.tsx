@@ -98,7 +98,7 @@ export default function Footer() {
                             <FooterButton icon={resume} link='../src/assets/AG_fullresume.pdf' alt='resume'/>
                         </div>
                     </div>
-                    <p className='w-56 mr-4'>created with ❤︎/✒︎ on <a className='underline' href='https://github.com/ameya-g-git/website'>github</a></p>
+                    <p className='w-56 -mr-4 text-nowrap'>created with ❤︎/✒︎ on <a className='underline' href='https://github.com/ameya-g-git/website'>github</a></p>
                 </div>
             </div>
         </footer>

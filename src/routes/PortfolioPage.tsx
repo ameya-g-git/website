@@ -26,7 +26,6 @@ export default function PortfolioPage() {
                     <img src={smiley} className="absolute h-[4.5rem] mt-6 ml-[6.5rem] left-1/2" alt="" />
                     <img src={eye} className="absolute h-16 mt-6 ml-[51rem]" alt="" />
                     <div className="absolute w-full h-full pointer-events-none select-none">
-                        <Shape src= />
                     </div>
                 </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
