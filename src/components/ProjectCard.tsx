@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import no_img from '../assets/no_repo_img.png'
+import noImg from '../assets/no_repo_img.png'
 
 export interface props {
     img: string,
@@ -54,7 +54,7 @@ export default function ProjectCard({img, name, description, languages, top = 0,
                             <p className='text-3xl'>→</p>
                             <p className='text-2xl'>go to repository</p>
                         </motion.div>
-                        <img className="object-cover rounded-2xl h-1/2" src={img ? img : no_img} alt={`Banner image of  ${name}`}
+                        <img className="object-cover rounded-2xl h-1/2" src={img ? img : noImg} alt={`Banner image of  ${name}`}
                             style={{
                                 objectPosition: `center ${top}%`
                             }}/>

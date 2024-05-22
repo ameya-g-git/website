@@ -18,7 +18,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/portfolio",
-        element: <PortfolioPage />
+        element: <PortfolioPage />,
+        children: [
+          { index: true, path: "/portfolio/gfx"}
+        ]
       }
     ]
   }

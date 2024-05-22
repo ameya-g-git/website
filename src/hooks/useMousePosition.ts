@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface position {
+export interface position {
     x: number | null,
     y: number | null
 }

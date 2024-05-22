@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import arrow_smiley from '../assets/arrow_smiley.png'
+import arrowSmiley from "../assets/arrow_smiley.png"
 import nameFill from '../assets/ameyaGupta_fill.png'
 import nameOutline from '../assets/ameyaGupta_outline.png'
 import downarrow from '../assets/downarrow.svg'
@@ -82,7 +82,7 @@ export default function Footer() {
     return (
         <footer id='footer' className="overflow-x-hidden bg-[#0A0A00] h-fit">
             <div className='w-[120%] shadow-footer flex flex-col items-center -ml-[9%] gap-4'>
-                <img src={arrow_smiley} className='my-2 mt-8 w-28' alt="" />
+                <img src={arrowSmiley} className='my-2 mt-8 w-28' alt="" />
                 <div className='flex flex-col [&>*]:-my-0.5'>
                     {firstLayer}
                     {secondLayer}
@@ -98,7 +98,7 @@ export default function Footer() {
                             <FooterButton icon={resume} link='../src/assets/AG_fullresume.pdf' alt='resume'/>
                         </div>
                     </div>
-                    <p className='w-56 -mr-4 text-nowrap'>created with ❤︎/✒︎ on <a className='underline' href='https://github.com/ameya-g-git/website'>github</a></p>
+                    <p className='w-64 -mr-4 text-nowrap'>created with ❤︎/✒︎ on <a className='underline' href='https://github.com/ameya-g-git/website'>github</a></p>
                 </div>
             </div>
         </footer>
