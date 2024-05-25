@@ -12,7 +12,7 @@ interface props {
 
 export default function Shape( {src, top, right, z = 1, width, delay = 0} : props ) {
     const mousePosition = useMousePosition();
-
+    // TODO: maybe redo this to use x and y instead of stinky top and left since it'll be faster that way
     return (
         <div className="absolute animate-float" style={{
             top: `calc(${top} + ${(mousePosition.y * z / 150)}px`,

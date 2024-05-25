@@ -1,13 +1,9 @@
-import clsx from "clsx"
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 
 export default function DesignCard({img, title, icon} : {img : string, title : string, icon : string}) {
-    const card = { 
-        start: {
-            opacity: 0, backdropFilter: "", backgroundColor: 'transparent', paddingLeft: "10rem"},
-        end: {
-            opacity: 1, backdropFilter: "blur(4px)", backgroundColor: "#191919C0", paddingLeft: 0},
+    const card : Variants = { 
+        start: { opacity: 0, backdropFilter: "", backgroundColor: 'transparent', paddingLeft: "10rem",  },
+        end: { opacity: 1, backdropFilter: "blur(4px)", backgroundColor: "#191919C0", paddingLeft: 0 },
     }
     
     const item = {
