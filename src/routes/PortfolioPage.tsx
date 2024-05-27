@@ -5,30 +5,52 @@ import eye from "../assets/portfolio_icons/eye_title.svg"
 import jagged from "../assets/portfolio_icons/jagged.svg"
 import sine from "../assets/portfolio_icons/sine.svg"
 import square from "../assets/portfolio_icons/square.svg"
-import circle from "../assets/hero_shapes/circle.svg"
 import pen_icon from '../assets/home_icons/pen_icon.svg'
-import paintbrush from '../assets/paintbrush.svg'
+import paintbrush_icon from '../assets/paintbrush.svg'
 
-import useMousePosition from "../hooks/useMousePosition";
 import Shape from "../components/Shape";
 import ScrollingImage from "../components/ScrollingImage";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { motion, Variants } from "framer-motion"
 import clsx from "clsx"
 
+interface linkProps {
+    icon: string,
+    title: string,
+    path: string
+}
+
 export default function PortfolioPage() {
-    const mousePosition = useMousePosition()
     const navigate = useNavigate()
     const { pathname } = useLocation()
 
-    const navClasses = (path : string) => clsx({
-        "flex flex-row items-center gap-4 text-4xl px-8 py-4 rounded-lg text-white": true,
-        "bg-yellow text-black shadow-lg shadow-yellow/25": pathname == path,
-    })
-
+    
     const navAnim : Variants = {
-        start: { backgroundColor: '#101010', borderWidth: '2px', borderColor: '#FFFFFF4E', shadow: '' },
-        end: { backgroundColor: '#FFF813', borderWidth: '2px', borderColor: '#FFF813', shadow: 'box-shadow: 0px 10rem 4px -15px #FFF813' }
+        start: { backgroundColor: "#101010", borderWidth: '2px', borderColor: '#FFFFFF4E' },
+        end: { backgroundColor: "#FFF813", borderWidth: '2px', borderColor: '#FFF813' }
+    }
+    
+    const titleAnim : Variants = {
+        start: { filter: "" },
+        end: { filter: "brightness(0)" }
+    }
+    
+    function PortfolioLink({icon, title, path} : linkProps) {
+        return (
+        <motion.a
+            initial={pathname === path ? "end" : "start"}
+            whileHover="end" 
+            variants={navAnim}
+            transition={{
+                duration: 0.2,
+            }}
+            href="#images"
+            onClick={_e => navigate(path)}
+            className="flex flex-row items-center py-4 pl-8 text-4xl text-white rounded-lg w-96 hover:shadow-sm shadow-yellow">
+            <motion.img variants={titleAnim} src={icon} className="block h-10" alt="" />
+            <motion.h1 className="flex-grow text-center" variants={titleAnim}>{title}</motion.h1>
+        </motion.a>
+        )
     }
 
     return (
@@ -61,21 +83,13 @@ export default function PortfolioPage() {
             </section>
             <section className="flex flex-col items-center gap-2 pt-8 bg-black">
                 <h2 className="text-2xl">always experimenting with new media and styles!</h2>
-                <div className="flex flex-row gap-8 rounded-full cursor-pointer">
-                    <motion.button
-                    initial="start" 
-                    onClick={_e => navigate("/portfolio/gfx")}
-                    whileHover="end" 
-                    variants={navAnim}
-                    transition={{
-                        duration: 0.1,
-                    }} 
-                    className={navClasses("/portfolio/gfx")}>
-                        <img src={pen_icon} className="block h-10" alt="" />
-                        <h1>graphic design</h1>
-                    </motion.button>
+                <div className="flex flex-row gap-4 rounded-full cursor-pointer">
+                    <PortfolioLink icon={pen_icon} title="graphic design" path="/portfolio/gfx" />
+                    <PortfolioLink icon={paintbrush_icon} title="ui design" path="/portfolio/ui" />
                 </div>
-                <Outlet />
+                <div id="images">
+                    <Outlet />
+                </div>
             </section>
         </>
     )
