@@ -1,12 +1,16 @@
 import { motion, Variants } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface props {
 	img: string;
 	title: string;
 	icon: string;
+	path: string;
 }
 
-export default function DesignCard({ img, title, icon }: props) {
+export default function DesignCard({ img, title, icon, path }: props) {
+	const navigate = useNavigate();
+
 	const card: Variants = {
 		start: {
 			opacity: 0,
@@ -28,7 +32,10 @@ export default function DesignCard({ img, title, icon }: props) {
 	};
 
 	return (
-		<div className="box-border w-full rounded-3xl border-2 border-white border-opacity-25 bg-card-black p-2">
+		<div
+			onClick={(_e) => navigate(path)}
+			className="box-border w-full cursor-pointer rounded-3xl border-2 border-white border-opacity-25 bg-card-black p-2"
+		>
 			<img
 				src={img}
 				alt={`${title} banner`}
