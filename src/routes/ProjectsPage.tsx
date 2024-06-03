@@ -13,15 +13,15 @@ import { getRepoDetails } from "../hooks/getRepoDetails"
 import { useLoaderData } from "react-router-dom"
 
 export async function loader() {
-    const repoNames : string[] = ['mirrormult-figma-plugin', 'mc-quantization', 'keep-it-real'] // repositories to load
-    let makeRequest : boolean = true // boolean to hold whether or not a request needs to be made
-    
+    const repoNames: string[] = ['mirrormult-figma-plugin', 'mc-quantization', 'keep-it-real'] // repositories to load
+    let makeRequest: boolean = true // boolean to hold whether or not a request needs to be made
+
     const repoDetails = await localforage.keys().then(async keys => {
-        let details : (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
+        let details: (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
         details = [] // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
-        
+
         if (keys.length >= 1 && !makeRequest) { // if localforage is not empty and request doesn't need to be made
-            const result : cardProps[] | null = await localforage.getItem('key', (err) => { if (err) {console.log(err)} })
+            const result: cardProps[] | null = await localforage.getItem('key', (err) => { if (err) { console.log(err) } })
             if (result) {
                 details = result
             }
@@ -34,25 +34,25 @@ export async function loader() {
                     }
                 }
             } else { // if the number of repos don't match, a new request must be made
-               makeRequest = true
+                makeRequest = true
             }
         }
 
         if (makeRequest) { // code to make the request
-            const repoDetailsPromises = repoNames.map( (repoName : string) => getRepoDetails(repoName).catch(err => console.log(err)))
+            const repoDetailsPromises = repoNames.map((repoName: string) => getRepoDetails(repoName).catch(err => console.log(err)))
             details = await Promise.all(repoDetailsPromises)
-            await localforage.setItem('key', details, (err) => { if (err) {console.log(err)} })
+            await localforage.setItem('key', details, (err) => { if (err) { console.log(err) } })
         }
 
         return details // return the repo details
     })
-    
+
     return repoDetails
 }
 
 export default function Projects() {
-    const {screenWidth} = useWindowSize()
-    const loaderData : any = useLoaderData();
+    const { screenWidth } = useWindowSize()
+    const loaderData: any = useLoaderData();
 
     const languages = Array(2).fill(['javascript', 'python', 'c++', 'html', 'css', 'typescript']).flat()
     const tools = Array(2).fill(['git', 'vite', 'npm', 'python', 'figma']).flat()
@@ -63,10 +63,10 @@ export default function Projects() {
 
     const languageIcons = languages.map((lang, i) => {
         return (
-            <object 
-                key={lang} 
-                width={50} 
-                height={50} 
+            <object
+                key={lang}
+                width={50}
+                height={50}
                 className="absolute -mt-6 -ml-6 brightness-0 stroke-yellow animate-orbit-rev"
                 data={`./src/assets/icons/${lang}.svg`}
                 style={{
@@ -78,10 +78,10 @@ export default function Projects() {
 
     const toolIcons = tools.map((tool, i) => {
         return (
-            <object 
-                key={tool} 
-                width={50} 
-                height={50} 
+            <object
+                key={tool}
+                width={50}
+                height={50}
                 className="absolute -mt-6 -ml-6 brightness-0 animate-orbit"
                 data={`./src/assets/icons/${tool}.svg`}
                 style={{
@@ -93,10 +93,10 @@ export default function Projects() {
 
     const frameworkIcons = frameworks.map((framework, i) => {
         return (
-            <object 
-                key={framework} 
-                width={50} 
-                height={50} 
+            <object
+                key={framework}
+                width={50}
+                height={50}
                 className="absolute -mt-6 -ml-6 brightness-0 animate-orbit-rev"
                 data={`./src/assets/icons/${framework}.svg`}
                 style={{
@@ -131,11 +131,11 @@ export default function Projects() {
                 </div>
                 <div className="z-50 flex items-center justify-center text-black bg-yellow font-page-heading">
                     <h1 className="md:text-[18rem] text-[25vw]">projects</h1>
-                    <img src={planet_curve} className="absolute mr-8 h-72 md:h-[12.5rem] md:mr-[4.5rem]"/>
+                    <img src={planet_curve} className="absolute mr-8 h-72 md:h-[12.5rem] md:mr-[4.5rem]" />
                 </div>
                 <div className='absolute bottom-0 scale-150 md:scale-100'>
                     <ScrollingImage ltr={true} width='full'>
-                        <img src={wave} alt="" className="object-cover w-full"/>
+                        <img src={wave} alt="" className="object-cover w-full" />
                     </ScrollingImage>
                 </div>
             </section>
@@ -157,8 +157,8 @@ export default function Projects() {
                 </div>
                 <div className='box-border flex flex-row items-stretch w-full gap-4 px-12 my-8 h-96 min-h-60'>
                     <ProjectCard {...loaderData[0]} top={50} />
-                    <ProjectCard {...loaderData[1]} newLanguages={['matplotlib', 'numpy']}/>
-                    <ProjectCard {...loaderData[2]} newLanguages={['flask', 'tailwind']}/>
+                    <ProjectCard {...loaderData[1]} newLanguages={['matplotlib', 'numpy']} />
+                    <ProjectCard {...loaderData[2]} newLanguages={['flask', 'tailwind']} />
                 </div>
             </section>
         </>

@@ -1,44 +1,51 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { clsx } from "clsx";
 import useScrollLength from "../hooks/useScrollLength";
 import ScrollingImage from "./ScrollingImage";
-import starbar from "../assets/starbar.png"
+import starbar from "../assets/starbar.png";
 
 export default function Navbar() {
-    const scrollLength : number = useScrollLength();
-    const routes : string[] = ['', 'projects', 'portfolio'];
-    const navElementClasses = clsx("content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5")
+	const location = useLocation();
+	const scrollLength: number = useScrollLength();
+	const routes: string[] = ["", "projects", "portfolio"];
+	const navElementClasses =
+		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 animate-nav-load";
 
-    const navLinkElements = routes.map( item => (
-        <NavLink 
-            key={item}
-            to={`/${item}`}
-            className={({ isActive, isPending, isTransitioning }) => // TODO: adjust the styles based on these booleans so that the user knows which page they're on  : D
-                [
-                isPending ? "pending" : "",
-                isActive ? "active" : "",
-                isTransitioning ? "transitioning" : "",
-                ].join(navElementClasses)
-            }
-            >
-            {item ? item : 'home'}
-        </NavLink>
-    ))
+	const navLinkElements = routes.map((item) => (
+		<NavLink
+			key={item}
+			to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
+			className={({ isActive, isPending }) =>
+				`${navElementClasses} ${isActive ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
+			}
+		>
+			{item ? item : "home"}
+		</NavLink>
+	));
 
-
-    return (
-        <div className={`z-[9999] transition-all ease-in-out fixed inline-flex justify-around w-full p-3 bg-black h-14 ${scrollLength > 0 ? '-top-14' : 'top-0'}`}>
-            <ScrollingImage ltr={true} width="starbar">
-                <img src={starbar} alt="" className="object-cover w-full" />
-            </ScrollingImage>
-            <nav className="relative inline-flex items-center justify-around w-full mx-8 text-lg transition-all border-b-0 mb text-yellow font-body">
-                {navLinkElements}
-                <a className={navElementClasses} href="../src/assets/AG_fullresume.pdf" target="_blank">resume</a>
-                <a className={navElementClasses} href="#footer">contact</a>
-            </nav>
-            <ScrollingImage ltr={false} width="starbar">
-                <img src={starbar} alt="" className="object-cover w-full" />
-            </ScrollingImage>
-        </div>
-    )
+	return (
+		<div
+			className={`fixed z-[9999] inline-flex h-14 w-full justify-around bg-black p-3 transition-all ease-in-out ${scrollLength > 0 ? "-top-14" : "top-0"}`}
+		>
+			<ScrollingImage ltr={true} width="starbar">
+				<img src={starbar} alt="" className="w-full object-cover" />
+			</ScrollingImage>
+			<nav className="mb font-body relative mx-8 inline-flex w-full items-center justify-around border-b-0 text-lg text-yellow transition-all">
+				{navLinkElements}
+				<a
+					className={navElementClasses}
+					href="../src/assets/AG_fullresume.pdf"
+					target="_blank"
+				>
+					resume
+				</a>
+				<a className={navElementClasses} href="#footer">
+					contact
+				</a>
+			</nav>
+			<ScrollingImage ltr={false} width="starbar">
+				<img src={starbar} alt="" className="w-full object-cover" />
+			</ScrollingImage>
+		</div>
+	);
 }

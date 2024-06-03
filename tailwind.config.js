@@ -18,7 +18,8 @@ export default {
         'infinite-scroll': 'infinite-scroll 7s linear infinite',
         'float': 'float 5s ease-in-out var(--delay, 0ms) infinite',
         'orbit': 'orbit 30s linear var(--delay, 0ms) infinite',
-        'orbit-rev': 'orbit 30s linear var(--delay, 0ms) infinite reverse'
+        'orbit-rev': 'orbit 30s linear var(--delay, 0ms) infinite reverse',
+        'nav-load': 'nav-loud 1s linear infinite'
       },
       keyframes: {
         'infinite-scroll': {
@@ -32,6 +33,10 @@ export default {
         'orbit' : {
           '0%': { transform: "rotate(0deg) translateY(var(--radius)) rotate(0deg)" },
           '100%': { transform: "rotate(360deg) translateY(var(--radius)) rotate(-360deg)" }
+        },
+        'nav-load': {
+          '0%, 100%': { "border-width": "4px"},
+          '50%': { "border-width": "0px"}
         }
       },
       colors: {
