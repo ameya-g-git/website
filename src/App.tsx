@@ -6,7 +6,7 @@ import Projects, { loader as ProjectsLoader } from "./routes/ProjectsPage";
 import PortfolioPage from "./routes/PortfolioPage";
 import PortfolioGFX from "./routes/PortfolioGFX";
 
-// TODO: just realized this syntax kinda sucks actually i should rework this with JSX instead
+// TODO: just realized this syntax kinda sucks actually i should rework this with JSX
 
 const router = createBrowserRouter([
 	{

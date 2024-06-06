@@ -12,7 +12,6 @@ import boom from "../assets/portfolio_icons/boom.svg";
 import pen_icon from "../assets/home_icons/pen_icon.svg";
 import paintbrush_icon from "../assets/paintbrush.svg";
 
-import Shape from "../components/Shape";
 import ScrollingImage from "../components/ScrollingImage";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
@@ -149,7 +148,7 @@ export default function PortfolioPage() {
 							animate="end"
 						/>
 					</svg>
-					<div className="absolute left-1/4 top-1/2 inline-flex h-12 translate-x-12 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
+					<div className="absolute left-96 top-1/2 inline-flex h-12 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
 						<img src={head} style={{ "--delay": "200ms" } as React.CSSProperties} />
 						<img
 							src={glaggle}

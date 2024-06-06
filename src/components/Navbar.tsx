@@ -1,11 +1,9 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { clsx } from "clsx";
+import { NavLink } from "react-router-dom";
 import useScrollLength from "../hooks/useScrollLength";
 import ScrollingImage from "./ScrollingImage";
 import starbar from "../assets/starbar.png";
 
 export default function Navbar() {
-	const location = useLocation();
 	const scrollLength: number = useScrollLength();
 	const routes: string[] = ["", "projects", "portfolio"];
 	const navElementClasses =

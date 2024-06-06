@@ -4,7 +4,7 @@ interface props {
 	toggle: (src: string) => void;
 }
 
-export default function Image({ src, link, toggle }: props) {
+export default function Image({ src, toggle }: props) {
 	return (
 		<>
 			<div

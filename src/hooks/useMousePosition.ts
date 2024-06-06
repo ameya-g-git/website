@@ -5,7 +5,7 @@ export interface position {
     y: number
 }
 
-export default function useMousePosition() {
+export default function useMousePosition() { // adding comment as small change to trigger rebuild
     const [mousePosition, setMousePosition] = useState<position>({ x: 0, y: 0 });
   
     useEffect(() => {
