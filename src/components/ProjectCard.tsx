@@ -59,7 +59,11 @@ export default function ProjectCard({
 
 	return (
 		<>
-			<a className="relative h-full w-full" href={`https://github.com/ameya-g-git/${name}`}>
+			<a
+				className="relative h-full w-full"
+				target="_blank"
+				href={`https://github.com/ameya-g-git/${name}`}
+			>
 				<div id={`${name}-card`}>
 					<motion.div
 						className="absolute inset-5 left-[1%] top-[1%] flex h-[98%] w-[98%] flex-col gap-2 rounded-3xl bg-opacity-50 p-4 backdrop-blur-md"
