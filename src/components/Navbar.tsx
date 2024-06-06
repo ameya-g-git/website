@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import useScrollLength from "../hooks/useScrollLength";
 import ScrollingImage from "./ScrollingImage";
 import starbar from "/assets/starbar.png";
 
 export default function Navbar() {
-	const scrollLength: number = useScrollLength();
 	const routes: string[] = ["", "projects", "portfolio"];
 	const navElementClasses =
 		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 animate-nav-load";
@@ -23,7 +21,7 @@ export default function Navbar() {
 
 	return (
 		<div
-			className={`fixed z-[9999] inline-flex h-14 w-full justify-around bg-black p-3 transition-all ease-in-out ${scrollLength > 0 ? "-top-14" : "top-0"}`}
+			className={`fixed z-[9999] inline-flex h-14 w-full justify-around bg-black p-3 transition-all ease-in-out`}
 		>
 			<ScrollingImage ltr={true} width="starbar">
 				<img src={starbar} alt="" className="w-full object-cover" />
