@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-import arrowSmiley from "../assets/arrow_smiley.png";
-import nameFill from "../assets/ameyaGupta_fill.png";
-import nameOutline from "../assets/ameyaGupta_outline.png";
-import downarrow from "../assets/downarrow.svg";
-import email from "../assets/icons/email.png";
-import github from "../assets/icons/github.png";
-import linkedin from "../assets/icons/linkedin.png";
-import resume from "../assets/icons/resume.png";
+import arrowSmiley from "../../public/assets/arrow_smiley.png";
+import nameFill from "../../public/assets/ameyaGupta_fill.png";
+import nameOutline from "../../public/assets/ameyaGupta_outline.png";
+import downarrow from "../../public/assets/downarrow.svg";
+import email from "../../public/assets/icons/email.png";
+import github from "../../public/assets/icons/github.png";
+import linkedin from "../../public/assets/icons/linkedin.png";
+import resume from "../../public/assets/icons/resume.png";
 import { Fragment } from "react/jsx-runtime";
 
 interface footerButtonProps {

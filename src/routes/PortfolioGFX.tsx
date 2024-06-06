@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 
 export default function PortfolioGFX() {
-	const images = Object.keys(import.meta.glob("/src/assets/img/gfx/*.webp")).reverse();
+	const images = Object.keys(import.meta.glob("../assets/img/gfx/*.webp")).reverse();
 	const [imagePortal, setImagePortal] = useState({ show: false, img: "" });
 
 	function pathToImgName(path: string) {

@@ -66,7 +66,7 @@
         font-style: normal;
         font-weight: 400;
         /* font-display: swap; */
-        src: url(./assets/fonts/PPNeueMontreal-Book.otf);
+        src: url(/assets/fonts/PPNeueMontreal-Book.otf);
     }
 
     @font-face {
@@ -74,7 +74,7 @@
         font-style: italic;
         font-weight: 400;
         /* font-display: swap; */
-        src: url(./assets/fonts/PPNeueMontreal-Italic.otf);
+        src: url(/assets/fonts/PPNeueMontreal-Italic.otf);
     }
 
     @font-face {
@@ -82,13 +82,13 @@
         font-style: normal;
         font-weight: 400;
         /* font-display: swap; */
-        src: url(./assets/fonts/Fraternite.ttf);
+        src: url(/assets/fonts/Fraternite.ttf);
     }
 
     @font-face {
         font-family: 'Illusion Serif';
         font-style: normal;
         font-weight: 400;
-        src: url(./assets/fonts/IllusionSerif-Regular.otf)
+        src: url(/assets/fonts/IllusionSerif-Regular.otf)
     }
 }

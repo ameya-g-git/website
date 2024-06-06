@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import noImg from "../assets/no_repo_img.png";
+import noImg from "/assets/no_repo_img.png";
 
 export interface props {
 	img: string;
@@ -50,7 +50,7 @@ export default function ProjectCard({
 	const languageCards = languages.map((language) => (
 		<div className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl">
 			<img
-				src={`/src/assets/icons/${language}.svg`}
+				src={`/assets/icons/${language}.svg`}
 				alt={language}
 				className="m-auto opacity-50"
 			/>

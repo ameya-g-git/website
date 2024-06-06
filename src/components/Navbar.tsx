@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import useScrollLength from "../hooks/useScrollLength";
 import ScrollingImage from "./ScrollingImage";
-import starbar from "../assets/starbar.png";
+import starbar from "/assets/starbar.png";
 
 export default function Navbar() {
 	const scrollLength: number = useScrollLength();
