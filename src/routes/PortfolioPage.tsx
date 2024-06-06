@@ -71,31 +71,55 @@ export default function PortfolioPage() {
 				id="banner"
 				className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden"
 			>
-				<div className="flex items-center justify-center font-page-heading text-black">
-					<h1 className="text-[25vw] md:text-[18rem]">portfolio</h1>
-					<img src={scribbleTitle} className="absolute mt-5 h-24 pr-[33rem]" alt="" />
-					<img
-						src={smiley}
-						className="absolute left-1/2 ml-[6.5rem] mt-6 h-[4.5rem]"
-						alt=""
-					/>
-					<img src={eye} className="absolute ml-[51rem] mt-6 h-16" alt="" />
+				<div className="flex h-fit w-fit items-center justify-center">
+					<div className="absolute flex items-center justify-center font-page-heading text-black">
+						<h1 className="text-[25vw] md:text-[18rem]">portfolio</h1>
+						<img src={scribbleTitle} className="absolute mt-5 h-24 pr-[33rem]" alt="" />
+						<img
+							src={smiley}
+							className="absolute left-1/2 ml-[6.5rem] mt-6 h-[4.5rem]"
+							alt=""
+						/>
+						<img src={eye} className="absolute ml-[51rem] mt-6 h-16" alt="" />
+					</div>
+					<div className="absolute -ml-72 mt-12 inline-flex h-12 -translate-x-24 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
+						<img src={head} style={{ "--delay": "200ms" } as React.CSSProperties} />
+						<img
+							src={glaggle}
+							style={{ "--delay": "400ms" } as React.CSSProperties}
+							alt=""
+						/>
+						<img
+							src={boom}
+							style={{ "--delay": "600ms" } as React.CSSProperties}
+							alt=""
+						/>
+						<img
+							src={eye2}
+							style={{ "--delay": "800ms" } as React.CSSProperties}
+							alt=""
+						/>
+						<img
+							src={star}
+							style={{ "--delay": "1000ms" } as React.CSSProperties}
+							alt=""
+						/>
+						<img
+							src={scribble}
+							style={{ "--delay": "1200ms" } as React.CSSProperties}
+							alt=""
+						/>
+						<img
+							src={sparkle}
+							style={{ "--delay": "1400ms" } as React.CSSProperties}
+							alt=""
+						/>
+					</div>
 				</div>
 				<div className="pointer-events-none absolute h-full w-full select-none overflow-hidden">
-					{" "}
-					{/* rework this entire thing dawg */}
-					{/* <Shape src={sine} top="59vh" right="25rem" width="12rem" />
-					<Shape src={square} top="59vh" right="40vw" width="12rem" delay={2} />
-					<Shape src={jagged} top="59vh" right="55vw" width="12rem" />
-					<Shape src={sine} top="10vh" right="10vw" width="25rem" z={4} delay={4} />
-					<Shape src={square} top="20vh" right="75vw" width="15rem" delay={2} />
-					<Shape src={jagged} top="30vh" right="50vw" width="7rem" delay={3} />
-					<Shape src={jagged} top="70vh" right="75vw" width="18rem" />
-					<Shape src={square} top="70vh" right="10vw" width="15rem" delay={2} />
-					<Shape src={sine} top="80vh" right="40vw" width="12rem" z={4} delay={4} /> */}
 					<svg className="absolute left-0 top-0 h-full w-full">
 						<motion.rect
-							x={-100}
+							x={-150}
 							y={700}
 							rx={80}
 							width={400}
@@ -148,39 +172,6 @@ export default function PortfolioPage() {
 							animate="end"
 						/>
 					</svg>
-					<div className="absolute left-1/3 top-1/2 inline-flex h-12 -translate-x-24 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
-						<img src={head} style={{ "--delay": "200ms" } as React.CSSProperties} />
-						<img
-							src={glaggle}
-							style={{ "--delay": "400ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={boom}
-							style={{ "--delay": "600ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={eye2}
-							style={{ "--delay": "800ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={star}
-							style={{ "--delay": "1000ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={scribble}
-							style={{ "--delay": "1200ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={sparkle}
-							style={{ "--delay": "1400ms" } as React.CSSProperties}
-							alt=""
-						/>
-					</div>
 				</div>
 				<div className="absolute bottom-0 z-[99] scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
