@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
 export interface position {
-    x: number | null,
-    y: number | null
+    x: number,
+    y: number
 }
 
 export default function useMousePosition() {
-    const [mousePosition, setMousePosition] = useState<position>({ x: null, y: null });
+    const [mousePosition, setMousePosition] = useState<position>({ x: 0, y: 0 });
   
     useEffect(() => {
         const updateMousePosition = (e : MouseEvent) => {

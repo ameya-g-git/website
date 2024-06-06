@@ -14,14 +14,34 @@ export default function PortfolioGFX() {
 		return lastItem;
 	}
 
+	function prevImg(path: string) {
+		const idx = images.indexOf(path);
+		if (idx - 1 === -1) {
+			return images[images.length - 1];
+		} else {
+			return images[idx - 1];
+		}
+	}
+
+	function nextImg(path: string) {
+		const idx = images.indexOf(path);
+		if (idx + 1 === images.length) {
+			return images[0];
+		} else {
+			return images[idx + 1];
+		}
+	}
+
 	const portalBg: Variants = {
 		start: { opacity: 0, backdropFilter: "blur(0px)" },
 		end: { opacity: 1, backdropFilter: "blur(12px)" },
+		exit: { opacity: 0, backdropFilter: "blur(0px)" },
 	};
 
 	const portalImg: Variants = {
-		start: { opacity: 0, scale: 0.75 },
-		end: { opacity: 1, scale: 1 },
+		start: { opacity: 0, scale: 0.75, translateY: "12rem" },
+		end: { opacity: 1, scale: 1, translateY: "0rem" },
+		exit: { opacity: 0, scale: 0.75, translateY: "-12rem" },
 	};
 
 	function toggle(src: string) {
@@ -44,29 +64,61 @@ export default function PortfolioGFX() {
 							variants={portalBg}
 							initial="start"
 							animate="end"
-							exit="start"
+							exit="exit"
 							onClick={(_e) => toggle("")}
 							className="fixed left-0 top-0 z-[9999] flex h-screen w-screen flex-col bg-black/50 backdrop-blur-md "
 						>
 							<div className="inline-flex h-16 w-full flex-row items-center gap-8 bg-gradient-to-b from-black/50 to-transparent p-2">
 								<button
-									onClick={(_e) => toggle("")}
-									className="inline-flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20"
+									onClick={(e) => {
+										e.stopPropagation();
+										toggle("");
+									}}
+									className="inline-flex h-12 w-12 items-center justify-center bg-transparent text-xl text-white hover:bg-white/20 active:bg-white/50"
 								>
-									←
+									◀︎
 								</button>
 								<h2 className="select-none pt-1">
 									{pathToImgName(imagePortal.img)}
 								</h2>
 							</div>
 
-							<div className="flex grow items-center justify-center overflow-hidden p-6 pt-0">
+							<div className="flex grow items-center justify-between overflow-hidden p-6 pt-2">
+								<button
+									onClick={(e) => {
+										e.stopPropagation();
+										setImagePortal((prev) => {
+											return {
+												...prev,
+												img: prevImg(prev.img),
+											};
+										});
+									}}
+									className="flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/50"
+								>
+									←
+								</button>
 								<motion.img
+									key={imagePortal.img}
 									variants={portalImg}
 									className="shadow-3xl max-h-full max-w-full rounded-xl shadow-black/25"
 									src={imagePortal.img}
-									alt=""
+									alt={pathToImgName(imagePortal.img)}
 								/>
+								<button
+									onClick={(e) => {
+										e.stopPropagation();
+										setImagePortal((prev) => {
+											return {
+												...prev,
+												img: nextImg(prev.img),
+											};
+										});
+									}}
+									className="flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/35"
+								>
+									→
+								</button>
 							</div>
 						</motion.div>
 					)}
