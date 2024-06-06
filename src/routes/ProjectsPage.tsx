@@ -87,7 +87,7 @@ export default function Projects() {
 				width={50}
 				height={50}
 				className="absolute -ml-6 -mt-6 animate-orbit-rev stroke-yellow brightness-0"
-				data={`./src/assets/icons/${lang}.svg`}
+				data={`/assets/icons/${lang}.svg`}
 				style={
 					{
 						"--radius": `${widths[0] / 2}px`,
@@ -105,7 +105,7 @@ export default function Projects() {
 				width={50}
 				height={50}
 				className="absolute -ml-6 -mt-6 animate-orbit brightness-0"
-				data={`./src/assets/icons/${tool}.svg`}
+				data={`/assets/icons/${tool}.svg`}
 				style={
 					{
 						"--radius": `${widths[1] / 2}px`,
@@ -123,7 +123,7 @@ export default function Projects() {
 				width={50}
 				height={50}
 				className="absolute -ml-6 -mt-6 animate-orbit-rev brightness-0"
-				data={`./src/assets/icons/${framework}.svg`}
+				data={`/assets/icons/${framework}.svg`}
 				style={
 					{
 						"--radius": `${widths[2] / 2}px`,
