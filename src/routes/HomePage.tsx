@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Player } from "@lottiefiles/react-lottie-player";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import localforage from "localforage";
 
 import useWindowSize from "../hooks/useWindowSize";
@@ -101,7 +101,6 @@ export default function Home() {
 	const { screenWidth }: windowSize = useWindowSize();
 	const loaderData: any = useLoaderData();
 	const cardData = loaderData;
-	const navigate = useNavigate();
 
 	const languages = ["python", "c++", "html", "css", "typescript"];
 	const tools = ["git", "vite", "npm", "pip", "figma"];
@@ -220,12 +219,13 @@ export default function Home() {
 							newLanguages={["flask", "tailwind"]}
 						/>
 					</div>
-					<button
+					<Link
 						className="mt-4 w-[32.5%] text-lg"
-						onClick={(_e) => navigate("/projects")}
+						to="projects"
+						onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 					>
-						check out more of what i’ve done! →
-					</button>
+						<button className="w-full">check out more of what i’ve done! →</button>
+					</Link>
 				</section>
 
 				<section id="technologies" className="flex flex-col items-baseline gap-4">
@@ -287,12 +287,14 @@ export default function Home() {
 							icon={paintbrush}
 						/>
 					</div>
-					<button
+
+					<Link
+						to="portfolio/gfx#banner"
 						className="mt-4 w-[32.5%] text-lg"
-						onClick={(_e) => navigate("/projects")}
+						onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 					>
-						take a look at the whole gallery! →
-					</button>
+						<button className="w-full">take a look at the whole gallery! →</button>
+					</Link>
 				</section>
 			</section>
 		</>
