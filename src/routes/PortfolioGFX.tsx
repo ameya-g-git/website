@@ -4,7 +4,27 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 
 export default function PortfolioGFX() {
-	const images = Object.keys(import.meta.glob("../assets/img/gfx/*.webp")).reverse();
+	const imagePaths = Object.keys(import.meta.glob("/public/assets/gfx/*.webp")).sort((a, b) => {
+		const aNum = parseInt(pathToImgName(a).split(" ")[0]);
+		const bNum = parseInt(pathToImgName(b).split(" ")[0]);
+
+		return bNum - aNum;
+	}); // sorted based on the first number
+
+	const imageNames = imagePaths.map((path) => {
+		const imageFullName = pathToImgName(path);
+		const imageName = imageFullName.split(" ")[1];
+
+		return imageName;
+	});
+
+	const imageNum = imageNames.length;
+
+	const images = Array(imageNum)
+		.fill(" ")
+		.map((_item, i) => `/assets/gfx/${imageNum - i} ${imageNames[i]}`);
+
+	// TODO: killing myself the glob import doesn't work between build preview and dev environment gotta fix
 	const [imagePortal, setImagePortal] = useState({ show: false, img: "" });
 
 	function pathToImgName(path: string) {
@@ -79,7 +99,7 @@ export default function PortfolioGFX() {
 									◀︎
 								</button>
 								<h2 className="select-none pt-1">
-									{pathToImgName(imagePortal.img)}
+									{imageNames[images.indexOf(imagePortal.img)]}
 								</h2>
 							</div>
 

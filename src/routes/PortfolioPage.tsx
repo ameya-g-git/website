@@ -148,7 +148,7 @@ export default function PortfolioPage() {
 							animate="end"
 						/>
 					</svg>
-					<div className="absolute left-96 top-1/2 inline-flex h-12 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
+					<div className="absolute left-1/3 top-1/2 inline-flex h-12 -translate-x-24 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
 						<img src={head} style={{ "--delay": "200ms" } as React.CSSProperties} />
 						<img
 							src={glaggle}

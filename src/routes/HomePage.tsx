@@ -31,8 +31,8 @@ import glaggle from "/assets/hero_shapes/glaggle.svg";
 import dev_icon from "/assets/home_icons/dev_icon.svg";
 import tech_icon from "/assets/home_icons/technologies_icon.svg";
 import pen_icon from "/assets/home_icons/pen_icon.svg";
-import gd_card from "/assets/home_icons/gd_card.png";
-import ui_card from "/assets/home_icons/ui_card.png";
+import gd_card from "/assets/home_icons/gd_card.webp";
+import ui_card from "/assets/home_icons/ui_card.webp";
 import pencil from "/assets/pencil.svg";
 import paintbrush from "/assets/paintbrush.svg";
 
