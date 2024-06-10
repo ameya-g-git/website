@@ -43,8 +43,6 @@ export default function ProjectCard({
 		},
 	};
 
-	// TODO: figure out this circle gradient bullshit lma o     if not then just reconfigure the code to change the colour and delete all mouse-related hooks
-
 	languages = newLanguages ? languages.concat(newLanguages) : languages;
 
 	const languageCards = languages.map((language, i) => (

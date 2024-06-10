@@ -24,7 +24,6 @@ export default function PortfolioGFX() {
 		.fill(" ")
 		.map((_item, i) => `/assets/gfx/${imageNum - i} ${imageNames[i]}`);
 
-	// TODO: killing myself the glob import doesn't work between build preview and dev environment gotta fix
 	const [imagePortal, setImagePortal] = useState({ show: false, img: "" });
 
 	function pathToImgName(path: string) {

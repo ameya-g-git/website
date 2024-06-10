@@ -36,9 +36,6 @@ import ui_card from "/assets/home_icons/ui_card.webp";
 import pencil from "/assets/pencil.svg";
 import paintbrush from "/assets/paintbrush.svg";
 
-// TODO: figure out a way to load the fonts elsewhere so the fonts   work on github pages
-// TODO: deploy this on github pages just to see how things go :D
-
 interface windowSize {
 	screenWidth: number;
 	screenHeight: number;
@@ -197,8 +194,6 @@ export default function Home() {
 					</ScrollingImage>
 				</div>
 			</section>
-
-			{/* TODO: make this section gradient a tailwind variable since im using this on every page */}
 			<section className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-12 [&_h2]:h-full [&_h2]:text-3xl">
 				<section id="projects" className="flex flex-col items-end gap-4">
 					<span className="flex h-8 w-full flex-row items-end gap-2">
@@ -290,7 +285,7 @@ export default function Home() {
 					</div>
 
 					<Link
-						to="portfolio/gfx#banner"
+						to="portfolio/gfx"
 						className="mt-4 w-[32.5%] text-lg"
 						onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 					>

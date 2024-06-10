@@ -29,23 +29,7 @@ function FooterButton({ icon, link, alt }: footerButtonProps) {
 	);
 }
 
-// TODO: format entire codebase with prettier LOL kinda didnt do that Right
-
 export default function Footer() {
-	// const layer = (height) => {
-	//     return (
-	//      <div className='flex flex-row items-center gap-1'>
-	//         { Array(10).fill('ameyaGupta').map( (name, id) => {
-	//             return (
-	//                 (id == 6) ?
-	//                 <p className='text-2xl text-yellow text-nowrap font-footer'>© Ameya Gupta</p> :
-	//                 <img src={id % 2 === 0 ? nameFill : nameOutline} className='h-12 opacity-20' alt="" />
-
-	//             )})
-	//         }
-	//     </div>)
-	// }
-
 	const firstLayer = (
 		<div className="flex flex-row items-center justify-end gap-1">
 			{Array(10)
