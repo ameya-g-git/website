@@ -31,7 +31,8 @@ export default function DesignCard({ img, title, icon, path }: props) {
 
 	return (
 		<Link
-			to={`/${path}`}
+			to={path}
+			onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 			className="box-border flex w-full items-center justify-center rounded-3xl border-2 border-white/25 bg-card-black p-2"
 		>
 			<div className="relative flex h-full w-full items-center justify-center ">

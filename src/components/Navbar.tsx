@@ -11,6 +11,7 @@ export default function Navbar() {
 		<NavLink
 			key={item}
 			to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
+			onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 			className={({ isActive, isPending }) =>
 				`${navElementClasses} ${isActive ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
 			}
@@ -28,11 +29,7 @@ export default function Navbar() {
 			</ScrollingImage>
 			<nav className="mb font-body relative mx-8 inline-flex w-full items-center justify-around border-b-0 text-lg text-yellow transition-all">
 				{navLinkElements}
-				<a
-					className={navElementClasses}
-					href="../src/assets/AG_fullresume.pdf"
-					target="_blank"
-				>
+				<a className={navElementClasses} href="/assets/AG_fullresume.pdf" target="_blank">
 					resume
 				</a>
 				<a className={navElementClasses} href="#footer">

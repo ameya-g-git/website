@@ -179,7 +179,7 @@ export default function PortfolioPage() {
 					</ScrollingImage>
 				</div>
 			</section>
-			<section className="flex flex-col items-center gap-2 bg-black pt-8">
+			<section className="flex flex-col items-center gap-2 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] pt-8">
 				<h2 className="text-2xl">always experimenting with new media and styles!</h2>
 				<div className="flex cursor-pointer flex-row gap-4 rounded-full">
 					<PortfolioLink icon={pen_icon} title="graphic design" path="/portfolio/gfx" />

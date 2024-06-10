@@ -238,8 +238,8 @@ export default function Home() {
 						<div id="languages" className="flex flex-grow flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">languages</h2>
 							<div className="grid grid-flow-col grid-rows-5 gap-2">
-								{languages.map((lang) => (
-									<ToolCard name={lang} />
+								{languages.map((lang, i) => (
+									<ToolCard key={i} name={lang} />
 								))}
 							</div>
 						</div>
@@ -247,8 +247,9 @@ export default function Home() {
 						<div id="tools" className="flex flex-grow flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">tools</h2>
 							<div className="grid grid-flow-col grid-rows-5 gap-2">
-								{tools.map((tool) => (
+								{tools.map((tool, i) => (
 									<ToolCard
+										key={i}
 										name={tool}
 										icon={tool == "pip" ? "python" : undefined}
 									/>
@@ -259,8 +260,8 @@ export default function Home() {
 						<div id="frameworks" className="flex flex-grow-[2] flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">frameworks</h2>
 							<div className="grid grid-flow-col grid-rows-5 gap-2">
-								{frameworks.map((framework) => (
-									<ToolCard name={framework} />
+								{frameworks.map((framework, i) => (
+									<ToolCard key={i} name={framework} />
 								))}
 							</div>
 						</div>

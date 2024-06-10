@@ -179,7 +179,7 @@ export default function Projects() {
 					</ScrollingImage>
 				</div>
 			</section>
-			<section className="flex flex-col items-center gap-2 bg-black">
+			<section className="flex flex-col items-center gap-2 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00]">
 				<h2 className="text-2xl">i like to make projects that help people</h2>
 				<div className="flex flex-row gap-8 rounded-full">
 					<div className="flex flex-row items-center gap-4 border-r-4 pr-8">

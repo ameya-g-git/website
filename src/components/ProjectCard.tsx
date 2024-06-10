@@ -47,8 +47,11 @@ export default function ProjectCard({
 
 	languages = newLanguages ? languages.concat(newLanguages) : languages;
 
-	const languageCards = languages.map((language) => (
-		<div className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl">
+	const languageCards = languages.map((language, i) => (
+		<div
+			key={i}
+			className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl"
+		>
 			<img
 				src={`/assets/icons/${language}.svg`}
 				alt={language}
