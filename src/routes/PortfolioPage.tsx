@@ -185,9 +185,7 @@ export default function PortfolioPage() {
 					<PortfolioLink icon={pen_icon} title="graphic design" path="/portfolio/gfx" />
 					<PortfolioLink icon={paintbrush_icon} title="ui design" path="/portfolio/ui" />
 				</div>
-				<div id="images" className="flex w-full flex-row flex-wrap gap-4 px-12 py-4">
-					<Outlet />
-				</div>
+				<Outlet />
 			</section>
 		</>
 	);

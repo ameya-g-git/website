@@ -136,7 +136,11 @@ export default function Footer() {
 					</div>
 					<p className="-mr-4 w-64 text-nowrap">
 						created with ❤︎/✒︎ on{" "}
-						<a className="underline" href="https://github.com/ameya-g-git/website">
+						<a
+							className="underline"
+							target="_blank"
+							href="https://github.com/ameya-g-git/website"
+						>
 							github
 						</a>
 					</p>

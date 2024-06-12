@@ -196,9 +196,9 @@ export default function Projects() {
 					</div>
 				</div>
 				<div className="my-8 box-border flex h-96 min-h-60 w-full flex-row items-stretch gap-4 px-12">
-					<ProjectCard {...loaderData[0]} top={50} />
-					<ProjectCard {...loaderData[1]} newLanguages={["matplotlib", "numpy"]} />
-					<ProjectCard {...loaderData[2]} newLanguages={["flask", "tailwind"]} />
+					<ProjectCard {...loaderData[0]} url="" top={50} />
+					<ProjectCard {...loaderData[1]} url="" newLanguages={["matplotlib", "numpy"]} />
+					<ProjectCard {...loaderData[2]} url="" newLanguages={["flask", "tailwind"]} />
 				</div>
 			</section>
 		</>

@@ -73,9 +73,11 @@ export default function PortfolioGFX() {
 
 	return (
 		<>
-			{images.map((src, i) => {
-				return <Image src={src} key={i} toggle={toggle} />;
-			})}
+			<div id="images" className="flex w-full flex-row flex-wrap gap-4 px-12 py-4">
+				{images.map((src, i) => {
+					return <Image src={src} key={i} toggle={toggle} />;
+				})}
+			</div>
 			{createPortal(
 				<AnimatePresence>
 					{imagePortal.show && (
@@ -113,7 +115,7 @@ export default function PortfolioGFX() {
 											};
 										});
 									}}
-									className="flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/50"
+									className="z-[999] flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/50"
 								>
 									←
 								</button>
@@ -134,7 +136,7 @@ export default function PortfolioGFX() {
 											};
 										});
 									}}
-									className="flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/35"
+									className="z-[9999] flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/35"
 								>
 									→
 								</button>

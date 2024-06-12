@@ -5,9 +5,10 @@ export interface props {
 	img: string;
 	name: string;
 	description: string;
-	languages: string[];
 
+	url?: string;
 	top?: number;
+	languages?: string[];
 	newLanguages?: string[];
 }
 
@@ -18,6 +19,7 @@ export default function ProjectCard({
 	languages,
 	top = 0,
 	newLanguages,
+	url = `https://github.com/ameya-g-git/${name}`,
 }: props) {
 	const card = {
 		start: {
@@ -43,28 +45,27 @@ export default function ProjectCard({
 		},
 	};
 
-	languages = newLanguages ? languages.concat(newLanguages) : languages;
+	let languageCards;
 
-	const languageCards = languages.map((language, i) => (
-		<div
-			key={i}
-			className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl"
-		>
-			<img
-				src={`/assets/icons/${language}.svg`}
-				alt={language}
-				className="m-auto opacity-50"
-			/>
-		</div>
-	));
+	if (languages) {
+		languages = newLanguages ? languages.concat(newLanguages) : languages;
+		languageCards = languages.map((language, i) => (
+			<div
+				key={i}
+				className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl"
+			>
+				<img
+					src={`/assets/icons/${language}.svg`}
+					alt={language}
+					className="m-auto opacity-50"
+				/>
+			</div>
+		));
+	}
 
 	return (
 		<>
-			<a
-				className="relative h-full w-full"
-				target="_blank"
-				href={`https://github.com/ameya-g-git/${name}`}
-			>
+			<a className="relative h-96 w-full" target="_blank" href={url}>
 				<div id={`${name}-card`}>
 					<motion.div
 						className="absolute inset-5 left-[1%] top-[1%] flex h-[98%] w-[98%] flex-col gap-2 rounded-3xl bg-opacity-50 p-4 backdrop-blur-md"
@@ -77,7 +78,7 @@ export default function ProjectCard({
 							className="absolute inline-flex h-[46%] w-[95%] items-center justify-center gap-2 rounded-2xl"
 						>
 							<p className="text-3xl">→</p>
-							<p className="text-2xl">go to repository</p>
+							<p className="text-2xl">go to link</p>
 						</motion.div>
 						<img
 							className="h-1/2 rounded-2xl object-cover"

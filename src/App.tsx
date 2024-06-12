@@ -5,6 +5,7 @@ import Home, { loader as HomeLoader } from "./routes/HomePage";
 import Projects, { loader as ProjectsLoader } from "./routes/ProjectsPage";
 import PortfolioPage from "./routes/PortfolioPage";
 import PortfolioGFX from "./routes/PortfolioGFX";
+import PortfolioUI from "./routes/PortfolioUI";
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: "/portfolio",
 				element: <PortfolioPage />,
-				children: [{ index: true, path: "/portfolio/gfx", element: <PortfolioGFX /> }],
+				children: [
+					{ index: true, path: "/portfolio/gfx", element: <PortfolioGFX /> },
+					{ path: "/portfolio/ui", element: <PortfolioUI /> },
+				],
 			},
 		],
 	},

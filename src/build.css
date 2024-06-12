@@ -709,6 +709,10 @@ object {
   z-index: 99;
 }
 
+.z-\[999\] {
+  z-index: 999;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -941,6 +945,10 @@ object {
   min-height: 15rem;
 }
 
+.min-h-96 {
+  min-height: 24rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1008,6 +1016,10 @@ object {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.flex-\[3\] {
+  flex: 3;
 }
 
 .flex-grow {
@@ -1134,6 +1146,10 @@ object {
 
 .grid-flow-col {
   grid-auto-flow: column;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-rows-5 {
