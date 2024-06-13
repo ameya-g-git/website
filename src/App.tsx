@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 				children: [
 					{ index: true, path: "/portfolio/gfx", element: <PortfolioGFX /> },
 					{ path: "/portfolio/ui", element: <PortfolioUI /> },
-					{ path: "/portfolio/*", element: <Navigate to="/404" /> },
+					{ path: "/portfolio/*", element: <Navigate to="/gfx" /> },
 				],
 			},
 			{
