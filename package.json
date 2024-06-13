@@ -1,7 +1,7 @@
 {
-  "homepage": "https://ameya-g-git.github.io/ameya-g-git.github.io",
+  "homepage": "https://ameya-g-git.github.io",
   "name": "website",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
