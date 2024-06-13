@@ -55,7 +55,7 @@ export default function PortfolioPage() {
 				}}
 				href="#images"
 				onClick={(_e) => navigate(path)}
-				className="flex w-96 flex-row items-center rounded-lg py-4 pl-8 text-4xl text-white shadow-yellow hover:shadow-sm"
+				className="flex flex-row items-center py-4 pl-8 text-4xl text-white rounded-lg w-96 shadow-yellow hover:shadow-sm"
 			>
 				<motion.img variants={titleAnim} src={icon} className="block h-10" alt="" />
 				<motion.h1 className="flex-grow text-center" variants={titleAnim}>
@@ -69,10 +69,10 @@ export default function PortfolioPage() {
 		<>
 			<section
 				id="banner"
-				className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden"
+				className="relative flex flex-col items-center justify-center w-full h-screen overflow-hidden"
 			>
-				<div className="flex h-fit w-fit items-center justify-center">
-					<div className="absolute flex items-center justify-center font-page-heading text-black">
+				<div className="flex items-center justify-center h-fit w-fit">
+					<div className="absolute flex items-center justify-center text-black font-page-heading">
 						<h1 className="text-[25vw] md:text-[18rem]">portfolio</h1>
 						<img src={scribbleTitle} className="absolute mt-5 h-24 pr-[33rem]" alt="" />
 						<img
@@ -116,8 +116,8 @@ export default function PortfolioPage() {
 						/>
 					</div>
 				</div>
-				<div className="pointer-events-none absolute h-full w-full select-none overflow-hidden">
-					<svg className="absolute left-0 top-0 h-full w-full">
+				<div className="absolute w-full h-full overflow-hidden pointer-events-none select-none">
+					<svg className="absolute top-0 left-0 w-full h-full">
 						<motion.rect
 							x={-150}
 							y={700}
@@ -175,13 +175,13 @@ export default function PortfolioPage() {
 				</div>
 				<div className="absolute bottom-0 z-[99] scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
-						<img src={wave} alt="" className="w-full object-cover" />
+						<img src={wave} alt="" className="object-cover w-full" />
 					</ScrollingImage>
 				</div>
 			</section>
 			<section className="flex flex-col items-center gap-2 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] pt-8">
 				<h2 className="text-2xl">always experimenting with new media and styles!</h2>
-				<div className="flex cursor-pointer flex-row gap-4 rounded-full">
+				<div className="flex flex-row gap-4 rounded-full cursor-pointer">
 					<PortfolioLink icon={pen_icon} title="graphic design" path="/portfolio/gfx" />
 					<PortfolioLink icon={paintbrush_icon} title="ui design" path="/portfolio/ui" />
 				</div>
