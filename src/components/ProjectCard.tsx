@@ -52,7 +52,7 @@ export default function ProjectCard({
 		languageCards = languages.map((language, i) => (
 			<div
 				key={i}
-				className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl"
+				className="box-border flex items-center justify-center w-10 h-10 p-2 border-2 rounded-lg border-white/30 bg-card-black backdrop-blur-xl"
 			>
 				<img
 					src={`/assets/icons/${language}.svg`}
@@ -65,7 +65,7 @@ export default function ProjectCard({
 
 	return (
 		<>
-			<a className="relative h-96 w-full" target="_blank" href={url}>
+			<a className="relative w-full h-96" target="_blank" href={url}>
 				<div id={`${name}-card`}>
 					<motion.div
 						className="absolute inset-5 left-[1%] top-[1%] flex h-[98%] w-[98%] flex-col gap-2 rounded-3xl bg-opacity-50 p-4 backdrop-blur-md"
@@ -81,7 +81,7 @@ export default function ProjectCard({
 							<p className="text-2xl">go to link</p>
 						</motion.div>
 						<img
-							className="h-1/2 rounded-2xl object-cover"
+							className="object-cover h-1/2 rounded-2xl"
 							src={img ? img : noImg}
 							alt={`Banner image of  ${name}`}
 							style={{
@@ -90,7 +90,7 @@ export default function ProjectCard({
 						/>
 						<div className="flex flex-col gap-1">
 							<span>
-								<h2 className="inline select-none text-3xl text-white/25">/</h2>
+								<h2 className="inline text-3xl select-none text-white/25">/</h2>
 								<h2 className="inline text-3xl text-white ">
 									{name ? name : "no-repo-found"}
 								</h2>
@@ -100,10 +100,10 @@ export default function ProjectCard({
 							</p>
 						</div>
 					</motion.div>
-					<div className="absolute -bottom-4 z-20 flex w-full flex-row items-center justify-center gap-2">
+					<div className="absolute z-20 flex flex-row items-center justify-center w-full gap-2 -bottom-4">
 						{languageCards ? languageCards : null}
 					</div>
-					<svg rx={24} className="pointer-events-none absolute h-full w-full select-none">
+					<svg rx={24} className="absolute w-full h-full pointer-events-none select-none">
 						<defs>
 							<linearGradient id="gradient" y1={0} y2={1}>
 								<stop stopColor="#FFFFFF80" offset={0} />
@@ -111,7 +111,7 @@ export default function ProjectCard({
 							</linearGradient>
 						</defs>
 						<rect
-							className="fill-none stroke-2"
+							className="stroke-2 fill-none"
 							x="1%"
 							y="1%"
 							width="98%"

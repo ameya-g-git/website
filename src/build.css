@@ -705,12 +705,12 @@ object {
   z-index: 9999;
 }
 
-.z-\[99\] {
-  z-index: 99;
-}
-
 .z-\[999\] {
   z-index: 999;
+}
+
+.z-\[99\] {
+  z-index: 99;
 }
 
 .m-4 {
@@ -945,10 +945,6 @@ object {
   min-height: 15rem;
 }
 
-.min-h-96 {
-  min-height: 24rem;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -1016,10 +1012,6 @@ object {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.flex-\[3\] {
-  flex: 3;
 }
 
 .flex-grow {
@@ -1568,6 +1560,10 @@ object {
 .text-yellow {
   --tw-text-opacity: 1;
   color: rgb(255 248 19 / var(--tw-text-opacity));
+}
+
+.text-white\/75 {
+  color: rgb(255 255 255 / 0.75);
 }
 
 .underline {
