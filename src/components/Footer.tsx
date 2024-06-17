@@ -22,7 +22,7 @@ function FooterButton({ icon, link, alt }: footerButtonProps) {
 			to={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-white/20 bg-card-black/50 p-2 transition-all hover:bg-card-hover"
+			className="flex items-center justify-center w-12 h-12 p-2 transition-all border-2 rounded-lg border-white/20 bg-card-black/50 hover:bg-card-hover"
 		>
 			<img src={icon} alt={alt} className="h-full" />
 		</Link>
@@ -36,7 +36,7 @@ export default function Footer() {
 				.fill("ameyaGupta")
 				.map((_name, id) => {
 					return id === 8 ? (
-						<p key={`${id}p`} className="text-nowrap font-footer text-2xl text-yellow">
+						<p key={`${id}p`} className="text-2xl text-nowrap font-footer text-yellow">
 							© Ameya Gupta
 						</p>
 					) : (
@@ -52,12 +52,12 @@ export default function Footer() {
 	);
 
 	const secondLayer = (
-		<div className="-ml-80 flex flex-row items-center gap-2">
+		<div className="flex flex-row items-center gap-2 -ml-80">
 			{Array(10)
 				.fill("ameyaGupta")
 				.map((_name, id) => {
 					return id === 1 ? (
-						<p key={id} className="text-nowrap font-footer text-5xl text-yellow">
+						<p key={id} className="text-5xl text-nowrap font-footer text-yellow">
 							let's work together!
 						</p>
 					) : (
@@ -82,7 +82,7 @@ export default function Footer() {
 							<p className="text-nowrap font-footer text-8xl text-yellow">
 								contact me
 							</p>
-							<img src={downarrow} className="w-30 flex" />
+							<img src={downarrow} className="flex w-30" />
 						</Fragment>
 					) : (
 						<img
@@ -105,7 +105,7 @@ export default function Footer() {
 					{secondLayer}
 					{thirdLayer}
 				</div>
-				<div className="mb-8 flex h-fit w-full flex-row items-center justify-between px-56">
+				<div className="flex flex-row items-center justify-between w-full px-56 mb-8 h-fit">
 					<div className="my-2 flex w-full flex-row items-center gap-[17rem]">
 						<p>
 							looking for entry-level positions to expand my skillset and make
@@ -129,12 +129,12 @@ export default function Footer() {
 							/>
 							<FooterButton
 								icon={resume}
-								link="../src/assets/AG_fullresume.pdf"
+								link="/assets/AG_fullresume.pdf"
 								alt="resume"
 							/>
 						</div>
 					</div>
-					<p className="-mr-4 w-64 text-nowrap">
+					<p className="w-64 -mr-4 text-nowrap">
 						created with ❤︎/✒︎ on{" "}
 						<a
 							className="underline"
