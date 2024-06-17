@@ -7,6 +7,10 @@ import PortfolioPage from "./routes/PortfolioPage";
 import PortfolioGFX from "./routes/PortfolioGFX";
 import PortfolioUI from "./routes/PortfolioUI";
 import NotFound from "./routes/NotFound";
+import { createPortal } from "react-dom";
+import CookiesModal from "./components/CookiesModal";
+import { useEffect, useState } from "react";
+import localforage from "localforage";
 
 const router = createBrowserRouter([
 	{
@@ -44,5 +48,36 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-	return <RouterProvider router={router} />;
+	const [isModalOpen, setIsModalOpen] = useState(true);
+
+	function toggleModal() {
+		setIsModalOpen((prev) => !prev);
+		localforage.setItem("modal", false);
+	}
+
+	useEffect(() => {
+		const fetchModalData = async () => {
+			try {
+				localforage.getItem("modal").then((val) => {
+					console.log(val);
+					if (typeof val === "boolean") {
+						setIsModalOpen((prev) => prev && val);
+					} else {
+						console.log("oopsie doopsie modal boolean couldn't be found");
+					}
+				});
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchModalData();
+	}, []);
+
+	return (
+		<>
+			<RouterProvider router={router} />
+			{createPortal(isModalOpen && <CookiesModal toggleModal={toggleModal} />, document.body)}
+		</>
+	);
 }
