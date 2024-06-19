@@ -26,6 +26,7 @@ export default function Shape({ src, top, right, z = 1, width, delay = 0, rotate
 		>
 			<img
 				src={src}
+				alt=""
 				style={{ transform: `rotate(${rotate ? rotate : 0}deg)`, width: width || "auto" }}
 			/>
 		</div>

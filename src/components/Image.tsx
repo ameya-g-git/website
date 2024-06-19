@@ -9,12 +9,14 @@ export default function Image({ src, toggle }: props) {
 		<>
 			<div
 				onClick={(_e) => {
-					console.log(src);
 					toggle(src);
 				}}
-				className="h-fit flex-grow cursor-pointer rounded-3xl border-2 border-white/20 bg-card-black p-2 transition-all hover:brightness-75"
+				className="flex-grow p-2 transition-all border-2 cursor-pointer h-fit rounded-3xl border-white/20 bg-card-black hover:brightness-75"
 			>
-				<img src={src} alt="" className="max-h-96 w-full rounded-2xl object-cover" />
+				<img
+					src={src}
+					className="object-cover w-full pointer-events-auto select-auto max-h-96 rounded-2xl"
+				/>
 			</div>
 		</>
 	);

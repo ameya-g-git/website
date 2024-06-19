@@ -637,6 +637,10 @@ object {
   pointer-events: none;
 }
 
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1222,6 +1226,12 @@ object {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.select-auto {
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
 }
 
 .resize {
