@@ -115,7 +115,7 @@ export default function Home() {
 
 	return (
 		<>
-			<section id="banner" className="relative w-full h-screen overflow-hidden">
+			<section id="banner" role="banner" className="relative h-screen w-full overflow-hidden">
 				{screenWidth >= 1080 && (
 					<div
 						id="shapes"
@@ -150,7 +150,7 @@ export default function Home() {
 						<Shape src={glaggle} top="68vh" right="18vw" z={2} width="18vw" delay={6} />
 					</div>
 				)}
-				<div className="box-border absolute px-8 text-black -translate-y-1/2 py-18 top-1/2 md:px-20 md:py-48 md:pt-8">
+				<div className="py-18 absolute top-1/2 box-border -translate-y-1/2 px-8 text-black md:px-20 md:py-48 md:pt-8">
 					<div className="inline-flex items-center gap-1">
 						<Player
 							src="https://lottie.host/1dd41cb5-2633-4dc5-99ba-03b545ea86ce/5x9D1FO1SB.json"
@@ -168,7 +168,7 @@ export default function Home() {
 								className="absolute -ml-[1vw] -mt-[7vh] max-h-[32vh]"
 							/>
 						)}
-						<div className="flex flex-row items-baseline h-full">
+						<div className="flex h-full flex-row items-baseline">
 							<h1 className={nameStyles}>ameya</h1>
 							<p className="text-sm">:3</p>
 						</div>
@@ -196,12 +196,12 @@ export default function Home() {
 			</section>
 			<section className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-12 [&_h2]:h-full [&_h2]:text-3xl">
 				<section id="projects" className="flex flex-col items-end gap-4">
-					<span className="flex flex-row items-end w-full h-8 gap-2">
+					<span className="flex h-8 w-full flex-row items-end gap-2">
 						<h2>here's what i've been</h2>
 						<img className="h-full" src={dev_icon} alt="React fragment element icon" />
 						<h2>working on!</h2>
 					</span>
-					<div className="box-border flex flex-row items-stretch w-full gap-4 h-96 min-h-60">
+					<div className="box-border flex h-96 min-h-60 w-full flex-row items-stretch gap-4">
 						<ProjectCard {...cardData[0]} top={50} />
 						<ProjectCard
 							{...cardData[1]}
@@ -224,13 +224,13 @@ export default function Home() {
 				</section>
 
 				<section id="technologies" className="flex flex-col items-baseline gap-4">
-					<span className="flex flex-row items-center justify-end w-full h-8 gap-2">
+					<span className="flex h-8 w-full flex-row items-center justify-end gap-2">
 						<h2>here are the</h2>
 						<img className="h-full" src={tech_icon} alt="Stack icon" />
 						<h2>skills i've gained!</h2>
 					</span>
-					<div className="box-border flex flex-col items-stretch w-full gap-3 md:flex-row">
-						<div id="languages" className="flex flex-col flex-grow gap-2">
+					<div className="box-border flex w-full flex-col items-stretch gap-3 md:flex-row">
+						<div id="languages" className="flex flex-grow flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">languages</h2>
 							<div className="grid grid-flow-col grid-rows-5 gap-2">
 								{languages.map((lang, i) => (
@@ -239,7 +239,7 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div id="tools" className="flex flex-col flex-grow gap-2">
+						<div id="tools" className="flex flex-grow flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">tools</h2>
 							<div className="grid grid-flow-col grid-rows-5 gap-2">
 								{tools.map((tool, i) => (
@@ -264,12 +264,12 @@ export default function Home() {
 				</section>
 
 				<section id="design" className="flex flex-col items-baseline gap-4">
-					<span className="flex flex-row items-center w-full h-8 gap-2">
+					<span className="flex h-8 w-full flex-row items-center gap-2">
 						<h2>check out some of my</h2>
 						<img className="h-full" src={pen_icon} alt="Pen icon" />
 						<h2>design work too!</h2>
 					</span>
-					<div className="flex flex-row w-full gap-4 justify-stretch">
+					<div className="flex w-full flex-row justify-stretch gap-4">
 						<DesignCard
 							path="/portfolio/gfx"
 							img={gd_card}

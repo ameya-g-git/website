@@ -28,10 +28,11 @@ export default function NotFound() {
 		<>
 			<section
 				id="banner"
-				className="relative flex flex-col items-center justify-center w-full h-screen overflow-hidden text-black"
+				role="banner"
+				className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-black"
 			>
-				<div id="shapes" className="absolute w-full h-full pointer-events-none select-none">
-					<svg className="w-full h-full">
+				<div id="shapes" className="pointer-events-none absolute h-full w-full select-none">
+					<svg className="h-full w-full">
 						<motion.rect
 							x={-300}
 							y={800}
@@ -78,12 +79,12 @@ export default function NotFound() {
 						src={typescript}
 					/> */}
 				</div>
-				<div className="flex mb-20 -ml-12">
+				<div className="-ml-12 mb-20 flex">
 					<img className="h-96 animate-float" src={four} alt="" />
 					<img className="h-96 animate-float pl-4 [--delay:400ms]" src={zero} alt="" />
 					<img className="-ml-4 h-96 animate-float [--delay:800ms]" src={four} alt="" />
 				</div>
-				<div className="flex flex-col items-center gap-4 min-w-1/3">
+				<div className="min-w-1/3 flex flex-col items-center gap-4">
 					<div className="flex flex-col items-center">
 						<h1 className="text-3xl ">
 							sorry, the page you were looking for does not exist!

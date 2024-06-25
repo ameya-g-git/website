@@ -155,6 +155,7 @@ export default function Projects() {
 		<>
 			<section
 				id="banner"
+				role="banner"
 				className="relative flex h-screen w-full items-center justify-center overflow-hidden"
 			>
 				<div
