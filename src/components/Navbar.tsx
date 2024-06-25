@@ -8,16 +8,19 @@ export default function Navbar() {
 		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 animate-nav-load";
 
 	const navLinkElements = routes.map((item) => (
-		<NavLink
-			key={item}
-			to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
-			onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
-			className={({ isActive, isPending }) =>
-				`${navElementClasses} ${isActive ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
-			}
-		>
-			{item ? item : "home"}
-		</NavLink>
+		<li>
+			<NavLink
+				role="listitem"
+				key={item}
+				to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
+				onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
+				className={({ isActive, isPending }) =>
+					`${navElementClasses} ${isActive ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
+				}
+			>
+				{item ? item : "home"}
+			</NavLink>
+		</li>
 	));
 
 	return (
@@ -27,14 +30,25 @@ export default function Navbar() {
 			<ScrollingImage ltr={true} width="starbar">
 				<img src={starbar} alt="" className="w-full object-cover" />
 			</ScrollingImage>
-			<nav className="mb font-body relative mx-8 inline-flex w-full items-center justify-around border-b-0 text-lg text-yellow transition-all">
-				{navLinkElements}
-				<a className={navElementClasses} href="/assets/AG_fullresume.pdf" target="_blank">
-					resume
-				</a>
-				<a className={navElementClasses} href="#footer">
-					contact
-				</a>
+			<nav className="w-full">
+				<ul className="font-body relative mx-8 inline-flex h-full w-full items-center justify-around border-b-0 text-lg text-yellow transition-all">
+					{navLinkElements}
+					<li>
+						<a
+							role="listitem"
+							className={navElementClasses}
+							href="/assets/AG_fullresume.pdf"
+							target="_blank"
+						>
+							resume
+						</a>
+					</li>
+					<li>
+						<a role="listitem" className={navElementClasses} href="#footer">
+							contact
+						</a>
+					</li>
+				</ul>
 			</nav>
 			<ScrollingImage ltr={false} width="starbar">
 				<img src={starbar} alt="" className="w-full object-cover" />

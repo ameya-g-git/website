@@ -26,6 +26,12 @@ export default function PortfolioPage() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
 
+	const icons = [head, glaggle, boom, eye2, star, scribble, sparkle];
+
+	const iconElements = icons.map((icon, i) => (
+		<img src={icon} style={{ "--delay": `${i * 200}ms` } as React.CSSProperties} />
+	));
+
 	const navAnim: Variants = {
 		start: { backgroundColor: "#101010", borderWidth: "2px", borderColor: "#FFFFFF4E" },
 		end: { backgroundColor: "#FFF813", borderWidth: "2px", borderColor: "#FFF813" },
@@ -72,7 +78,7 @@ export default function PortfolioPage() {
 				role="banner"
 				className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden"
 			>
-				<div className="flex h-fit w-fit items-center justify-center">
+				<div role="presentation" className="flex h-fit w-fit items-center justify-center">
 					<div className="absolute flex items-center justify-center font-page-heading text-black">
 						<h1 className="text-[25vw] md:text-[18rem]">portfolio</h1>
 						<img src={scribbleTitle} className="absolute mt-5 h-24 pr-[33rem]" alt="" />
@@ -83,38 +89,11 @@ export default function PortfolioPage() {
 						/>
 						<img src={eye} className="absolute ml-[51rem] mt-6 h-16" alt="" />
 					</div>
-					<div className="absolute -ml-72 mt-12 inline-flex h-12 -translate-x-24 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float">
-						<img src={head} style={{ "--delay": "200ms" } as React.CSSProperties} />
-						<img
-							src={glaggle}
-							style={{ "--delay": "400ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={boom}
-							style={{ "--delay": "600ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={eye2}
-							style={{ "--delay": "800ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={star}
-							style={{ "--delay": "1000ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={scribble}
-							style={{ "--delay": "1200ms" } as React.CSSProperties}
-							alt=""
-						/>
-						<img
-							src={sparkle}
-							style={{ "--delay": "1400ms" } as React.CSSProperties}
-							alt=""
-						/>
+					<div
+						role="presentation"
+						className="absolute -ml-72 mt-12 inline-flex h-12 -translate-x-24 translate-y-20 scale-90 gap-2 *:h-auto *:max-w-12 *:animate-float"
+					>
+						{iconElements}
 					</div>
 				</div>
 				<div className="pointer-events-none absolute h-full w-full select-none overflow-hidden">

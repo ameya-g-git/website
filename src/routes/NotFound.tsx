@@ -28,7 +28,7 @@ export default function NotFound() {
 		<>
 			<section
 				id="banner"
-				role="banner"
+				role="main"
 				className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-black"
 			>
 				<div id="shapes" className="pointer-events-none absolute h-full w-full select-none">

@@ -118,6 +118,7 @@ export default function Home() {
 			<section id="banner" role="banner" className="relative h-screen w-full overflow-hidden">
 				{screenWidth >= 1080 && (
 					<div
+						role="presentation"
 						id="shapes"
 						className="h-screen w-screen overflow-hidden [perspective:12px]"
 					>
@@ -150,7 +151,10 @@ export default function Home() {
 						<Shape src={glaggle} top="68vh" right="18vw" z={2} width="18vw" delay={6} />
 					</div>
 				)}
-				<div className="py-18 absolute top-1/2 box-border -translate-y-1/2 px-8 text-black md:px-20 md:py-48 md:pt-8">
+				<div
+					role="presentation"
+					className="py-18 absolute top-1/2 box-border -translate-y-1/2 px-8 text-black md:px-20 md:py-48 md:pt-8"
+				>
 					<div className="inline-flex items-center gap-1">
 						<Player
 							src="https://lottie.host/1dd41cb5-2633-4dc5-99ba-03b545ea86ce/5x9D1FO1SB.json"
@@ -163,6 +167,7 @@ export default function Home() {
 					<div>
 						{screenWidth > 768 && (
 							<img
+								role="presentation"
 								src={starCurve}
 								alt=""
 								className="absolute -ml-[1vw] -mt-[7vh] max-h-[32vh]"
@@ -194,7 +199,7 @@ export default function Home() {
 					</ScrollingImage>
 				</div>
 			</section>
-			<section className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-12 [&_h2]:h-full [&_h2]:text-3xl">
+			<main className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-12 [&_h2]:h-full [&_h2]:text-3xl">
 				<section id="projects" className="flex flex-col items-end gap-4">
 					<span className="flex h-8 w-full flex-row items-end gap-2">
 						<h2>here's what i've been</h2>
@@ -292,7 +297,7 @@ export default function Home() {
 						<button className="w-full">take a look at the whole gallery! →</button>
 					</Link>
 				</section>
-			</section>
+			</main>
 		</>
 	);
 }

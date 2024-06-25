@@ -1,7 +1,8 @@
 export default function CookiesModal({ toggleModal }: { toggleModal: () => void }) {
 	return (
 		<div
-			tabIndex={-1}
+			tabIndex={0}
+			onClick={toggleModal}
 			className="fixed bottom-8 left-8 z-[999] mr-8 flex h-72 max-w-[30rem] flex-col gap-2 rounded-3xl border-2 border-white/40 bg-card-black/60 p-6 backdrop-blur-md"
 		>
 			<h1 className="text-3xl">hey there!</h1>

@@ -77,7 +77,10 @@ export default function App() {
 	return (
 		<>
 			<RouterProvider router={router} />
-			{createPortal(isModalOpen && <CookiesModal toggleModal={toggleModal} />, document.body)}
+			{createPortal(
+				isModalOpen && <CookiesModal toggleModal={toggleModal} />,
+				document.getElementById("modal")!,
+			)}
 		</>
 	);
 }
