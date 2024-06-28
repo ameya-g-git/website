@@ -12,7 +12,13 @@ export default function CookiesModal({ toggleModal }: { toggleModal: () => void 
 				website, you're okay with this! <br /> <br />
 				don't worry, none of your data is collected or stored!
 			</p>
-			<button onClick={toggleModal} className="mt-auto h-12 w-full text-xl">
+			<button
+				onClick={(e) => {
+					e.stopPropagation;
+					toggleModal;
+				}}
+				className="mt-auto h-12 w-full text-xl"
+			>
 				i understand!
 			</button>
 		</div>

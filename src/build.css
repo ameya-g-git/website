@@ -1005,10 +1005,6 @@ object {
   height: 100vh;
 }
 
-.h-48 {
-  height: 12rem;
-}
-
 .max-h-8 {
   max-height: 2rem;
 }
@@ -1027,10 +1023,6 @@ object {
 
 .min-h-60 {
   min-height: 15rem;
-}
-
-.w-1\/4 {
-  width: 25%;
 }
 
 .w-10 {
@@ -1106,52 +1098,16 @@ object {
   width: 100vw;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.min-w-\[30rem\] {
-  min-width: 30rem;
-}
-
-.min-w-96 {
-  min-width: 24rem;
-}
-
-.min-w-72 {
-  min-width: 18rem;
-}
-
-.min-w-24 {
-  min-width: 6rem;
-}
-
 .max-w-8 {
   max-width: 2rem;
-}
-
-.max-w-full {
-  max-width: 100%;
-}
-
-.max-w-72 {
-  max-width: 18rem;
-}
-
-.max-w-96 {
-  max-width: 24rem;
 }
 
 .max-w-\[30rem\] {
   max-width: 30rem;
 }
 
-.max-w-\[40rem\] {
-  max-width: 40rem;
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-grow {
@@ -1617,10 +1573,6 @@ object {
   padding-top: 2rem;
 }
 
-.pb-8 {
-  padding-bottom: 2rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -1697,12 +1649,12 @@ object {
   line-height: 1;
 }
 
-.leading-tight {
-  line-height: 1.25;
-}
-
 .leading-snug {
   line-height: 1.375;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-black {
@@ -1919,14 +1871,6 @@ object {
 
   .md\:h-\[12\.5rem\] {
     height: 12.5rem;
-  }
-
-  .md\:w-1\/4 {
-    width: 25%;
-  }
-
-  .md\:w-1\/3 {
-    width: 33.333333%;
   }
 
   .md\:scale-100 {
