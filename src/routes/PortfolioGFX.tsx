@@ -104,7 +104,7 @@ export default function PortfolioGFX() {
 								</h2>
 							</div>
 
-							<div className="flex grow items-center justify-between overflow-hidden p-6 pt-2">
+							<div className="flex h-full w-screen items-center justify-between overflow-hidden p-6 pt-2">
 								<button
 									onClick={(e) => {
 										e.stopPropagation();
@@ -122,7 +122,7 @@ export default function PortfolioGFX() {
 								<motion.img
 									key={imagePortal.img}
 									variants={portalImg}
-									className="shadow-3xl max-h-full max-w-full rounded-xl shadow-black/25"
+									className="shadow-3xl max-h-full max-w-[90%] rounded-xl shadow-black/25"
 									src={imagePortal.img}
 									alt={pathToImgName(imagePortal.img)}
 								/>
@@ -136,7 +136,7 @@ export default function PortfolioGFX() {
 											};
 										});
 									}}
-									className="z-[9999] flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/35"
+									className="z-[999] flex h-12 w-12 items-center justify-center bg-transparent text-3xl text-white hover:bg-white/20 active:bg-white/35"
 								>
 									→
 								</button>
