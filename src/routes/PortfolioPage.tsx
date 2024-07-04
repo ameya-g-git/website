@@ -15,6 +15,7 @@ import paintbrush_icon from "/assets/paintbrush.svg";
 import ScrollingImage from "../components/ScrollingImage";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface linkProps {
 	icon: string;
@@ -25,6 +26,10 @@ interface linkProps {
 export default function PortfolioPage() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
+	const { screenWidth, screenHeight } = useWindowSize();
+
+	const WIDTH = 1440;
+	const HEIGHT = 1080;
 
 	const icons = [head, glaggle, boom, eye2, star, scribble, sparkle];
 
@@ -96,63 +101,71 @@ export default function PortfolioPage() {
 						{iconElements}
 					</div>
 				</div>
-				<div className="pointer-events-none absolute h-full w-full select-none overflow-hidden">
-					<svg className="absolute left-0 top-0 h-full w-full">
-						<motion.rect
-							x={-150}
-							y={700}
-							rx={80}
-							width={400}
-							height={400}
-							stroke="#000000"
-							strokeWidth={90}
-							fillOpacity={0}
-							variants={pathAnim}
-							initial="start"
-							animate="end"
-						/>
-						<motion.rect
-							x={-100}
-							y={-275}
-							rx={80}
-							width={700}
-							height={600}
-							stroke="#000000"
-							strokeWidth={90}
-							fillOpacity={0}
-							variants={pathAnim}
-							initial="start"
-							animate="end"
-						/>
-						<motion.rect
-							x={1600}
-							y={-250}
-							rx={80}
-							width={400}
-							height={700}
-							stroke="#000000"
-							strokeWidth={90}
-							fillOpacity={0}
-							variants={pathAnim}
-							initial="start"
-							animate="end"
-						/>
-						<motion.rect
-							transform="rotate(90 1400 850)"
-							x={1300}
-							y={150}
-							rx={80}
-							width={400}
-							height={700}
-							stroke="#000000"
-							strokeWidth={90}
-							fillOpacity={0}
-							variants={pathAnim}
-							initial="start"
-							animate="end"
-						/>
-					</svg>
-				</div>
+				{screenWidth > 1080 && (
+					<div className="absolute flex h-full w-full items-center justify-center">
+						<div className="pointer-events-none h-full w-full select-none ">
+							<svg className="absolute left-0 top-0 h-full w-full">
+								<motion.rect
+									key={1}
+									x={(screenWidth / WIDTH) * -150}
+									y={(screenHeight / HEIGHT) * 850}
+									rx={80}
+									width={(screenWidth / WIDTH) * 400}
+									height={(screenHeight / HEIGHT) * 400}
+									stroke="#000000"
+									strokeWidth={90}
+									fillOpacity={0}
+									variants={pathAnim}
+									initial="start"
+									animate="end"
+								/>
+								<motion.rect
+									key={2}
+									x={(screenWidth / WIDTH) * -100}
+									y={(screenHeight / HEIGHT) * -275}
+									rx={80}
+									width={(screenWidth / WIDTH) * 600}
+									height={(screenHeight / HEIGHT) * 600}
+									stroke="#000000"
+									strokeWidth={90}
+									fillOpacity={0}
+									variants={pathAnim}
+									initial="start"
+									animate="end"
+								/>
+								<motion.rect
+									key={3}
+									x={(screenWidth / WIDTH) * 1250}
+									y={(screenHeight / HEIGHT) * -300}
+									rx={80}
+									width={(screenWidth / WIDTH) * 400}
+									height={(screenHeight / HEIGHT) * 700}
+									stroke="#000000"
+									strokeWidth={90}
+									fillOpacity={0}
+									variants={pathAnim}
+									initial="start"
+									animate="end"
+								/>
+								<motion.rect
+									key={4}
+									transform={`rotate(90 ${(screenWidth / WIDTH) * 1400} ${(screenHeight / HEIGHT) * 850})`}
+									x={(screenWidth / WIDTH) * 1350}
+									y={(screenHeight / HEIGHT) * 550}
+									rx={80}
+									width={(screenWidth / WIDTH) * 400}
+									height={(screenHeight / HEIGHT) * 700}
+									stroke="#000000"
+									strokeWidth={90}
+									fillOpacity={0}
+									variants={pathAnim}
+									initial="start"
+									animate="end"
+								/>
+							</svg>
+						</div>
+					</div>
+				)}
 				<div className="absolute bottom-0 z-[99] scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
 						<img src={wave} alt="" className="w-full object-cover" />

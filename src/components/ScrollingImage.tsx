@@ -9,7 +9,7 @@ interface props {
 
 export default function ScrollingImage({ ltr, width, children, colour }: props) {
 	const elementWidth = clsx({
-		"w-full": width === "full",
+		"w-screen": width === "full",
 		"w-60": width === "starbar",
 		"bg-black": colour === "black",
 	});

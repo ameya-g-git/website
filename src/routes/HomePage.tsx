@@ -120,7 +120,7 @@ export default function Home() {
 					<div
 						role="presentation"
 						id="shapes"
-						className="h-screen w-screen overflow-hidden [perspective:12px]"
+						className="mt-4 h-screen w-screen overflow-hidden [perspective:12px]"
 					>
 						<Shape src={circle} top="10vh" right="0px" z={3} width="24vw" delay={9} />
 						<Shape src={circle2} top="8vh" right="0px" width="5vw" delay={4} />
@@ -155,7 +155,7 @@ export default function Home() {
 					role="presentation"
 					className="py-18 absolute top-1/2 box-border -translate-y-1/2 px-8 text-black md:px-20 md:py-48 md:pt-8"
 				>
-					<div className="inline-flex items-center gap-1">
+					<div className="mt-4 inline-flex items-center gap-1">
 						<Player
 							src="https://lottie.host/1dd41cb5-2633-4dc5-99ba-03b545ea86ce/5x9D1FO1SB.json"
 							loop
