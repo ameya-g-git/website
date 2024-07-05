@@ -59,7 +59,6 @@ export default function App() {
 		const fetchModalData = async () => {
 			try {
 				localforage.getItem("modal").then((val) => {
-					console.log(val);
 					if (typeof val === "boolean") {
 						setIsModalOpen((prev) => prev && val);
 					} else {

@@ -46,7 +46,7 @@ export async function loader() {
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made
 
 	const repoDetails = await localforage.keys().then(async (keys) => {
-		let details: (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
+		let details: (void | cardProps)[]; // cardProps comes from ProjectCard.tsx
 		details = []; // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
 
 		if (keys.length >= 1 && !makeRequest) {

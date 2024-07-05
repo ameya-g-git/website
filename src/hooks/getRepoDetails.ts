@@ -2,9 +2,9 @@ import { Octokit } from 'octokit';
 const octokit = new Octokit({ })
 
 export async function getRepoDetails(repoName : string) {
-    let img : string | null;
-    let description : string | null;
-    let languages : string[] | null;
+    let img : string;
+    let description : string;
+    let languages : string[];
 
     try {
         img = await octokit.request('GET /repos/{owner}/{repo}/contents/assets/{path}', {
@@ -20,8 +20,8 @@ export async function getRepoDetails(repoName : string) {
     try {
         description = await octokit.request('GET /repos/{owner}/{repo}', {
             owner: 'ameya-g-git',
-            repo: repoName
-        }).then(res => {return res.data.description})
+            repo: repoName,
+        }).then(res => {return res.data.description ? res.data.description : ""})
     } catch (error) {
         console.error(`Error fetching desc. for repository ${repoName}:`, error);
         description = ""
@@ -41,7 +41,7 @@ export async function getRepoDetails(repoName : string) {
         {
             name: repoName,
             img: img,
-            description: description ? description : null,
+            description: description,
             languages: languages,
         }
     );
