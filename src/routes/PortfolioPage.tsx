@@ -102,8 +102,8 @@ export default function PortfolioPage() {
 					</div>
 				</div>
 				{screenWidth > 1080 && (
-					<div className="absolute flex h-full w-full items-center justify-center">
-						<div className="pointer-events-none h-full w-full select-none ">
+					<div className="pointer-events-none absolute flex h-full w-full select-none items-center justify-center">
+						<div className="h-full w-full">
 							<svg className="absolute left-0 top-0 h-full w-full">
 								<motion.rect
 									key={1}
