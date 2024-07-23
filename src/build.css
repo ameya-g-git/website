@@ -781,10 +781,6 @@ object {
   margin: auto;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .-my-\[10vh\] {
   margin-top: -10vh;
   margin-bottom: -10vh;
@@ -914,10 +910,6 @@ object {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .box-border {
@@ -1114,14 +1106,6 @@ object {
   max-width: 30rem;
 }
 
-.max-w-full {
-  max-width: 100%;
-}
-
-.max-w-12 {
-  max-width: 3rem;
-}
-
 .max-w-\[90\%\] {
   max-width: 90%;
 }
@@ -1132,10 +1116,6 @@ object {
 
 .flex-grow-\[2\] {
   flex-grow: 2;
-}
-
-.grow {
-  flex-grow: 1;
 }
 
 .-translate-x-24 {
@@ -1340,10 +1320,6 @@ object {
 
 .gap-\[17rem\] {
   gap: 17rem;
-}
-
-.self-center {
-  align-self: center;
 }
 
 .overflow-hidden {
@@ -1563,16 +1539,6 @@ object {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.py-48 {
-  padding-top: 12rem;
-  padding-bottom: 12rem;
 }
 
 .pl-4 {
@@ -1881,21 +1847,7 @@ object {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-@media (min-width: 640px) {
-  .sm\:m-0 {
-    margin: 0px;
-  }
-
-  .sm\:mt-16 {
-    margin-top: 4rem;
-  }
-}
-
 @media (min-width: 768px) {
-  .md\:m-0 {
-    margin: 0px;
-  }
-
   .md\:my-\[6vh\] {
     margin-top: 6vh;
     margin-bottom: 6vh;
@@ -1907,22 +1859,6 @@ object {
 
   .md\:mr-\[4\.5rem\] {
     margin-right: 4.5rem;
-  }
-
-  .md\:mt-16 {
-    margin-top: 4rem;
-  }
-
-  .md\:mt-8 {
-    margin-top: 2rem;
-  }
-
-  .md\:mt-4 {
-    margin-top: 1rem;
-  }
-
-  .md\:mt-24 {
-    margin-top: 6rem;
   }
 
   .md\:h-16 {
@@ -1951,11 +1887,6 @@ object {
   .md\:py-48 {
     padding-top: 12rem;
     padding-bottom: 12rem;
-  }
-
-  .md\:py-64 {
-    padding-top: 16rem;
-    padding-bottom: 16rem;
   }
 
   .md\:pt-8 {
