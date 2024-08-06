@@ -73,7 +73,10 @@ export default function PortfolioGFX() {
 
 	return (
 		<>
-			<div id="images" className="flex w-full flex-row flex-wrap gap-4 px-12 py-4">
+			<div
+				id="images"
+				className="flex w-full flex-row flex-wrap justify-center gap-4 px-12 py-4"
+			>
 				{images.map((src, i) => {
 					return <Image src={src} key={i} toggle={toggle} />;
 				})}

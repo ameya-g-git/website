@@ -1098,6 +1098,10 @@ object {
   width: 100vw;
 }
 
+.w-1\/3 {
+  width: 33.333333%;
+}
+
 .max-w-8 {
   max-width: 2rem;
 }
@@ -1110,12 +1114,48 @@ object {
   max-width: 90%;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-\[2\] {
+  flex: 2;
+}
+
+.flex-\[10\] {
+  flex: 10;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
 
 .flex-grow-\[2\] {
   flex-grow: 2;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .-translate-x-24 {
@@ -1641,6 +1681,11 @@ object {
   line-height: 1.75rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -1711,6 +1756,11 @@ object {
 
 .brightness-0 {
   --tw-brightness: brightness(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.brightness-75 {
+  --tw-brightness: brightness(.75);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -1905,6 +1955,17 @@ object {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:leading-tight {
+    line-height: 1.25;
   }
 }
 

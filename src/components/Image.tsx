@@ -1,3 +1,6 @@
+import clsx from "clsx";
+import useWindowSize from "../hooks/useWindowSize";
+
 interface props {
 	src: string;
 	link?: string;
@@ -5,17 +8,25 @@ interface props {
 }
 
 export default function Image({ src, toggle }: props) {
+	const { screenWidth } = useWindowSize();
+
+	const imageStyles = clsx({
+		"h-fit grow cursor-pointer rounded-3xl border-2 border-white/20 bg-card-black p-2 transition-all hover:brightness-75":
+			true,
+		"max-w-lg": screenWidth < 1200,
+	});
+
 	return (
 		<>
 			<div
 				onClick={(_e) => {
 					toggle(src);
 				}}
-				className="flex-grow p-2 transition-all border-2 cursor-pointer h-fit rounded-3xl border-white/20 bg-card-black hover:brightness-75"
+				className={imageStyles}
 			>
 				<img
 					src={src}
-					className="object-cover w-full pointer-events-auto select-auto max-h-96 rounded-2xl"
+					className="pointer-events-auto max-h-96 w-full select-auto rounded-2xl object-cover"
 				/>
 			</div>
 		</>

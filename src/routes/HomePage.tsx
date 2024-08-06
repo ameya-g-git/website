@@ -100,7 +100,7 @@ export default function Home() {
 	const cardData = loaderData;
 
 	const languages = ["python", "c++", "html", "css", "typescript"];
-	const tools = ["git", "vite", "npm", "pip", "figma"];
+	const tools = ["git", "vite", "node", "pip", "figma"];
 	const frameworks = ["react", "vue", "tailwind", "bootstrap", "flask", "numpy", "matplotlib"];
 
 	const nameStyles = clsx(
@@ -116,7 +116,7 @@ export default function Home() {
 	return (
 		<>
 			<section id="banner" role="banner" className="relative h-screen w-full overflow-hidden">
-				{screenWidth >= 1080 && (
+				{screenWidth >= 1200 && (
 					<div
 						role="presentation"
 						id="shapes"
@@ -195,7 +195,7 @@ export default function Home() {
 				</div>
 				<div className="absolute bottom-0 scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
-						<img src={wave} alt="" />
+						<img src={wave} className="w-screen" alt="" />
 					</ScrollingImage>
 				</div>
 			</section>
@@ -222,7 +222,7 @@ export default function Home() {
 					<Link
 						className="mt-4 w-[32.5%] text-lg"
 						to="projects"
-						onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
+						onClick={(_e) => document.getElementById("banner")!.scrollIntoView()}
 					>
 						<button className="w-full">check out more of what i’ve done! →</button>
 					</Link>

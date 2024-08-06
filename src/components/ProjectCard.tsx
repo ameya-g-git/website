@@ -40,7 +40,7 @@ export default function ProjectCard({
 		end: {
 			opacity: 1,
 			backdropFilter: "blur(8px)",
-			backgroundColor: "#19191940",
+			backgroundColor: "#19191980",
 			paddingRight: 0,
 		},
 	};
@@ -95,7 +95,7 @@ export default function ProjectCard({
 									{name ? name : "no-repo-found"}
 								</h2>
 							</span>
-							<p className="text-lg leading-tight text-white">
+							<p className="leading-tighter text-sm text-white lg:text-lg lg:leading-tight">
 								{description ? description : "lorem ipsum and such"}
 							</p>
 						</div>
