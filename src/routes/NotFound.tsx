@@ -6,13 +6,7 @@ import wave from "/assets/hero_shapes/wave.svg";
 import four from "/assets/4.svg";
 import zero from "/assets/0.svg";
 import eyes from "/assets/eyes.svg";
-// import glaggle from "/assets/hero_shapes/glaggle.svg";
-// import head from "/assets/portfolio_icons/head.svg";
-// import nanner from "/assets/hero_shapes/nanner.svg";
-// import square from "/assets/hero_shapes/square.svg";
-// import react from "/assets/icons/react.svg";
-// import typescript from "/assets/icons/typescript.svg";
-// import tailwind from "/assets/icons/tailwind.svg";
+
 import { Link } from "react-router-dom";
 
 export default function NotFound() {
@@ -79,14 +73,22 @@ export default function NotFound() {
 						src={typescript}
 					/> */}
 				</div>
-				<div className="-ml-12 mb-20 flex">
-					<img className="h-96 animate-float" src={four} alt="" />
-					<img className="h-96 animate-float pl-4 [--delay:400ms]" src={zero} alt="" />
-					<img className="-ml-4 h-96 animate-float [--delay:800ms]" src={four} alt="" />
+				<div className="-ml-12 mb-[5vh] flex">
+					<img className="w-[30vw] max-w-72 animate-float" src={four} alt="" />
+					<img
+						className="w-[30vw] max-w-72 animate-float pl-4 [--delay:400ms]"
+						src={zero}
+						alt=""
+					/>
+					<img
+						className="-ml-4 w-[30vw] max-w-72 animate-float [--delay:800ms]"
+						src={four}
+						alt=""
+					/>
 				</div>
 				<div className="min-w-1/3 flex flex-col items-center gap-4">
 					<div className="flex flex-col items-center">
-						<h1 className="text-3xl ">
+						<h1 className="text-xl md:text-3xl">
 							sorry, the page you were looking for does not exist!
 						</h1>
 						<span className="flex flex-row items-center gap-2 text-xl">
@@ -96,7 +98,7 @@ export default function NotFound() {
 					</div>
 					<hr className="w-full border-black" />
 					<div className="flex flex-col items-center">
-						<span className="text-xl">
+						<span className="text-center text-lg md:text-xl">
 							if a link on this site brought you here,{" "}
 							<a className="underline" href="#footer">
 								contact me!
