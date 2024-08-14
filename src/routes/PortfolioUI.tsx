@@ -23,7 +23,7 @@ export default function PortfolioUI() {
 				top={50}
 				name="hither-&-dither"
 				description="a ui design for a web app im working on right now that applies various dithering algorithms to an uploaded image"
-				url=""
+				url="https://www.figma.com/proto/hvaz50fpTFcnehIZshFGca/hither-%26-dither?page-id=0%3A1&node-id=1-3&viewport=792%2C184%2C0.63&t=vVSiqH544Vlzxk3C-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3"
 			/>
 			<ProjectCard
 				img={rTistBanner}
