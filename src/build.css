@@ -868,12 +868,12 @@ object {
   margin-top: -7vh;
 }
 
-.mb-20 {
-  margin-bottom: 5rem;
-}
-
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mb-\[5vh\] {
+  margin-bottom: 5vh;
 }
 
 .ml-\[51rem\] {
@@ -910,14 +910,6 @@ object {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-\[10vh\] {
-  margin-bottom: 10vh;
-}
-
-.mb-\[5vh\] {
-  margin-bottom: 5vh;
 }
 
 .box-border {
@@ -1013,10 +1005,6 @@ object {
   height: 100vh;
 }
 
-.h-\[40vw\] {
-  height: 40vw;
-}
-
 .max-h-8 {
   max-height: 2rem;
 }
@@ -1031,10 +1019,6 @@ object {
 
 .max-h-full {
   max-height: 100%;
-}
-
-.max-h-72 {
-  max-height: 18rem;
 }
 
 .min-h-60 {
@@ -1089,6 +1073,10 @@ object {
   width: 200%;
 }
 
+.w-\[30vw\] {
+  width: 30vw;
+}
+
 .w-\[32\.5\%\] {
   width: 32.5%;
 }
@@ -1114,12 +1102,12 @@ object {
   width: 100vw;
 }
 
-.w-3\/5 {
-  width: 60%;
+.min-w-full {
+  min-width: 100%;
 }
 
-.w-\[30vw\] {
-  width: 30vw;
+.max-w-72 {
+  max-width: 18rem;
 }
 
 .max-w-8 {
@@ -1138,20 +1126,8 @@ object {
   max-width: 32rem;
 }
 
-.max-w-96 {
-  max-width: 24rem;
-}
-
-.max-w-36 {
-  max-width: 9rem;
-}
-
-.max-w-48 {
-  max-width: 12rem;
-}
-
-.max-w-72 {
-  max-width: 18rem;
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-grow {
@@ -1896,12 +1872,6 @@ object {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-@media (min-width: 640px) {
-  .sm\:h-96 {
-    height: 24rem;
-  }
-}
-
 @media (min-width: 768px) {
   .md\:my-\[6vh\] {
     margin-top: 6vh;
@@ -1922,10 +1892,6 @@ object {
 
   .md\:h-\[12\.5rem\] {
     height: 12.5rem;
-  }
-
-  .md\:h-96 {
-    height: 24rem;
   }
 
   .md\:scale-100 {
@@ -1952,6 +1918,11 @@ object {
     padding-top: 2rem;
   }
 
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1970,22 +1941,9 @@ object {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:h-96 {
-    height: 24rem;
-  }
-
-  .lg\:gap-4 {
-    gap: 1rem;
-  }
-
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;

@@ -8,10 +8,9 @@ export default function Navbar() {
 		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 animate-nav-load";
 
 	const navLinkElements = routes.map((item) => (
-		<li>
+		<li key={item}>
 			<NavLink
 				role="listitem"
-				key={item}
 				to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
 				onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 				className={({ isActive, isPending }) =>
@@ -31,7 +30,7 @@ export default function Navbar() {
 				<img src={starbar} alt="" className="w-full object-cover" />
 			</ScrollingImage>
 			<nav className="w-full">
-				<ul className="font-body relative mx-8 inline-flex h-full w-full items-center justify-around border-b-0 text-lg text-yellow transition-all">
+				<ul className="font-body relative inline-flex h-full w-full items-center justify-around px-8 text-lg text-yellow transition-all">
 					{navLinkElements}
 					<li>
 						<a
@@ -50,7 +49,7 @@ export default function Navbar() {
 					</li>
 				</ul>
 			</nav>
-			<ScrollingImage ltr={false} width="starbar">
+			<ScrollingImage ltr={true} width="starbar">
 				<img src={starbar} alt="" className="w-full object-cover" />
 			</ScrollingImage>
 		</div>
