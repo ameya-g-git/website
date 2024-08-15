@@ -7,21 +7,29 @@ import create from "/assets/projects_icons/create_icon.svg";
 import explore from "/assets/projects_icons/explore_icon.svg";
 import discover from "/assets/projects_icons/discover_icon.svg";
 
+import websiteBanner from "/embedbanner.webp";
+
 import localforage from "localforage";
 import ProjectCard, { props as cardProps } from "../components/ProjectCard";
 import { getRepoDetails } from "../hooks/getRepoDetails";
 import { useLoaderData } from "react-router-dom";
 
 export async function loader() {
-	const repoNames: string[] = ["mirrormult-figma-plugin", "mc-quantization", "keep-it-real"]; // repositories to load
+	const repoNames: string[] = [
+		"website",
+		"basic-dithering-app",
+		"keep-it-real",
+		"mirrormult-figma-plugin",
+		"mc-quantization",
+	]; // repositories to load
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made
 
 	const repoDetails = await localforage.keys().then(async (keys) => {
 		let details: (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
 		details = []; // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
 
-		if (keys.length >= 1 && !makeRequest) {
-			// if localforage is not empty and request doesn't need to be made
+		if (keys.length >= 1) {
+			// if localforage is not empty
 			const result: cardProps[] | null = await localforage.getItem("key", (err) => {
 				if (err) {
 					console.log(err);
@@ -83,7 +91,7 @@ export default function Projects() {
 	const languageIcons = languages.map((lang, i) => {
 		return (
 			<object
-				key={lang}
+				key={`${lang}-${i}`}
 				width={50}
 				height={50}
 				className="absolute -ml-6 -mt-6 animate-orbit-rev stroke-yellow brightness-0"
@@ -101,7 +109,7 @@ export default function Projects() {
 	const toolIcons = tools.map((tool, i) => {
 		return (
 			<object
-				key={tool}
+				key={`${tool}-${i}`}
 				width={50}
 				height={50}
 				className="absolute -ml-6 -mt-6 animate-orbit brightness-0"
@@ -119,7 +127,7 @@ export default function Projects() {
 	const frameworkIcons = frameworks.map((framework, i) => {
 		return (
 			<object
-				key={framework}
+				key={`${framework}-${i}`}
 				width={50}
 				height={50}
 				className="absolute -ml-6 -mt-6 animate-orbit-rev brightness-0"
@@ -196,10 +204,20 @@ export default function Projects() {
 						<h1 className="text-4xl">discover</h1>
 					</div>
 				</div>
-				<div className="my-8 box-border flex h-96 min-h-60 w-full flex-row items-stretch gap-4 px-12">
-					<ProjectCard {...loaderData[0]} url="" top={50} />
-					<ProjectCard {...loaderData[1]} url="" newLanguages={["matplotlib", "numpy"]} />
-					<ProjectCard {...loaderData[2]} url="" newLanguages={["flask", "tailwind"]} />
+				<div className="my-8 box-border grid min-h-60 w-full grid-cols-3 items-stretch gap-8 gap-x-4 px-12">
+					<ProjectCard
+						{...loaderData[1]}
+						newLanguages={["vite", "flask", "numpy"]}
+						top={50}
+					/>
+					<ProjectCard {...loaderData[2]} newLanguages={["matplotlib", "numpy"]} />
+					<ProjectCard
+						{...loaderData[0]}
+						top={25}
+						img={websiteBanner}
+						newLanguages={["vite", "react", "tailwind"]}
+					/>
+					<ProjectCard {...loaderData[3]} top={50} />
 				</div>
 			</section>
 		</>

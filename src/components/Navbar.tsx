@@ -49,7 +49,7 @@ export default function Navbar() {
 					</li>
 				</ul>
 			</nav>
-			<ScrollingImage ltr={true} width="starbar">
+			<ScrollingImage ltr={false} width="starbar">
 				<img src={starbar} alt="" className="w-full object-cover" />
 			</ScrollingImage>
 		</div>
