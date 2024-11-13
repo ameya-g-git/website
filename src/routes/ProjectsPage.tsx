@@ -16,9 +16,10 @@ import { useLoaderData } from "react-router-dom";
 
 export async function loader() {
 	const repoNames: string[] = [
-		"website",
-		"basic-dithering-app",
+		"app-alert",
 		"keep-it-real",
+		"basic-dithering-app",
+		"website",
 		"mirrormult-figma-plugin",
 		"mc-quantization",
 	]; // repositories to load
@@ -26,7 +27,7 @@ export async function loader() {
 
 	const repoDetails = await localforage.keys().then(async (keys) => {
 		let details: (cardProps | null | void)[]; // cardProps comes from ProjectCard.tsx
-		details = []; // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary APi calls
+		details = []; // details will be the value returned from this operation to either a) make a request || b) use cached repo data to avoid unnecessary API calls
 
 		if (keys.length >= 1) {
 			// if localforage is not empty
@@ -206,18 +207,24 @@ export default function Projects() {
 				</div>
 				<div className="my-8 box-border grid min-h-60 w-full grid-cols-3 items-stretch gap-8 gap-x-4 px-12">
 					<ProjectCard
-						{...loaderData[1]}
-						newLanguages={["vite", "flask", "numpy"]}
+						{...loaderData[0]}
+						newLanguages={["vite", "react", "flask"]}
 						top={50}
 					/>
-					<ProjectCard {...loaderData[2]} newLanguages={["matplotlib", "numpy"]} />
+					<ProjectCard {...loaderData[1]} newLanguages={["flask"]} />
+					<ProjectCard top={50} newLanguages={["flask", "numpy"]} {...loaderData[2]} />
 					<ProjectCard
-						{...loaderData[0]}
 						top={25}
 						img={websiteBanner}
 						newLanguages={["vite", "react", "tailwind"]}
+						{...loaderData[3]}
 					/>
-					<ProjectCard {...loaderData[3]} top={50} />
+					<ProjectCard {...loaderData[4]} top={50} />
+					<ProjectCard
+						{...loaderData[5]}
+						newLanguages={["matplotlib", "numpy"]}
+						top={50}
+					/>
 				</div>
 			</section>
 		</>
