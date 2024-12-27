@@ -27,7 +27,7 @@ export default function Navbar() {
 			className={`fixed z-[9999] inline-flex h-14 w-full justify-around bg-black p-3 transition-all ease-in-out`}
 		>
 			<ScrollingImage ltr={true} width="starbar">
-				<img src={starbar} alt="" className="w-full object-cover" />
+				<img src={starbar} alt="" className="w-64 object-cover" />
 			</ScrollingImage>
 			<nav className="w-full">
 				<ul className="font-body relative inline-flex h-full w-full items-center justify-around px-8 text-lg text-yellow transition-all">
@@ -50,7 +50,7 @@ export default function Navbar() {
 				</ul>
 			</nav>
 			<ScrollingImage ltr={false} width="starbar">
-				<img src={starbar} alt="" className="w-full object-cover" />
+				<img src={starbar} alt="" className="w-64 object-cover" />
 			</ScrollingImage>
 		</div>
 	);

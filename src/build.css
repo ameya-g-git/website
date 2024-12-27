@@ -753,6 +753,22 @@ object {
   top: 28rem;
 }
 
+.top-96 {
+  top: 24rem;
+}
+
+.top-80 {
+  top: 20rem;
+}
+
+.top-3\/4 {
+  top: 75%;
+}
+
+.top-\[22rem\] {
+  top: 22rem;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -1800,6 +1816,10 @@ object {
   height: auto;
 }
 
+.\*\:h-96 > * {
+  height: 24rem;
+}
+
 .\*\:max-w-12 > * {
   max-width: 3rem;
 }
@@ -1860,6 +1880,12 @@ object {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+@media (min-width: 640px) {
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:my-\[6vh\] {
     margin-top: 6vh;
@@ -1890,6 +1916,10 @@ object {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
   }
 
   .md\:px-20 {
@@ -1932,6 +1962,10 @@ object {
 }
 
 @media (min-width: 1024px) {
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;

@@ -100,7 +100,7 @@ export default function ProjectCard({
 							</p>
 						</div>
 					</motion.div>
-					<div className="absolute -bottom-4 z-20 flex w-full flex-row items-center justify-center gap-2">
+					<div className="absolute top-[22rem] z-20 flex w-full flex-row flex-wrap items-center justify-center gap-2">
 						{languageCards ? languageCards : null}
 					</div>
 					<svg rx={24} className="pointer-events-none absolute h-full w-full select-none">

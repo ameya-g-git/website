@@ -113,6 +113,11 @@ export default function Home() {
 		screenWidth >= 768 ? "text-[22vh]" : "text-[22vw]",
 	]);
 
+	const projectSectionStyles = clsx({
+		"box-border flex min-h-60 w-full flex-row items-stretch gap-4 *:h-96": true,
+		"flex-col": screenWidth < 1080,
+	});
+
 	return (
 		<>
 			<section id="banner" role="banner" className="relative h-screen w-full overflow-hidden">
@@ -206,7 +211,7 @@ export default function Home() {
 						<img className="h-full" src={dev_icon} alt="React fragment element icon" />
 						<h2>working on!</h2>
 					</span>
-					<div className="box-border flex h-96 min-h-60 w-full flex-row items-stretch gap-4">
+					<div className={projectSectionStyles}>
 						<ProjectCard {...cardData[0]} top={50} />
 						<ProjectCard
 							{...cardData[1]}
@@ -274,7 +279,7 @@ export default function Home() {
 						<img className="h-full" src={pen_icon} alt="Pen icon" />
 						<h2>design work too!</h2>
 					</span>
-					<div className="flex w-full flex-row justify-stretch gap-4">
+					<div className="flex w-full flex-col justify-stretch gap-4 md:flex-row">
 						<DesignCard
 							path="/portfolio/gfx"
 							img={gd_card}
