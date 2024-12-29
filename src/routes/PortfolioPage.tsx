@@ -168,7 +168,7 @@ export default function PortfolioPage() {
 				)}
 				<div className="absolute bottom-0 z-[99] scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
-						<img src={wave} alt="" className="w-full object-cover" />
+						<img src={wave} className="w-screen" alt="" />
 					</ScrollingImage>
 				</div>
 			</section>

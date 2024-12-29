@@ -13,6 +13,7 @@ import localforage from "localforage";
 import ProjectCard, { props as cardProps } from "../components/ProjectCard";
 import { getRepoDetails } from "../hooks/getRepoDetails";
 import { useLoaderData } from "react-router-dom";
+import clsx from "clsx";
 
 export async function loader() {
 	const repoNames: string[] = [
@@ -88,6 +89,12 @@ export default function Projects() {
 
 	const widths = [screenWidth * 0.75, screenWidth * 0.85, screenWidth * 0.95];
 	const strokeWidth = 5;
+
+	const cardBoxStyles = clsx({
+		"flex-wrap gap-4 min-h-60 w-full justify-center p-4": true,
+		"flex flex-col": screenWidth < 960,
+		"grid grid-cols-3": screenWidth >= 960,
+	});
 
 	const languageIcons = languages.map((lang, i) => {
 		return (
@@ -185,7 +192,7 @@ export default function Projects() {
 				</div>
 				<div className="absolute bottom-0 scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
-						<img src={wave} alt="" className="w-full object-cover" />
+						<img src={wave} className="w-screen" alt="" />
 					</ScrollingImage>
 				</div>
 			</section>
@@ -205,7 +212,7 @@ export default function Projects() {
 						<h1 className="text-4xl">discover</h1>
 					</div>
 				</div>
-				<div className="my-8 box-border grid min-h-60 w-full grid-cols-3 items-stretch gap-8 gap-x-4 px-12">
+				<div className={cardBoxStyles}>
 					<ProjectCard
 						{...loaderData[0]}
 						newLanguages={["vite", "react", "flask"]}
