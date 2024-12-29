@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "../components/Image";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { useKeyPress } from "../hooks/useKeyPress";
 
 export default function PortfolioGFX() {
 	const imagePaths = Object.keys(import.meta.glob("/public/assets/gfx/*.webp")).sort((a, b) => {
@@ -10,6 +11,13 @@ export default function PortfolioGFX() {
 
 		return bNum - aNum;
 	}); // sorted based on the first number
+
+	useKeyPress("ArrowLeft", (_) =>
+		imagePortal.show ? setImagePortal((prev) => ({ ...prev, img: prevImg(prev.img) })) : null,
+	);
+	useKeyPress("ArrowRight", (_) =>
+		imagePortal.show ? setImagePortal((prev) => ({ ...prev, img: nextImg(prev.img) })) : null,
+	);
 
 	const imageNames = imagePaths.map((path) => {
 		const imageFullName = pathToImgName(path);

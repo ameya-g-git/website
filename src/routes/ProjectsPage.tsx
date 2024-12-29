@@ -34,7 +34,7 @@ export async function loader() {
 			// if localforage is not empty
 			const result: cardProps[] | null = await localforage.getItem("key", (err) => {
 				if (err) {
-					console.log(err);
+					console.error(err);
 				}
 			});
 			if (result) {
@@ -59,12 +59,12 @@ export async function loader() {
 		if (makeRequest) {
 			// code to make the request
 			const repoDetailsPromises = repoNames.map((repoName: string) =>
-				getRepoDetails(repoName).catch((err) => console.log(err)),
+				getRepoDetails(repoName).catch((err) => console.error(err)),
 			);
 			details = await Promise.all(repoDetailsPromises);
 			await localforage.setItem("key", details, (err) => {
 				if (err) {
-					console.log(err);
+					console.error(err);
 				}
 			});
 		}
