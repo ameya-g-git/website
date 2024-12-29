@@ -52,7 +52,7 @@ export default function ProjectCard({
 		languageCards = languages.map((language, i) => (
 			<div
 				key={i}
-				className="box-border flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl"
+				className="box-border flex aspect-square max-w-10 items-center justify-center rounded-lg border-2 border-white/30 bg-card-black p-2 backdrop-blur-xl"
 			>
 				<img
 					src={`/assets/icons/${language}.svg`}
@@ -95,12 +95,12 @@ export default function ProjectCard({
 									{name ? name : "no-repo-found"}
 								</h2>
 							</span>
-							<p className="leading-tighter text-md text-white lg:text-lg lg:leading-tight">
+							<p className="text-md leading-tight text-white lg:text-lg">
 								{description ? description : "lorem ipsum and such"}
 							</p>
 						</div>
 					</motion.div>
-					<div className="absolute top-[22rem] z-20 flex w-full flex-row flex-wrap items-center justify-center gap-2">
+					<div className="absolute top-[22rem] z-20 flex w-full flex-row items-center justify-center gap-2 px-4">
 						{languageCards ? languageCards : null}
 					</div>
 					<svg rx={24} className="pointer-events-none absolute h-full w-full select-none">

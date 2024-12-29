@@ -174,20 +174,22 @@ export default function Projects() {
 				role="banner"
 				className="relative flex h-screen w-full items-center justify-center overflow-hidden"
 			>
-				<div
-					id="orbit"
-					className="visible absolute flex h-full w-full select-none items-center justify-center"
-				>
-					{circleElements}
-					<div id="languages">{languageIcons}</div>
-					<div id="tools">{toolIcons}</div>
-					<div id="frameworks">{frameworkIcons}</div>
-				</div>
+				{screenWidth > 768 && (
+					<div
+						id="orbit"
+						className="visible absolute flex h-full w-full select-none items-center justify-center"
+					>
+						{circleElements}
+						<div id="languages">{languageIcons}</div>
+						<div id="tools">{toolIcons}</div>
+						<div id="frameworks">{frameworkIcons}</div>
+					</div>
+				)}
 				<div className="z-50 flex items-center justify-center bg-yellow font-page-heading text-black">
 					<h1 className="text-[25vw] md:text-[18rem]">projects</h1>
 					<img
 						src={planet_curve}
-						className="absolute mr-8 h-72 md:mr-[4.5rem] md:h-[12.5rem]"
+						className="absolute mr-6 h-[4.25rem] md:mr-[4.5rem] md:h-[12.5rem]"
 					/>
 				</div>
 				<div className="absolute bottom-0 scale-150 md:scale-100">

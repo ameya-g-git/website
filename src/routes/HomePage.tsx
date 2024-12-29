@@ -192,7 +192,7 @@ export default function Home() {
 							aspiring software developer | multidisciplinary creative | graphic
 							designer | 3d artist | ui designer
 						</h3>
-						<hr className="w-11/12 border-black" />
+						<hr className="w-full border-black md:w-11/12" />
 						<h3 className="">
 							passionate about bringing bold, unique design to software solutions
 						</h3>
@@ -204,12 +204,18 @@ export default function Home() {
 					</ScrollingImage>
 				</div>
 			</section>
-			<main className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-12 [&_h2]:h-full [&_h2]:text-3xl">
+			<main className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-6 [&_h2]:h-full [&_h2]:text-3xl">
 				<section id="projects" className="flex flex-col items-end gap-4">
-					<span className="flex h-8 w-full flex-row items-end gap-2">
+					<span className="mb-12 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
 						<h2>here's what i've been</h2>
-						<img className="h-full" src={dev_icon} alt="React fragment element icon" />
-						<h2>working on!</h2>
+						<div className="flex h-full flex-row gap-2">
+							<img
+								className="h-full"
+								src={dev_icon}
+								alt="React fragment element icon"
+							/>
+							<h2>working on!</h2>
+						</div>
 					</span>
 					<div className={projectSectionStyles}>
 						<ProjectCard {...cardData[0]} top={50} />
@@ -225,7 +231,7 @@ export default function Home() {
 						/>
 					</div>
 					<Link
-						className="mt-4 w-[32.5%] text-lg"
+						className="mt-4 w-full text-lg md:w-[32.5%]"
 						to="projects"
 						onClick={(_e) => document.getElementById("banner")!.scrollIntoView()}
 					>
@@ -234,10 +240,12 @@ export default function Home() {
 				</section>
 
 				<section id="technologies" className="flex flex-col items-baseline gap-4">
-					<span className="flex h-8 w-full flex-row items-center justify-end gap-2">
+					<span className="mb-8 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
 						<h2>here are the</h2>
-						<img className="h-full" src={tech_icon} alt="Stack icon" />
-						<h2>skills i've gained!</h2>
+						<div className="flex h-full flex-row gap-2">
+							<img className="h-full" src={tech_icon} alt="Hammer icon" />
+							<h2>skills i've gained!</h2>
+						</div>
 					</span>
 					<div className="box-border flex w-full flex-col items-stretch gap-3 md:flex-row">
 						<div id="languages" className="flex flex-grow flex-col gap-2">
@@ -274,10 +282,12 @@ export default function Home() {
 				</section>
 
 				<section id="design" className="flex flex-col items-baseline gap-4">
-					<span className="flex h-8 w-full flex-row items-center gap-2">
+					<span className="mb-12 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
 						<h2>check out some of my</h2>
-						<img className="h-full" src={pen_icon} alt="Pen icon" />
-						<h2>design work too!</h2>
+						<div className="flex h-full flex-row gap-2">
+							<img className="h-full" src={pen_icon} alt="Pen icon" />
+							<h2>design work too!</h2>
+						</div>
 					</span>
 					<div className="flex w-full flex-col justify-stretch gap-4 md:flex-row">
 						<DesignCard
@@ -296,7 +306,7 @@ export default function Home() {
 
 					<Link
 						to="portfolio/gfx"
-						className="mt-4 w-[32.5%] text-lg"
+						className="mt-4 w-full text-lg md:w-[32.5%]"
 						onClick={(_e) => document.getElementById("banner")!.scrollIntoView()}
 					>
 						<button className="w-full">take a look at the whole gallery! →</button>

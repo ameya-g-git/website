@@ -4,13 +4,20 @@ import slayschoolsBanner from "/assets/ui/slayschools.webp";
 import mirrormultBanner from "/assets/ui/mirrormult.webp";
 import rTistBanner from "/assets/ui/rtist.webp";
 import hitherAndDitherBanner from "/assets/ui/hitheranddither.webp";
+import useWindowSize from "../hooks/useWindowSize";
+import clsx from "clsx";
 
 export default function PortfolioUI() {
+	const { screenWidth } = useWindowSize();
+
+	const cardBoxStyles = clsx({
+		"flex-wrap gap-4 min-h-60 w-full justify-center p-4": true,
+		"flex flex-col": screenWidth < 960,
+		"grid grid-cols-3": screenWidth >= 960,
+	});
+
 	return (
-		<div
-			id="images"
-			className="my-8 box-border grid min-h-60 w-full grid-cols-3 flex-row items-stretch gap-4 px-12"
-		>
+		<div id="images" className={cardBoxStyles}>
 			<ProjectCard
 				img={websiteBanner}
 				top={30}

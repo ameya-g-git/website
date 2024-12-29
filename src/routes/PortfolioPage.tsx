@@ -66,7 +66,7 @@ export default function PortfolioPage() {
 				}}
 				href="#images"
 				onClick={(_e) => navigate(path)}
-				className="flex w-96 flex-row items-center rounded-lg py-4 pl-8 text-4xl text-white shadow-yellow hover:shadow-sm"
+				className="flex max-w-96 flex-row items-center rounded-lg py-4 pl-8 text-2xl text-white shadow-yellow hover:shadow-sm md:text-4xl"
 			>
 				<motion.img variants={titleAnim} src={icon} className="block h-10" alt="" />
 				<motion.h1 className="flex-grow text-center" variants={titleAnim}>
@@ -173,8 +173,10 @@ export default function PortfolioPage() {
 				</div>
 			</section>
 			<section className="flex flex-col items-center gap-2 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] pt-8">
-				<h2 className="text-2xl">always experimenting with new media and styles!</h2>
-				<div className="flex cursor-pointer flex-row gap-4 rounded-full">
+				<h2 className="text-center text-xl md:text-2xl">
+					always experimenting with new media and styles!
+				</h2>
+				<div className="flex w-full cursor-pointer flex-col gap-4 rounded-full px-4 md:flex-row">
 					<PortfolioLink icon={pen_icon} title="graphic design" path="/portfolio/gfx" />
 					<PortfolioLink icon={paintbrush_icon} title="ui design" path="/portfolio/ui" />
 				</div>

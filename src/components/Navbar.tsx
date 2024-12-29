@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import ScrollingImage from "./ScrollingImage";
 import starbar from "/assets/starbar.png";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function Navbar() {
+	const { screenWidth } = useWindowSize();
+
 	const routes: string[] = ["", "projects", "portfolio"];
 	const navElementClasses =
 		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 animate-nav-load";
@@ -24,12 +27,14 @@ export default function Navbar() {
 
 	return (
 		<div
-			className={`fixed z-[9999] inline-flex h-14 w-full justify-around bg-black p-3 transition-all ease-in-out`}
+			className={`fixed z-[9999] inline-flex h-14 w-screen justify-around bg-black p-3 transition-all ease-in-out`}
 		>
-			<ScrollingImage ltr={true} width="starbar">
-				<img src={starbar} alt="" className="w-64 object-cover" />
-			</ScrollingImage>
-			<nav className="w-full">
+			{screenWidth > 768 && (
+				<ScrollingImage ltr={true} width="starbar">
+					<img src={starbar} alt="" className="w-64 object-cover" />
+				</ScrollingImage>
+			)}
+			<nav className="w-full *:text-sm md:*:text-base">
 				<ul className="font-body relative inline-flex h-full w-full items-center justify-around px-8 text-lg text-yellow transition-all">
 					{navLinkElements}
 					<li>
@@ -49,9 +54,11 @@ export default function Navbar() {
 					</li>
 				</ul>
 			</nav>
-			<ScrollingImage ltr={false} width="starbar">
-				<img src={starbar} alt="" className="w-64 object-cover" />
-			</ScrollingImage>
+			{screenWidth > 768 && (
+				<ScrollingImage ltr={false} width="starbar">
+					<img src={starbar} alt="" className="w-64 object-cover" />
+				</ScrollingImage>
+			)}
 		</div>
 	);
 }
