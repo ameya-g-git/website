@@ -17,12 +17,12 @@ import clsx from "clsx";
 
 export async function loader() {
 	const repoNames: string[] = [
+		"hither-and-dither",
 		"app-alert",
 		"keep-it-real",
 		"basic-dithering-app",
 		"website",
 		"mirrormult-figma-plugin",
-		"mc-quantization",
 	]; // repositories to load
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made
 
@@ -223,25 +223,25 @@ export default function Projects() {
 					</div>
 				)}
 				<div className={cardBoxStyles}>
+					<ProjectCard {...loaderData[0]} newLanguages={["flask", "numpy", "tailwind"]} />
 					<ProjectCard
-						{...loaderData[0]}
+						{...loaderData[1]}
 						newLanguages={["vite", "react", "flask"]}
 						top={50}
 					/>
-					<ProjectCard {...loaderData[1]} newLanguages={["flask"]} />
-					<ProjectCard top={50} newLanguages={["flask", "numpy"]} {...loaderData[2]} />
+					<ProjectCard newLanguages={["flask"]} {...loaderData[2]} />
 					<ProjectCard
-						top={25}
 						img={websiteBanner}
-						newLanguages={["vite", "react", "tailwind"]}
+						newLanguages={["flask", "numpy"]}
+						top={50}
 						{...loaderData[3]}
 					/>
-					<ProjectCard {...loaderData[4]} top={50} />
 					<ProjectCard
-						{...loaderData[5]}
-						newLanguages={["matplotlib", "numpy"]}
-						top={50}
+						{...loaderData[4]}
+						top={25}
+						newLanguages={["vite", "react", "tailwind"]}
 					/>
+					<ProjectCard {...loaderData[5]} top={50} />
 				</div>
 			</section>
 		</>
