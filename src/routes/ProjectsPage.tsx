@@ -91,9 +91,10 @@ export default function Projects() {
 	const strokeWidth = 5;
 
 	const cardBoxStyles = clsx({
-		"flex-wrap gap-4 min-h-60 w-full justify-center p-4": true,
-		"flex flex-col": screenWidth < 960,
+		"flex-wrap gap-x-4 gap-y-6 min-h-60 w-full justify-center p-4": true,
+		"grid grid-cols-2": 960 >= screenWidth && screenWidth >= 720,
 		"grid grid-cols-3": screenWidth >= 960,
+		"flex flex-col": screenWidth < 720,
 	});
 
 	const languageIcons = languages.map((lang, i) => {

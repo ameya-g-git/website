@@ -114,9 +114,16 @@ export default function Home() {
 	]);
 
 	const projectSectionStyles = clsx({
-		"box-border flex min-h-60 w-full flex-row items-stretch gap-4 *:h-96": true,
-		"flex-col": screenWidth < 1080,
+		"flex w-full gap-4": true,
+		"flex-col": screenWidth < 960,
+		"flex-row": screenWidth >= 960,
 	});
+
+	// const cardBoxStyles = clsx({
+	// 	"flex-wrap gap-4 min-h-60 w-full justify-center p-4": true,
+	// 	"flex flex-col": screenWidth < 960,
+	// 	"grid grid-cols-3": screenWidth >= 960,
+	// });
 
 	return (
 		<>
