@@ -199,22 +199,29 @@ export default function Projects() {
 					</ScrollingImage>
 				</div>
 			</section>
-			<section className="flex flex-col items-center gap-2 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00]">
+			<section className="flex flex-col items-center gap-2 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] pt-4">
 				<h2 className="text-2xl">i like to make projects that help people</h2>
 				<div className="flex flex-row gap-8 rounded-full">
-					<div className="flex flex-row items-center gap-4 border-r-4 pr-8">
-						<img src={explore} alt="explore icon" />
+					<div className="flex items-center gap-4 border-r-4 pr-8">
+						{screenWidth > 768 && <img src={explore} alt="explore icon" />}
 						<h1 className="text-4xl">explore</h1>
 					</div>
 					<div className="flex flex-row items-center gap-4 border-r-4 pr-8">
-						<img src={create} alt="create icon" />
+						{screenWidth > 768 && <img src={create} alt="create icon" />}
 						<h1 className="text-4xl">create</h1>
 					</div>
 					<div className="flex flex-row items-center gap-4">
-						<img src={discover} alt="discover icon" />
+						{screenWidth > 768 && <img src={discover} alt="discover icon" />}
 						<h1 className="text-4xl">discover</h1>
 					</div>
 				</div>
+				{screenWidth < 768 && (
+					<div className="mt-2 flex h-8 flex-row gap-4">
+						<img src={explore} alt="explore icon" />
+						<img src={create} alt="create icon" />
+						<img src={discover} alt="discover icon" />
+					</div>
+				)}
 				<div className={cardBoxStyles}>
 					<ProjectCard
 						{...loaderData[0]}
