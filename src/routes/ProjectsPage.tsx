@@ -223,7 +223,11 @@ export default function Projects() {
 					</div>
 				)}
 				<div className={cardBoxStyles}>
-					<ProjectCard {...loaderData[0]} newLanguages={["flask", "numpy", "tailwind"]} />
+					<ProjectCard
+						top={50}
+						{...loaderData[0]}
+						newLanguages={["flask", "numpy", "tailwind"]}
+					/>
 					<ProjectCard
 						{...loaderData[1]}
 						newLanguages={["vite", "react", "flask"]}
