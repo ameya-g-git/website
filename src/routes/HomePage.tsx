@@ -42,7 +42,7 @@ interface windowSize {
 }
 
 export async function loader() {
-	const repoNames: string[] = ["mirrormult-figma-plugin", "keep-it-real", "basic-dithering-app"]; // repositories to load
+	const repoNames: string[] = ["mirrormult-figma-plugin", "keep-it-real", "paper-strings"]; // repositories to load
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made
 
 	const repoDetails = await localforage.keys().then(async (keys) => {
@@ -172,7 +172,7 @@ export default function Home() {
 							src="https://lottie.host/1dd41cb5-2633-4dc5-99ba-03b545ea86ce/5x9D1FO1SB.json"
 							loop
 							autoplay
-							className="h-8 md:h-16"
+							className="h-8 w-16 md:h-16"
 						/>
 						<h2 className="text-xl md:text-4xl">hi! i'm</h2>
 					</div>
@@ -234,7 +234,7 @@ export default function Home() {
 						<ProjectCard
 							{...cardData[2]}
 							top={50}
-							newLanguages={["flask", "tailwind"]}
+							newLanguages={["react", "tailwind", "numpy"]}
 						/>
 					</div>
 					<Link

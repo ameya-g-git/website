@@ -18,6 +18,7 @@ import clsx from "clsx";
 export async function loader() {
 	const repoNames: string[] = [
 		"hither-and-dither",
+		"paper-strings",
 		"app-alert",
 		"keep-it-real",
 		"basic-dithering-app",
