@@ -127,11 +127,7 @@ export default function Footer() {
 								link="https://linkedin.com/in/ameya-g"
 								alt="linkedin"
 							/>
-							<FooterButton
-								icon={resume}
-								link="/assets/AG_fullresume.pdf"
-								alt="resume"
-							/>
+							<FooterButton icon={resume} link="/assets/AG_resume.pdf" alt="resume" />
 						</div>
 					</div>
 					<p className="-mr-4 w-64 text-nowrap">
