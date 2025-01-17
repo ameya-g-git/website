@@ -205,7 +205,7 @@ export default function Home() {
 						</h3>
 					</div>
 				</div>
-				<div className="absolute bottom-0 scale-150 md:scale-100">
+				<div className="absolute bottom-0 w-full scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
 						<img src={wave} className="w-screen" alt="" />
 					</ScrollingImage>
