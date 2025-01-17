@@ -228,7 +228,7 @@ export default function Home() {
 						<ProjectCard {...cardData[0]} top={50} />
 						<ProjectCard
 							{...cardData[1]}
-							top={0}
+							top={50}
 							newLanguages={["matplotlib", "numpy"]}
 						/>
 						<ProjectCard

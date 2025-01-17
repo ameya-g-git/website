@@ -231,10 +231,10 @@ export default function Projects() {
 					/>
 					<ProjectCard
 						{...loaderData[1]}
-						newLanguages={["vite", "react", "flask"]}
+						newLanguages={["vite", "react", "numpy"]}
 						top={50}
 					/>
-					<ProjectCard newLanguages={["flask"]} {...loaderData[2]} />
+					<ProjectCard top={50} newLanguages={["flask"]} {...loaderData[2]} />
 					<ProjectCard
 						img={websiteBanner}
 						newLanguages={["flask", "numpy"]}
@@ -243,10 +243,10 @@ export default function Projects() {
 					/>
 					<ProjectCard
 						{...loaderData[4]}
-						top={25}
+						top={50}
 						newLanguages={["vite", "react", "tailwind"]}
 					/>
-					<ProjectCard {...loaderData[5]} top={50} />
+					<ProjectCard {...loaderData[5]} top={25} />
 				</div>
 			</section>
 		</>
