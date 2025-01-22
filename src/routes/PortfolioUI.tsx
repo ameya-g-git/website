@@ -41,7 +41,7 @@ export default function PortfolioUI() {
 			/>
 			<ProjectCard
 				img={slayschoolsBanner}
-				top={0}
+				top={50}
 				name="slayschool-redesign"
 				description="a redesign for the website of slayschool, a generative ai flashcard service. one of my first complete ui designs. received praise from the founder, ali jiwani!"
 				url="https://www.figma.com/proto/EnknM3UtRZ62LCNF09yrbG/slayschools-ui-redesign?page-id=0%3A1&node-id=0-6&viewport=1675%2C17%2C0.17&t=njV61w3L9ZI54sGD-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=0%3A6"

@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import ScrollingImage from "./ScrollingImage";
 import starbar from "/assets/starbar.png";
 import useWindowSize from "../hooks/useWindowSize";
 
 export default function Navbar() {
 	const { screenWidth } = useWindowSize();
+	const { pathname } = useLocation();
 
 	const routes: string[] = ["", "projects", "portfolio"];
 	const navElementClasses =
@@ -17,7 +18,7 @@ export default function Navbar() {
 				to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
 				onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 				className={({ isActive, isPending }) =>
-					`${navElementClasses} ${isActive ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
+					`${navElementClasses} ${isActive || (item === "portfolio" && pathname === "/portfolio/ui") ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
 				}
 			>
 				{item ? item : "home"}
@@ -31,11 +32,11 @@ export default function Navbar() {
 		>
 			{screenWidth > 768 && (
 				<ScrollingImage ltr={true} width="starbar">
-					<img src={starbar} alt="" className="w-64 object-cover" />
+					<img src={starbar} alt="" className="object-cover w-64" />
 				</ScrollingImage>
 			)}
 			<nav className="w-full *:text-sm md:*:text-base">
-				<ul className="font-body relative inline-flex h-full w-full items-center justify-around px-8 text-lg text-yellow transition-all">
+				<ul className="relative inline-flex items-center justify-around w-full h-full px-8 text-lg transition-all font-body text-yellow">
 					{navLinkElements}
 					<li>
 						<a
@@ -56,7 +57,7 @@ export default function Navbar() {
 			</nav>
 			{screenWidth > 768 && (
 				<ScrollingImage ltr={false} width="starbar">
-					<img src={starbar} alt="" className="w-64 object-cover" />
+					<img src={starbar} alt="" className="object-cover w-64" />
 				</ScrollingImage>
 			)}
 		</div>
