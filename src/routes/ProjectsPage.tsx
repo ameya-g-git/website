@@ -247,6 +247,7 @@ export default function Projects() {
 						newLanguages={["vite", "react", "tailwind"]}
 					/>
 					<ProjectCard {...loaderData[5]} top={25} />
+					<ProjectCard {...loaderData[6]} top={50} />
 				</div>
 			</section>
 		</>
