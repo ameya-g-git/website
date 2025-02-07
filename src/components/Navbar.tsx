@@ -9,7 +9,7 @@ export default function Navbar() {
 
 	const routes: string[] = ["", "projects", "portfolio"];
 	const navElementClasses =
-		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 animate-nav-load";
+		"content-box m-4 border-yellow transition-all hover:border-b-4 hover:-translate-y-0.5 ";
 
 	const navLinkElements = routes.map((item) => (
 		<li key={item}>
