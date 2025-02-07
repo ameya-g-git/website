@@ -115,7 +115,7 @@ export default function PortfolioGFX() {
 								</h2>
 							</div>
 
-							<div className="flex h-full w-screen items-center justify-between overflow-hidden p-6 pt-2">
+							<div className="flex h-full w-full items-center justify-between gap-2 overflow-hidden p-4 pr-8 pt-2">
 								<button
 									onClick={(e) => {
 										e.stopPropagation();
@@ -133,7 +133,7 @@ export default function PortfolioGFX() {
 								<motion.img
 									key={imagePortal.img}
 									variants={portalImg}
-									className="shadow-3xl max-h-full max-w-[90%] rounded-xl shadow-black/25"
+									className="shadow-3xl max-h-full max-w-[75%] rounded-lg"
 									src={imagePortal.img}
 									alt={pathToImgName(imagePortal.img)}
 								/>

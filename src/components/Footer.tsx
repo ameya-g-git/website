@@ -9,6 +9,7 @@ import github from "/assets/icons/github.png";
 import linkedin from "/assets/icons/linkedin.png";
 import resume from "/assets/icons/resume.png";
 import { Fragment } from "react/jsx-runtime";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface footerButtonProps {
 	icon: string;
@@ -30,6 +31,8 @@ function FooterButton({ icon, link, alt }: footerButtonProps) {
 }
 
 export default function Footer() {
+	const { screenWidth, screenHeight } = useWindowSize();
+
 	const firstLayer = (
 		<div className="flex flex-row items-center justify-end gap-1">
 			{Array(10)
@@ -57,14 +60,17 @@ export default function Footer() {
 				.fill("ameyaGupta")
 				.map((_name, id) => {
 					return id === 1 ? (
-						<p key={id} className="text-nowrap font-footer text-5xl text-yellow">
+						<p
+							key={id}
+							className="text-nowrap font-footer text-2xl text-yellow md:text-5xl"
+						>
 							let's work together!
 						</p>
 					) : (
 						<img
 							key={id}
 							src={id % 2 === 0 ? nameFill : nameOutline}
-							className="h-24 opacity-20"
+							className="h-14 opacity-20 md:h-24"
 							alt=""
 						/>
 					);
@@ -79,7 +85,7 @@ export default function Footer() {
 				.map((_name, id) => {
 					return id === 1 ? (
 						<Fragment key={id}>
-							<p className="text-nowrap font-footer text-8xl text-yellow">
+							<p className="text-nowrap font-footer text-4xl text-yellow md:text-8xl">
 								contact me
 							</p>
 							<img src={downarrow} className="w-30 flex" />
@@ -101,12 +107,16 @@ export default function Footer() {
 			<div className="-ml-[9%] flex w-[120%] flex-col items-center gap-4 shadow-footer">
 				<img src={arrowSmiley} className="my-2 mt-8 w-28" alt="" />
 				<div className="flex flex-col [&>*]:-my-0.5">
-					{firstLayer}
-					{secondLayer}
-					{thirdLayer}
+					{screenWidth > 480 && (
+						<>
+							{firstLayer}
+							{secondLayer}
+							{thirdLayer}
+						</>
+					)}
 				</div>
-				<div className="mb-8 flex h-fit w-full flex-row items-center justify-between px-56">
-					<div className="my-2 flex w-full flex-row items-center gap-[17rem]">
+				<div className="mb-8 flex h-fit w-full flex-col items-center justify-between px-16 md:flex-row md:px-56">
+					<div className="my-2 flex w-full flex-col items-center justify-between gap-4 text-center md:flex-row md:gap-0 md:text-left">
 						<p>
 							looking for entry-level positions to expand my skillset and make
 							valuable connections!
@@ -130,7 +140,7 @@ export default function Footer() {
 							<FooterButton icon={resume} link="/assets/AG_resume.pdf" alt="resume" />
 						</div>
 					</div>
-					<p className="-mr-4 w-64 text-nowrap">
+					<p className="mt-4 text-nowrap md:-mr-4 md:w-64">
 						created with ❤︎/✒︎ on{" "}
 						<a
 							className="underline"

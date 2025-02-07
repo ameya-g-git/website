@@ -114,9 +114,9 @@ export default function Home() {
 	]);
 
 	const projectSectionStyles = clsx({
-		"flex w-full gap-4": true,
-		"flex-col": screenWidth < 960,
-		"flex-row": screenWidth >= 960,
+		"flex w-full": true,
+		"flex-col gap-6": screenWidth < 960,
+		"flex-row gap-4": screenWidth >= 960,
 	});
 
 	// const cardBoxStyles = clsx({
