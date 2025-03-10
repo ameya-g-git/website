@@ -31,7 +31,7 @@ function FooterButton({ icon, link, alt }: footerButtonProps) {
 }
 
 export default function Footer() {
-	const { screenWidth, screenHeight } = useWindowSize();
+	const { screenWidth } = useWindowSize();
 
 	const firstLayer = (
 		<div className="flex flex-row items-center justify-end gap-1">
