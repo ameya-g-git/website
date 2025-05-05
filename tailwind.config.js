@@ -34,8 +34,8 @@ export default {
 					},
 				},
 				"nav-load": {
-					"0%, 100%": { "border-width": "4px" },
-					"50%": { "border-width": "0px" },
+					"0%, 100%": { "border-bottom-width": "4px" },
+					"50%": { "border-bottom-width": "0px" },
 				},
 			},
 			colors: {

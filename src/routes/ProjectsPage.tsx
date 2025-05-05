@@ -23,6 +23,7 @@ export async function loader() {
 		"keep-it-real",
 		"basic-dithering-app",
 		"website",
+		"armoire",
 		"mirrormult-figma-plugin",
 	]; // repositories to load
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made

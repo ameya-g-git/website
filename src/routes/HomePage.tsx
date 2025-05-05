@@ -99,7 +99,7 @@ export default function Home() {
 	const loaderData: any = useLoaderData();
 	const cardData = loaderData;
 
-	const languages = ["python", "c++", "html", "css", "typescript"];
+	const languages = ["python", "c++", "html", "css", "typescript", "sql", "php"];
 	const tools = ["git", "vite", "node", "pip", "figma"];
 	const frameworks = ["react", "vue", "tailwind", "bootstrap", "flask", "numpy", "matplotlib"];
 
@@ -211,7 +211,7 @@ export default function Home() {
 					</ScrollingImage>
 				</div>
 			</section>
-			<main className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-6 [&_h2]:h-full [&_h2]:text-3xl">
+			<main className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-6 [&_h2]:text-3xl">
 				<section id="projects" className="flex flex-col items-end gap-4">
 					<span className="mb-12 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
 						<h2>here's what i've been</h2>
@@ -256,8 +256,8 @@ export default function Home() {
 					</span>
 					<div className="box-border flex w-full flex-col items-stretch gap-3 md:flex-row">
 						<div id="languages" className="flex flex-grow flex-col gap-2">
-							<h2 className="my-2 text-2xl text-white/50">languages</h2>
-							<div className="grid grid-flow-col grid-rows-5 gap-2">
+							<h2 className="my-2 h-12 text-2xl text-white/50">languages</h2>
+							<div className="grid h-full grid-flow-row grid-rows-7 gap-2">
 								{languages.map((lang, i) => (
 									<ToolCard key={i} name={lang} />
 								))}
@@ -266,7 +266,7 @@ export default function Home() {
 
 						<div id="tools" className="flex flex-grow flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">tools</h2>
-							<div className="grid grid-flow-col grid-rows-5 gap-2">
+							<div className="grid grid-flow-row grid-rows-7 gap-2">
 								{tools.map((tool, i) => (
 									<ToolCard
 										key={i}
@@ -277,9 +277,9 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div id="frameworks" className="flex flex-grow-[2] flex-col gap-2">
+						<div id="frameworks" className="flex flex-grow flex-col gap-2">
 							<h2 className="my-2 text-2xl text-white/50">frameworks</h2>
-							<div className="grid grid-flow-col grid-rows-5 gap-2">
+							<div className="grid grid-flow-row grid-rows-7 gap-2">
 								{frameworks.map((framework, i) => (
 									<ToolCard key={i} name={framework} />
 								))}
