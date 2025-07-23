@@ -290,18 +290,18 @@ Original authors: Sean Weeks, Alan Weeks
 								<li>
 									<a
 										href="javascript:void(0)"
-										class="accessible ak_c nav_link link_criteria title_font"
+										class="accessible ak_c nav_link link_criteria title_font navselected"
 										onclick="UU.caseViewCriteria();"
-										title="View the Select Courses region"
+										title="You are currently viewing the Select Courses region"
 										>Select <span class="akl">C</span>ourses</a
 									>
 								</li>
 								<li>
 									<a
 										href="javascript:void(0)"
-										class="accessible ak_r nav_link link_results title_font navselected"
+										class="accessible ak_r nav_link link_results title_font"
 										onclick="UU.caseViewResults();"
-										title="You are currently viewing the Results region"
+										title="View the Generated Results region"
 										>Schedule <span class="akl">R</span>esults</a
 									>
 								</li>
@@ -332,7 +332,7 @@ Original authors: Sean Weeks, Alan Weeks
 										id="page_criteria"
 										role="region"
 										aria-labelledby="page_criteria_label"
-										class="vsb_page disable-get-schedule noprint"
+										class="vsb_page disable-get-schedule noprint active_vsb_page"
 										style="width: 34.3826%"
 									>
 										<div
@@ -3343,7 +3343,11 @@ Original authors: Sean Weeks, Alan Weeks
 														aria-atomic="true"
 													></div>
 
-													<div class="bubble" id="step2bubble">
+													<div
+														class="bubble"
+														id="step2bubble"
+														style="display: none"
+													>
 														<div class="bubbletitle hide50">
 															Step<span class="bubbleNb2">2</span>
 														</div>
@@ -3564,7 +3568,7 @@ Original authors: Sean Weeks, Alan Weeks
 														aria-label="List of courses:"
 													></h3>
 													<div id="size-tester">
-														Stay enrolled in LEC C01 - TUT T01
+														Stay enrolled in LEC C02 - TUT T05
 													</div>
 
 													<div
@@ -4493,7 +4497,7 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<div
 																					class="cnf_trash_tip mdl-tooltip mdl-tooltip--top dynID"
-																					for="tipTrashWildX_5"
+																					for="tipTrashWildX_0"
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Drop this
@@ -4502,7 +4506,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<button
 																					aria-label="Remove class"
 																					class="cnf_trash_button mdl-button mdl-js-button mdl-button--icon dynID"
-																					id="tipTrashWildX_5"
+																					id="tipTrashWildX_0"
 																					data-upgraded=",MaterialButton"
 																					style="
 																						cursor: default;
@@ -4549,10 +4553,10 @@ Original authors: Sean Weeks, Alan Weeks
 																>
 																	<input
 																		type="checkbox"
-																		id="cnf_toggle_5"
+																		id="cnf_toggle_0"
 																		class="mdl-checkbox__input ignore_check dynID"
 																		checked="checked"
-																		aria-label="COMPSCI 2C03 Data Structures and Algorithms"
+																		aria-label="MATH 2LA3 Applications of Linear Algebra"
 																		style="
 																			display: inline-block;
 																		" />
@@ -4590,14 +4594,14 @@ Original authors: Sean Weeks, Alan Weeks
 																				<div
 																					class="cbox-cn bc1"
 																				>
-																					COMPSCI<br />2C03
+																					MATH<br />2LA3
 																				</div>
 																			</td>
 																			<td class="cbox-header">
 																				<div
 																					class="mdl-tooltip mdl-tooltip--right dynID"
 																					aria-hidden="true"
-																					for="tipCourseLinkX_5"
+																					for="tipCourseLinkX_0"
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Courses with
@@ -4607,7 +4611,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				</div>
 																				<span
 																					class="block_piece_indicator_cont dynID"
-																					id="tipCourseLinkX_5"
+																					id="tipCourseLinkX_0"
 																					style="
 																						display: none;
 																					"
@@ -4620,9 +4624,9 @@ Original authors: Sean Weeks, Alan Weeks
 																				></span>
 																				<span
 																					class="leftnclear cbox-title"
-																					>Data Structures
-																					and
-																					Algorithms</span
+																					>Applications of
+																					Linear
+																					Algebra</span
 																				>
 																				<span
 																					class="cnf_req_state"
@@ -4659,23 +4663,24 @@ Original authors: Sean Weeks, Alan Weeks
 																					<!-- <div class="dh_locker_hotspot" onclick="UU.caseToggleDropLock($(this).parents('.requirementDiv2').data('cnfid'));">&nbsp;</div> -->
 																					<!-- <img src="images/padlock.gif" style="vertical-align:middle;" class="dropdownLockImg" alt="Padlock" title="The specific class you are to take for this course has been assigned to you by an advisor"/> -->
 																					<select
-																						class="cbox-dropdown cbox-dropdown-normal dropdownSelect"
+																						class="cbox-dropdown dropdownSelect cbox-dropdown-normal"
 																						aria-label="Please select a course section from this dropdown.  If selected, course schedules will only be generated containing the selected sections for a given course."
 																						style="
-																							max-width: 139px;
+																							max-width: 201px;
 																						"
 																					>
 																						<option
-																							value="kp_MCMST--2259_3668-3779-"
+																							value="kp_MCMST--2259_2105-2107-"
+																							selected="selected"
 																						>
 																							Stay
 																							enrolled
 																							in LEC
-																							C02 -
-																							TUT T05
+																							C01 -
+																							TUT T02
 																						</option>
 																						<option
-																							value="dp_MCMST--2259_3668-3779-"
+																							value="dp_MCMST--2259_2105-2107-"
 																						>
 																							Drop
 																							Course
@@ -4683,11 +4688,10 @@ Original authors: Sean Weeks, Alan Weeks
 																						<option
 																							aria-label="Current selection "
 																							value="al"
-																							selected="selected"
 																						>
 																							Try all
 																							classes
-																							(6)
+																							(2)
 																						</option>
 																						<!-- <option value="ig">Ignore this course</option>  -->
 																						<option
@@ -4697,50 +4701,22 @@ Original authors: Sean Weeks, Alan Weeks
 																							Try
 																							specific
 																							classes
-																							(6/6)
+																							(2/2)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3480-3481-"
+																							value="us_MCMST--2259_2105-2106-"
 																						>
 																							LEC C01
 																							- TUT
 																							T01
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3480-3482-"
+																							value="us_MCMST--2259_2105-2107-"
 																						>
 																							LEC C01
 																							- TUT
 																							T02
-																						</option>
-																						<option
-																							value="us_MCMST--2259_3480-8958-"
-																						>
-																							LEC C01
-																							- TUT
-																							T03
-																						</option>
-																						<option
-																							value="us_MCMST--2259_3668-3779-"
-																						>
-																							LEC C02
-																							- TUT
-																							T05
 																							(Closed)
-																						</option>
-																						<option
-																							value="us_MCMST--2259_3779-3780-"
-																						>
-																							LEC C02
-																							- TUT
-																							T06
-																						</option>
-																						<option
-																							value="us_MCMST--2259_3779-3860-"
-																						>
-																							LEC C02
-																							- TUT
-																							T07
 																						</option>
 																					</select>
 
@@ -4751,10 +4727,10 @@ Original authors: Sean Weeks, Alan Weeks
 																							cursor: pointer;
 																							margin: -2px
 																								0px;
-																							display: none;
 																						"
 																						class="dropdownPinImg"
 																						alt="Push Pin"
+																						title="Click to unpin course"
 																					/>
 																					<img
 																						src="test_loggedin_semesterselected_files/padlock.gif"
@@ -4771,7 +4747,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					<div
 																						class="cnf_class_lock_tip mdl-tooltip mdl-tooltip--top dynID"
 																						aria-hidden="true"
-																						for="tipClsLockX_5"
+																						for="tipClsLockX_0"
 																						data-upgraded=",MaterialTooltip"
 																					>
 																						Click to
@@ -4791,7 +4767,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					<button
 																						aria-label="lock class"
 																						class="class_locker_button mdl-button mdl-js-button mdl-button--icon dynID"
-																						id="tipClsLockX_5"
+																						id="tipClsLockX_0"
 																						onclick="UU.caseToggleDropLock($(this).parents('.requirementDiv2').data('cnfid'));"
 																						style="
 																							margin: -6px
@@ -4826,7 +4802,7 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<div
 																					class="cnf_locker_tip mdl-tooltip mdl-tooltip--top dynID"
-																					for="tipLockX_5"
+																					for="tipLockX_0"
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Click to lock
@@ -4843,7 +4819,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<button
 																					aria-label="lock course"
 																					class="cnf_locker_button mdl-button mdl-js-button mdl-button--icon dynID"
-																					id="tipLockX_5"
+																					id="tipLockX_0"
 																					data-upgraded=",MaterialButton"
 																					tabindex="0"
 																				>
@@ -4868,7 +4844,7 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<div
 																					class="cnf_trash_tip mdl-tooltip mdl-tooltip--top dynID"
-																					for="tipTrashX_5"
+																					for="tipTrashX_0"
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Drop this
@@ -4877,7 +4853,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<button
 																					aria-label="Remove course"
 																					class="cnf_trash_button mdl-button mdl-js-button mdl-button--icon dynID"
-																					id="tipTrashX_5"
+																					id="tipTrashX_0"
 																					data-upgraded=",MaterialButton"
 																					style="
 																						cursor: default;
@@ -4914,16 +4890,16 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<div
 																					class="mdl-tooltip mdl-tooltip--top dynID cnf_tip_expand"
-																					for="tipExpandX_5"
+																					for="tipExpandX_0"
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Expand detail on
-																					COMPSCI 2C03
+																					MATH 2LA3
 																				</div>
 																				<button
 																					aria-label="Expand course detail"
 																					class="mdl-button mdl-js-button mdl-button--icon dynID"
-																					id="tipExpandX_5"
+																					id="tipExpandX_0"
 																					data-upgraded=",MaterialButton"
 																					tabindex="0"
 																				>
@@ -4949,35 +4925,25 @@ Original authors: Sean Weeks, Alan Weeks
 																		>
 																		<span
 																			class="cbox-row-content cnf_desc_desc"
-																			>Basic data structures:
-																			stacks, queues, hash
-																			tables, and binary
-																			trees; searching and
-																			sorting; graph
-																			representations and
-																			algorithms, including
-																			minimum spanning trees,
-																			traversals, shortest
-																			paths; introduction to
-																			algorithmic design
-																			strategies; correctness
-																			and performance
-																			analysis.<br />Three
-																			lectures, one tutorial
-																			(one hour); first term;
-																			may be offered also in
-																			the first term<br />Prerequisite(s):
-																			COMPSCI 1DM3 or 2DM3;
-																			COMPSCI 1XC3 or 1XD3 or
-																			1MD3 or MATH 1MP3, and
-																			registration in any
-																			Computer Science program
-																			(see Department Note 3
-																			in the course listing)
-																			or in the Minor in
-																			Computer Science.<br />Antirequisite(s):
-																			SFWRENG 2C03, COMPENG
-																			3SM4</span
+																			>This course focuses on
+																			applications of linear
+																			algebra. Topics include
+																			linear programming,
+																			applications of matrix
+																			decomposition theorems,
+																			examples from data
+																			science, singular value
+																			decomposition and
+																			applications to
+																			compression.<br />Three
+																			lectures, one tutorial;
+																			one term<br />Prerequisite(s):
+																			One of MATH 1AA3, 1LT3,
+																			1NN3, 1XX3, 1ZB3,
+																			ARTSSCI 1D06 A/B, ISCI
+																			1A24 A/B; and one of
+																			MATH 1B03, 1ZC3,
+																			1ZZ5</span
 																		>
 																		<div
 																			style="clear: both"
@@ -5043,12 +5009,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cam_0_020127231205661034"
+																					for="cam_0_0051336644144718946"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cam="MCMSTiMCMST"
-																						id="cam_0_020127231205661034"
+																						id="cam_0_0051336644144718946"
 																						class="mdl-checkbox__input cnf_cam_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -5146,15 +5112,15 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox dynID mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cb_online_5"
+																					for="cb_online_0"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																				>
 																					<input
 																						type="checkbox"
-																						id="cb_online_5"
+																						id="cb_online_0"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2C03 Data Structures and Algorithms" />
+																						aria-label="MATH 2LA3 Applications of Linear Algebra" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Online</span
@@ -5180,15 +5146,15 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox dynID mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cb_on_camp_5"
+																					for="cb_on_camp_0"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																				>
 																					<input
 																						type="checkbox"
-																						id="cb_on_camp_5"
+																						id="cb_on_camp_0"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2C03 Data Structures and Algorithms" />
+																						aria-label="MATH 2LA3 Applications of Linear Algebra" />
 																					<span
 																						class="cbox-selitem-label"
 																						>On
@@ -5215,15 +5181,15 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox dynID mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cb_lod_5"
+																					for="cb_lod_0"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																				>
 																					<input
 																						type="checkbox"
-																						id="cb_lod_5"
+																						id="cb_lod_0"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2C03 Data Structures and Algorithms" />
+																						aria-label="MATH 2LA3 Applications of Linear Algebra" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Learn on
@@ -5289,15 +5255,15 @@ Original authors: Sean Weeks, Alan Weeks
 																		<span
 																			class="class_checkboxes"
 																			><span
-																				class="cbox-selitem cbox-classitem"
+																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="0-020127231205661034"
+																					for="0-0051336644144718946"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="0"
-																						id="0-020127231205661034"
+																						id="0-0051336644144718946"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -5321,7 +5287,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Pin down class"
+																					title="Pin down class instead"
 																				>
 																					+
 																				</div></span
@@ -5329,91 +5295,17 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="1-020127231205661034"
+																					for="1-0051336644144718946"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="1"
-																						id="1-020127231205661034"
+																						id="1-0051336644144718946"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
 																						>LEC C01 -
-																						TUT
-																						T02</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="2-020127231205661034"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="2"
-																						id="2-020127231205661034"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T03</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="3-020127231205661034"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="3"
-																						id="3-020127231205661034"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C02 -
-																						TUT T05<span
+																						TUT T02<span
 																							style="
 																								color: #cc0000;
 																							"
@@ -5441,83 +5333,9 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Pin down class"
+																					title="Unpin class"
 																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="4-020127231205661034"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="4"
-																						id="4-020127231205661034"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C02 -
-																						TUT
-																						T06</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="5-020127231205661034"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="5"
-																						id="5-020127231205661034"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C02 -
-																						TUT
-																						T07</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class"
-																				>
-																					+
+																					-
 																				</div></span
 																			></span
 																		>
@@ -5729,7 +5547,7 @@ Original authors: Sean Weeks, Alan Weeks
 																		id="cnf_toggle_1"
 																		class="mdl-checkbox__input ignore_check dynID"
 																		checked="checked"
-																		aria-label="MATH 2LA3 Applications of Linear Algebra"
+																		aria-label="COMPSCI 2GA3 Computer Architecture"
 																		style="
 																			display: inline-block;
 																		" />
@@ -5767,7 +5585,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<div
 																					class="cbox-cn bc2"
 																				>
-																					MATH<br />2LA3
+																					COMPSCI<br />2GA3
 																				</div>
 																			</td>
 																			<td class="cbox-header">
@@ -5797,9 +5615,8 @@ Original authors: Sean Weeks, Alan Weeks
 																				></span>
 																				<span
 																					class="leftnclear cbox-title"
-																					>Applications of
-																					Linear
-																					Algebra</span
+																					>Computer
+																					Architecture</span
 																				>
 																				<span
 																					class="cnf_req_state"
@@ -5839,21 +5656,21 @@ Original authors: Sean Weeks, Alan Weeks
 																						class="cbox-dropdown dropdownSelect cbox-dropdown-normal"
 																						aria-label="Please select a course section from this dropdown.  If selected, course schedules will only be generated containing the selected sections for a given course."
 																						style="
-																							max-width: 201px;
+																							max-width: 180px;
 																						"
 																					>
 																						<option
-																							value="kp_MCMST--2259_2105-2107-"
+																							value="kp_MCMST--2259_2951-2952-"
 																							selected="selected"
 																						>
 																							Stay
 																							enrolled
 																							in LEC
 																							C01 -
-																							TUT T02
+																							TUT T01
 																						</option>
 																						<option
-																							value="dp_MCMST--2259_2105-2107-"
+																							value="dp_MCMST--2259_2951-2952-"
 																						>
 																							Drop
 																							Course
@@ -5864,7 +5681,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						>
 																							Try all
 																							classes
-																							(2)
+																							(5)
 																						</option>
 																						<!-- <option value="ig">Ignore this course</option>  -->
 																						<option
@@ -5874,21 +5691,39 @@ Original authors: Sean Weeks, Alan Weeks
 																							Try
 																							specific
 																							classes
-																							(2/2)
+																							(5/5)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_2105-2106-"
+																							value="us_MCMST--2259_2951-2952-"
 																						>
 																							LEC C01
 																							- TUT
 																							T01
+																							(Closed)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_2105-2107-"
+																							value="us_MCMST--2259_2951-2953-"
 																						>
 																							LEC C01
 																							- TUT
-																							T02
+																							T02 or
+																							LEC C01
+																							- TUT
+																							T04
+																						</option>
+																						<option
+																							value="us_MCMST--2259_2951-2954-"
+																						>
+																							LEC C01
+																							- TUT
+																							T03
+																						</option>
+																						<option
+																							value="us_MCMST--2259_2951-3781-"
+																						>
+																							LEC C01
+																							- TUT
+																							T05
 																							(Closed)
 																						</option>
 																					</select>
@@ -6067,7 +5902,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Expand detail on
-																					MATH 2LA3
+																					COMPSCI 2GA3
 																				</div>
 																				<button
 																					aria-label="Expand course detail"
@@ -6098,25 +5933,34 @@ Original authors: Sean Weeks, Alan Weeks
 																		>
 																		<span
 																			class="cbox-row-content cnf_desc_desc"
-																			>This course focuses on
-																			applications of linear
-																			algebra. Topics include
-																			linear programming,
-																			applications of matrix
-																			decomposition theorems,
-																			examples from data
-																			science, singular value
-																			decomposition and
-																			applications to
-																			compression.<br />Three
-																			lectures, one tutorial;
-																			one term<br />Prerequisite(s):
-																			One of MATH 1AA3, 1LT3,
-																			1NN3, 1XX3, 1ZB3,
-																			ARTSSCI 1D06 A/B, ISCI
-																			1A24 A/B; and one of
-																			MATH 1B03, 1ZC3,
-																			1ZZ5</span
+																			>Introduction to logic
+																			gates, computer
+																			arithmetic,
+																			instruction-set
+																			architecture, assembly
+																			programming, translation
+																			of high-level languages
+																			into assembly. Computer
+																			system organization:
+																			datapath and control,
+																			pipelining, memory
+																			hierarchies, I/O
+																			systems; measures of
+																			performance.<br />Three
+																			lectures, one tutorial,
+																			(one hour); first term;
+																			may be offered also in
+																			the second term<br />Prerequisite(s):
+																			One of the following:<br />
+																			• COMPSCI 1XC3 and 1DM3
+																			and registration in any
+																			Computer Science program
+																			(see Department Note 3
+																			in the course listing)
+																			or in the Minor in
+																			Computer Science.<br />Antirequisite(s):
+																			COMPENG 3DR4, 4DM4,
+																			SFWRENG 2GA3, 3GA3</span
 																		>
 																		<div
 																			style="clear: both"
@@ -6182,12 +6026,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cam_0_008474021002909737"
+																					for="cam_0_07342869574205688"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cam="MCMSTiMCMST"
-																						id="cam_0_008474021002909737"
+																						id="cam_0_07342869574205688"
 																						class="mdl-checkbox__input cnf_cam_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -6293,7 +6137,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_online_1"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="MATH 2LA3 Applications of Linear Algebra" />
+																						aria-label="COMPSCI 2GA3 Computer Architecture" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Online</span
@@ -6327,7 +6171,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_on_camp_1"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="MATH 2LA3 Applications of Linear Algebra" />
+																						aria-label="COMPSCI 2GA3 Computer Architecture" />
 																					<span
 																						class="cbox-selitem-label"
 																						>On
@@ -6362,7 +6206,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_lod_1"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="MATH 2LA3 Applications of Linear Algebra" />
+																						aria-label="COMPSCI 2GA3 Computer Architecture" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Learn on
@@ -6428,57 +6272,20 @@ Original authors: Sean Weeks, Alan Weeks
 																		<span
 																			class="class_checkboxes"
 																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
+																				class="cbox-selitem cbox-classitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="0-008474021002909737"
+																					for="0-07342869574205688"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="0"
-																						id="0-008474021002909737"
+																						id="0-07342869574205688"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
 																						>LEC C01 -
-																						TUT
-																						T01</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="1-008474021002909737"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="1"
-																						id="1-008474021002909737"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT T02<span
+																						TUT T01<span
 																							style="
 																								color: #cc0000;
 																							"
@@ -6509,6 +6316,159 @@ Original authors: Sean Weeks, Alan Weeks
 																					title="Unpin class"
 																				>
 																					-
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="1-07342869574205688"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="1"
+																						id="1-07342869574205688"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T02</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="3-07342869574205688"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="3"
+																						id="3-07342869574205688"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T03</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="2-07342869574205688"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="2"
+																						id="2-07342869574205688"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T04</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="4-07342869574205688"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="4"
+																						id="4-07342869574205688"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT T05<span
+																							style="
+																								color: #cc0000;
+																							"
+																						>
+																							(Closed)</span
+																						></span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
 																				</div></span
 																			></span
 																		>
@@ -6720,7 +6680,7 @@ Original authors: Sean Weeks, Alan Weeks
 																		id="cnf_toggle_2"
 																		class="mdl-checkbox__input ignore_check dynID"
 																		checked="checked"
-																		aria-label="COMPSCI 2GA3 Computer Architecture"
+																		aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science"
 																		style="
 																			display: inline-block;
 																		" />
@@ -6758,7 +6718,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<div
 																					class="cbox-cn bc3"
 																				>
-																					COMPSCI<br />2GA3
+																					COMPSCI<br />2LC3
 																				</div>
 																			</td>
 																			<td class="cbox-header">
@@ -6788,8 +6748,10 @@ Original authors: Sean Weeks, Alan Weeks
 																				></span>
 																				<span
 																					class="leftnclear cbox-title"
-																					>Computer
-																					Architecture</span
+																					>Logical
+																					Reasoning for
+																					Computer
+																					Science</span
 																				>
 																				<span
 																					class="cnf_req_state"
@@ -6833,7 +6795,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						"
 																					>
 																						<option
-																							value="kp_MCMST--2259_2951-2952-"
+																							value="kp_MCMST--2259_3484-3485-"
 																							selected="selected"
 																						>
 																							Stay
@@ -6843,7 +6805,7 @@ Original authors: Sean Weeks, Alan Weeks
 																							TUT T01
 																						</option>
 																						<option
-																							value="dp_MCMST--2259_2951-2952-"
+																							value="dp_MCMST--2259_3484-3485-"
 																						>
 																							Drop
 																							Course
@@ -6854,7 +6816,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						>
 																							Try all
 																							classes
-																							(5)
+																							(7)
 																						</option>
 																						<!-- <option value="ig">Ignore this course</option>  -->
 																						<option
@@ -6864,40 +6826,42 @@ Original authors: Sean Weeks, Alan Weeks
 																							Try
 																							specific
 																							classes
-																							(5/5)
+																							(7/7)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_2951-2952-"
+																							value="us_MCMST--2259_3484-3485-"
 																						>
 																							LEC C01
 																							- TUT
-																							T01
+																							T01 or
+																							LEC C01
+																							- TUT
+																							T03
 																							(Closed)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_2951-2953-"
+																							value="us_MCMST--2259_3484-3486-"
 																						>
 																							LEC C01
 																							- TUT
-																							T02 or
+																							T02
+																						</option>
+																						<option
+																							value="us_MCMST--2259_3484-3488-"
+																						>
 																							LEC C01
 																							- TUT
 																							T04
 																						</option>
 																						<option
-																							value="us_MCMST--2259_2951-2954-"
+																							value="us_MCMST--2259_3484-3669-"
 																						>
 																							LEC C01
 																							- TUT
-																							T03
-																						</option>
-																						<option
-																							value="us_MCMST--2259_2951-3781-"
-																						>
-																							LEC C01
-																							- TUT
-																							T05
-																							(Closed)
+																							T05 or
+																							L... LEC
+																							C01 -
+																							TUT T07
 																						</option>
 																					</select>
 
@@ -7075,7 +7039,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Expand detail on
-																					COMPSCI 2GA3
+																					COMPSCI 2LC3
 																				</div>
 																				<button
 																					aria-label="Expand course detail"
@@ -7107,33 +7071,29 @@ Original authors: Sean Weeks, Alan Weeks
 																		<span
 																			class="cbox-row-content cnf_desc_desc"
 																			>Introduction to logic
-																			gates, computer
-																			arithmetic,
-																			instruction-set
-																			architecture, assembly
-																			programming, translation
-																			of high-level languages
-																			into assembly. Computer
-																			system organization:
-																			datapath and control,
-																			pipelining, memory
-																			hierarchies, I/O
-																			systems; measures of
-																			performance.<br />Three
-																			lectures, one tutorial,
-																			(one hour); first term;
+																			and proof techniques for
+																			practical reasoning:
+																			propositional logic,
+																			predicate logic,
+																			structural induction;
+																			rigorous proofs in
+																			discrete mathematics and
+																			programming.<br />Three
+																			lectures, one tutorial
+																			(two hours); first term;
 																			may be offered also in
 																			the second term<br />Prerequisite(s):
-																			One of the following:<br />
-																			• COMPSCI 1XC3 and 1DM3
-																			and registration in any
+																			COMPSCI 1DM3, 1JC3; one
+																			of COMPSCI 1MD3, 1XC3,
+																			1XD3, MATH 1MP3 and
+																			registration in any
 																			Computer Science program
 																			(see Department Note 3
 																			in the course listing)
 																			or in the Minor in
 																			Computer Science.<br />Antirequisite(s):
-																			COMPENG 3DR4, 4DM4,
-																			SFWRENG 2GA3, 3GA3</span
+																			COMPSCI 2DM3, SFWRENG
+																			2DM3</span
 																		>
 																		<div
 																			style="clear: both"
@@ -7199,12 +7159,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cam_0_029278541719467566"
+																					for="cam_0_06659169740926291"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cam="MCMSTiMCMST"
-																						id="cam_0_029278541719467566"
+																						id="cam_0_06659169740926291"
 																						class="mdl-checkbox__input cnf_cam_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -7310,7 +7270,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_online_2"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2GA3 Computer Architecture" />
+																						aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Online</span
@@ -7344,7 +7304,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_on_camp_2"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2GA3 Computer Architecture" />
+																						aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science" />
 																					<span
 																						class="cbox-selitem-label"
 																						>On
@@ -7379,7 +7339,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_lod_2"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2GA3 Computer Architecture" />
+																						aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Learn on
@@ -7448,12 +7408,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="0-029278541719467566"
+																					for="0-06659169740926291"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="0"
-																						id="0-029278541719467566"
+																						id="0-06659169740926291"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -7486,7 +7446,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Unpin class"
+																					title="Unpin classes at this meeting time"
 																				>
 																					-
 																				</div></span
@@ -7494,12 +7454,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="1-029278541719467566"
+																					for="2-06659169740926291"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
-																						data-cfsi="1"
-																						id="1-029278541719467566"
+																						data-cfsi="2"
+																						id="2-06659169740926291"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -7523,7 +7483,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Pin down class instead"
+																					title="Pin down classes at this meeting time instead"
 																				>
 																					+
 																				</div></span
@@ -7531,91 +7491,17 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="3-029278541719467566"
+																					for="1-06659169740926291"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
-																						data-cfsi="3"
-																						id="3-029278541719467566"
+																						data-cfsi="1"
+																						id="1-06659169740926291"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
 																						>LEC C01 -
-																						TUT
-																						T03</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="2-029278541719467566"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="2"
-																						id="2-029278541719467566"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T04</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down class instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="4-029278541719467566"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="4"
-																						id="4-029278541719467566"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT T05<span
+																						TUT T03<span
 																							style="
 																								color: #cc0000;
 																							"
@@ -7639,7 +7525,155 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Pin down class instead"
+																					title="Unpin classes at this meeting time"
+																				>
+																					-
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="3-06659169740926291"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="3"
+																						id="3-06659169740926291"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T04</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down classes at this meeting time instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="4-06659169740926291"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="4"
+																						id="4-06659169740926291"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T05</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down classes at this meeting time instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="5-06659169740926291"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="5"
+																						id="5-06659169740926291"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T06</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down classes at this meeting time instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="6-06659169740926291"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="6"
+																						id="6-06659169740926291"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T07</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down classes at this meeting time instead"
 																				>
 																					+
 																				</div></span
@@ -7853,7 +7887,7 @@ Original authors: Sean Weeks, Alan Weeks
 																		id="cnf_toggle_3"
 																		class="mdl-checkbox__input ignore_check dynID"
 																		checked="checked"
-																		aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science"
+																		aria-label="COMPSCI 2ME3 Introduction to Software Development"
 																		style="
 																			display: inline-block;
 																		" />
@@ -7891,7 +7925,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<div
 																					class="cbox-cn bc4"
 																				>
-																					COMPSCI<br />2LC3
+																					COMPSCI<br />2ME3
 																				</div>
 																			</td>
 																			<td class="cbox-header">
@@ -7921,10 +7955,9 @@ Original authors: Sean Weeks, Alan Weeks
 																				></span>
 																				<span
 																					class="leftnclear cbox-title"
-																					>Logical
-																					Reasoning for
-																					Computer
-																					Science</span
+																					>Introduction to
+																					Software
+																					Development</span
 																				>
 																				<span
 																					class="cnf_req_state"
@@ -7968,7 +8001,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						"
 																					>
 																						<option
-																							value="kp_MCMST--2259_3484-3485-"
+																							value="kp_MCMST--2259_3489-3490-"
 																							selected="selected"
 																						>
 																							Stay
@@ -7978,7 +8011,7 @@ Original authors: Sean Weeks, Alan Weeks
 																							TUT T01
 																						</option>
 																						<option
-																							value="dp_MCMST--2259_3484-3485-"
+																							value="dp_MCMST--2259_3489-3490-"
 																						>
 																							Drop
 																							Course
@@ -7989,7 +8022,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						>
 																							Try all
 																							classes
-																							(7)
+																							(5)
 																						</option>
 																						<!-- <option value="ig">Ignore this course</option>  -->
 																						<option
@@ -7999,42 +8032,34 @@ Original authors: Sean Weeks, Alan Weeks
 																							Try
 																							specific
 																							classes
-																							(7/7)
+																							(5/5)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3484-3485-"
+																							value="us_MCMST--2259_3489-3490-"
 																						>
 																							LEC C01
 																							- TUT
 																							T01 or
 																							LEC C01
 																							- TUT
-																							T03
-																							(Closed)
-																						</option>
-																						<option
-																							value="us_MCMST--2259_3484-3486-"
-																						>
-																							LEC C01
-																							- TUT
 																							T02
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3484-3488-"
+																							value="us_MCMST--2259_3489-3670-"
 																						>
 																							LEC C01
 																							- TUT
-																							T04
+																							T03
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3484-3669-"
+																							value="us_MCMST--2259_3489-3783-"
 																						>
 																							LEC C01
 																							- TUT
-																							T05 or
-																							L... LEC
-																							C01 -
-																							TUT T07
+																							T04 or
+																							LEC C01
+																							- TUT
+																							T05
 																						</option>
 																					</select>
 
@@ -8212,7 +8237,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Expand detail on
-																					COMPSCI 2LC3
+																					COMPSCI 2ME3
 																				</div>
 																				<button
 																					aria-label="Expand course detail"
@@ -8243,30 +8268,35 @@ Original authors: Sean Weeks, Alan Weeks
 																		>
 																		<span
 																			class="cbox-row-content cnf_desc_desc"
-																			>Introduction to logic
-																			and proof techniques for
-																			practical reasoning:
-																			propositional logic,
-																			predicate logic,
-																			structural induction;
-																			rigorous proofs in
-																			discrete mathematics and
-																			programming.<br />Three
-																			lectures, one tutorial
+																			>Classes and
+																			inheritance, class
+																			invariants, interface
+																			specifications;
+																			object-oriented design
+																			patterns; exception
+																			handling; tools for
+																			interface documentation,
+																			testing, program
+																			analysis; requirements
+																			documentation; quality
+																			attributes; development
+																			models.<br />Three
+																			lectures one tutorial
 																			(two hours); first term;
 																			may be offered also in
 																			the second term<br />Prerequisite(s):
-																			COMPSCI 1DM3, 1JC3; one
-																			of COMPSCI 1MD3, 1XC3,
-																			1XD3, MATH 1MP3 and
-																			registration in any
+																			<br />
+																			• COMPSCI 1XC3 or 1XD3,
+																			and registration in any
 																			Computer Science program
 																			(see Department Note 3
 																			in the course listing)
 																			or in the Minor in
-																			Computer Science.<br />Antirequisite(s):
-																			COMPSCI 2DM3, SFWRENG
-																			2DM3</span
+																			Computer Science<br />Co-requisite(s):
+																			COMPSCI 2LC3<br />Antirequisite(s):
+																			SFWRENG 2AA4, SFWRENG
+																			3K04, MECHTRON
+																			3K04</span
 																		>
 																		<div
 																			style="clear: both"
@@ -8332,12 +8362,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cam_0_06062323597873929"
+																					for="cam_0_04420741749155416"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cam="MCMSTiMCMST"
-																						id="cam_0_06062323597873929"
+																						id="cam_0_04420741749155416"
 																						class="mdl-checkbox__input cnf_cam_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -8443,7 +8473,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_online_3"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science" />
+																						aria-label="COMPSCI 2ME3 Introduction to Software Development" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Online</span
@@ -8477,7 +8507,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_on_camp_3"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science" />
+																						aria-label="COMPSCI 2ME3 Introduction to Software Development" />
 																					<span
 																						class="cbox-selitem-label"
 																						>On
@@ -8512,7 +8542,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_lod_3"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2LC3 Logical Reasoning for Computer Science" />
+																						aria-label="COMPSCI 2ME3 Introduction to Software Development" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Learn on
@@ -8581,12 +8611,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="0-06062323597873929"
+																					for="0-04420741749155416"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="0"
-																						id="0-06062323597873929"
+																						id="0-04420741749155416"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -8627,60 +8657,18 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="2-06062323597873929"
+																					for="1-04420741749155416"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
-																						data-cfsi="2"
-																						id="2-06062323597873929"
+																						data-cfsi="1"
+																						id="1-04420741749155416"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
 																						>LEC C01 -
 																						TUT
 																						T02</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down classes at this meeting time instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="1-06062323597873929"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="1"
-																						id="1-06062323597873929"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT T03<span
-																							style="
-																								color: #cc0000;
-																							"
-																						>
-																							(Closed)</span
-																						></span
 																					><span
 																						class="mdl-checkbox__focus-helper"
 																					></span
@@ -8706,12 +8694,49 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="3-06062323597873929"
+																					for="2-04420741749155416"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="2"
+																						id="2-04420741749155416"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T03</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down classes at this meeting time instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="3-04420741749155416"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="3"
-																						id="3-06062323597873929"
+																						id="3-04420741749155416"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -8743,92 +8768,18 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="4-06062323597873929"
+																					for="4-04420741749155416"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="4"
-																						id="4-06062323597873929"
+																						id="4-04420741749155416"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
 																						>LEC C01 -
 																						TUT
 																						T05</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down classes at this meeting time instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="5-06062323597873929"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="5"
-																						id="5-06062323597873929"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T06</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down classes at this meeting time instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="6-06062323597873929"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="6"
-																						id="6-06062323597873929"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T07</span
 																					><span
 																						class="mdl-checkbox__focus-helper"
 																					></span
@@ -9060,7 +9011,7 @@ Original authors: Sean Weeks, Alan Weeks
 																		id="cnf_toggle_4"
 																		class="mdl-checkbox__input ignore_check dynID"
 																		checked="checked"
-																		aria-label="COMPSCI 2ME3 Introduction to Software Development"
+																		aria-label="COMPSCI 2C03 Data Structures and Algorithms"
 																		style="
 																			display: inline-block;
 																		" />
@@ -9098,7 +9049,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				<div
 																					class="cbox-cn bc5"
 																				>
-																					COMPSCI<br />2ME3
+																					COMPSCI<br />2C03
 																				</div>
 																			</td>
 																			<td class="cbox-header">
@@ -9128,9 +9079,9 @@ Original authors: Sean Weeks, Alan Weeks
 																				></span>
 																				<span
 																					class="leftnclear cbox-title"
-																					>Introduction to
-																					Software
-																					Development</span
+																					>Data Structures
+																					and
+																					Algorithms</span
 																				>
 																				<span
 																					class="cnf_req_state"
@@ -9174,17 +9125,17 @@ Original authors: Sean Weeks, Alan Weeks
 																						"
 																					>
 																						<option
-																							value="kp_MCMST--2259_3489-3490-"
+																							value="kp_MCMST--2259_3668-3779-"
 																							selected="selected"
 																						>
 																							Stay
 																							enrolled
 																							in LEC
-																							C01 -
-																							TUT T01
+																							C02 -
+																							TUT T05
 																						</option>
 																						<option
-																							value="dp_MCMST--2259_3489-3490-"
+																							value="dp_MCMST--2259_3668-3779-"
 																						>
 																							Drop
 																							Course
@@ -9195,7 +9146,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						>
 																							Try all
 																							classes
-																							(5)
+																							(6)
 																						</option>
 																						<!-- <option value="ig">Ignore this course</option>  -->
 																						<option
@@ -9205,34 +9156,50 @@ Original authors: Sean Weeks, Alan Weeks
 																							Try
 																							specific
 																							classes
-																							(5/5)
+																							(6/6)
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3489-3490-"
+																							value="us_MCMST--2259_3480-3481-"
 																						>
 																							LEC C01
 																							- TUT
-																							T01 or
+																							T01
+																						</option>
+																						<option
+																							value="us_MCMST--2259_3480-3482-"
+																						>
 																							LEC C01
 																							- TUT
 																							T02
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3489-3670-"
+																							value="us_MCMST--2259_3480-8958-"
 																						>
 																							LEC C01
 																							- TUT
 																							T03
 																						</option>
 																						<option
-																							value="us_MCMST--2259_3489-3783-"
+																							value="us_MCMST--2259_3668-3779-"
 																						>
-																							LEC C01
-																							- TUT
-																							T04 or
-																							LEC C01
+																							LEC C02
 																							- TUT
 																							T05
+																							(Closed)
+																						</option>
+																						<option
+																							value="us_MCMST--2259_3779-3780-"
+																						>
+																							LEC C02
+																							- TUT
+																							T06
+																						</option>
+																						<option
+																							value="us_MCMST--2259_3779-3860-"
+																						>
+																							LEC C02
+																							- TUT
+																							T07
 																						</option>
 																					</select>
 
@@ -9410,7 +9377,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					data-upgraded=",MaterialTooltip"
 																				>
 																					Expand detail on
-																					COMPSCI 2ME3
+																					COMPSCI 2C03
 																				</div>
 																				<button
 																					aria-label="Expand course detail"
@@ -9441,35 +9408,35 @@ Original authors: Sean Weeks, Alan Weeks
 																		>
 																		<span
 																			class="cbox-row-content cnf_desc_desc"
-																			>Classes and
-																			inheritance, class
-																			invariants, interface
-																			specifications;
-																			object-oriented design
-																			patterns; exception
-																			handling; tools for
-																			interface documentation,
-																			testing, program
-																			analysis; requirements
-																			documentation; quality
-																			attributes; development
-																			models.<br />Three
-																			lectures one tutorial
-																			(two hours); first term;
+																			>Basic data structures:
+																			stacks, queues, hash
+																			tables, and binary
+																			trees; searching and
+																			sorting; graph
+																			representations and
+																			algorithms, including
+																			minimum spanning trees,
+																			traversals, shortest
+																			paths; introduction to
+																			algorithmic design
+																			strategies; correctness
+																			and performance
+																			analysis.<br />Three
+																			lectures, one tutorial
+																			(one hour); first term;
 																			may be offered also in
-																			the second term<br />Prerequisite(s):
-																			<br />
-																			• COMPSCI 1XC3 or 1XD3,
-																			and registration in any
+																			the first term<br />Prerequisite(s):
+																			COMPSCI 1DM3 or 2DM3;
+																			COMPSCI 1XC3 or 1XD3 or
+																			1MD3 or MATH 1MP3, and
+																			registration in any
 																			Computer Science program
 																			(see Department Note 3
 																			in the course listing)
 																			or in the Minor in
-																			Computer Science<br />Co-requisite(s):
-																			COMPSCI 2LC3<br />Antirequisite(s):
-																			SFWRENG 2AA4, SFWRENG
-																			3K04, MECHTRON
-																			3K04</span
+																			Computer Science.<br />Antirequisite(s):
+																			SFWRENG 2C03, COMPENG
+																			3SM4</span
 																		>
 																		<div
 																			style="clear: both"
@@ -9535,12 +9502,12 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="cam_0_040005670398627335"
+																					for="cam_0_024733801954998613"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cam="MCMSTiMCMST"
-																						id="cam_0_040005670398627335"
+																						id="cam_0_024733801954998613"
 																						class="mdl-checkbox__input cnf_cam_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
@@ -9646,7 +9613,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_online_4"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2ME3 Introduction to Software Development" />
+																						aria-label="COMPSCI 2C03 Data Structures and Algorithms" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Online</span
@@ -9680,7 +9647,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_on_camp_4"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2ME3 Introduction to Software Development" />
+																						aria-label="COMPSCI 2C03 Data Structures and Algorithms" />
 																					<span
 																						class="cbox-selitem-label"
 																						>On
@@ -9715,7 +9682,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						id="cb_lod_4"
 																						class="mdl-checkbox__input dynID"
 																						checked="checked"
-																						aria-label="COMPSCI 2ME3 Introduction to Software Development" />
+																						aria-label="COMPSCI 2C03 Data Structures and Algorithms" />
 																					<span
 																						class="cbox-selitem-label"
 																						>Learn on
@@ -9781,20 +9748,131 @@ Original authors: Sean Weeks, Alan Weeks
 																		<span
 																			class="class_checkboxes"
 																			><span
-																				class="cbox-selitem cbox-classitem"
+																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="0-040005670398627335"
+																					for="0-024733801954998613"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="0"
-																						id="0-040005670398627335"
+																						id="0-024733801954998613"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
 																						>LEC C01 -
-																						TUT T01<span
+																						TUT
+																						T01</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="1-024733801954998613"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="1"
+																						id="1-024733801954998613"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T02</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="2-024733801954998613"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="2"
+																						id="2-024733801954998613"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C01 -
+																						TUT
+																						T03</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="3-024733801954998613"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="3"
+																						id="3-024733801954998613"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C02 -
+																						TUT T05<span
 																							style="
 																								color: #cc0000;
 																							"
@@ -9822,7 +9900,7 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Unpin classes at this meeting time"
+																					title="Unpin class"
 																				>
 																					-
 																				</div></span
@@ -9830,129 +9908,18 @@ Original authors: Sean Weeks, Alan Weeks
 																				class="cbox-selitem cbox-classitem cbox-faded"
 																				><label
 																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="1-040005670398627335"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="1"
-																						id="1-040005670398627335"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T02</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Unpin classes at this meeting time"
-																				>
-																					-
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="2-040005670398627335"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="2"
-																						id="2-040005670398627335"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T03</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down classes at this meeting time instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="3-040005670398627335"
-																					data-upgraded=",MaterialCheckbox,MaterialRipple"
-																					><input
-																						type="checkbox"
-																						data-cfsi="3"
-																						id="3-040005670398627335"
-																						class="mdl-checkbox__input class_chk"
-																						checked="checked" /><span
-																						class="cbox-selitem-label"
-																						>LEC C01 -
-																						TUT
-																						T04</span
-																					><span
-																						class="mdl-checkbox__focus-helper"
-																					></span
-																					><span
-																						class="mdl-checkbox__box-outline"
-																						><span
-																							class="mdl-checkbox__tick-outline"
-																						></span></span
-																					><span
-																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
-																						data-upgraded=",MaterialRipple"
-																						><span
-																							class="mdl-ripple"
-																						></span></span
-																				></label>
-																				<div
-																					class="cbox-hover-pin"
-																					title="Pin down classes at this meeting time instead"
-																				>
-																					+
-																				</div></span
-																			><span
-																				class="cbox-selitem cbox-classitem cbox-faded"
-																				><label
-																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
-																					for="4-040005670398627335"
+																					for="4-024733801954998613"
 																					data-upgraded=",MaterialCheckbox,MaterialRipple"
 																					><input
 																						type="checkbox"
 																						data-cfsi="4"
-																						id="4-040005670398627335"
+																						id="4-024733801954998613"
 																						class="mdl-checkbox__input class_chk"
 																						checked="checked" /><span
 																						class="cbox-selitem-label"
-																						>LEC C01 -
+																						>LEC C02 -
 																						TUT
-																						T05</span
+																						T06</span
 																					><span
 																						class="mdl-checkbox__focus-helper"
 																					></span
@@ -9970,7 +9937,44 @@ Original authors: Sean Weeks, Alan Weeks
 																				></label>
 																				<div
 																					class="cbox-hover-pin"
-																					title="Pin down classes at this meeting time instead"
+																					title="Pin down class instead"
+																				>
+																					+
+																				</div></span
+																			><span
+																				class="cbox-selitem cbox-classitem cbox-faded"
+																				><label
+																					class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect cbox-checkbox mdl-js-ripple-effect--ignore-events is-checked is-upgraded"
+																					for="5-024733801954998613"
+																					data-upgraded=",MaterialCheckbox,MaterialRipple"
+																					><input
+																						type="checkbox"
+																						data-cfsi="5"
+																						id="5-024733801954998613"
+																						class="mdl-checkbox__input class_chk"
+																						checked="checked" /><span
+																						class="cbox-selitem-label"
+																						>LEC C02 -
+																						TUT
+																						T07</span
+																					><span
+																						class="mdl-checkbox__focus-helper"
+																					></span
+																					><span
+																						class="mdl-checkbox__box-outline"
+																						><span
+																							class="mdl-checkbox__tick-outline"
+																						></span></span
+																					><span
+																						class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"
+																						data-upgraded=",MaterialRipple"
+																						><span
+																							class="mdl-ripple"
+																						></span></span
+																				></label>
+																				<div
+																					class="cbox-hover-pin"
+																					title="Pin down class instead"
 																				>
 																					+
 																				</div></span
@@ -10145,7 +10149,7 @@ Original authors: Sean Weeks, Alan Weeks
 												</div>
 												<div>
 													<span class="fullscreen-results-total-schedules"
-														>2 Schedule Results</span
+														>1 Schedule Result</span
 													>
 												</div>
 												<button
@@ -11089,7 +11093,7 @@ Original authors: Sean Weeks, Alan Weeks
 										id="page_results"
 										role="region"
 										aria-labelledby="page_results_label"
-										class="vsb_page active_vsb_page"
+										class="vsb_page"
 										style="width: 63.0764%"
 									>
 										<div class="left_gradient nomobile"></div>
@@ -11137,13 +11141,15 @@ Original authors: Sean Weeks, Alan Weeks
 												>
 													&nbsp;
 													<span id="procStatus"
-														>Found 3 schedule results...</span
+														>Found 6 schedule results...</span
 													>
 												</div>
 
 												<div id="flap_pause_results">
 													<div class="resultMax pause_max">0</div>
-													<div class="pause_found">schedule results</div>
+													<div class="pause_found" style="display: block">
+														schedule result
+													</div>
 													<div class="pause_view_results" style="">
 														<input
 															type="button"
@@ -11183,7 +11189,7 @@ Original authors: Sean Weeks, Alan Weeks
 														>
 														<span>of</span>
 														<span class="results-total-schedules"
-															>2</span
+															>1</span
 														>. This shows you a list of all the possible
 														schedules using your list of courses in the
 														'Select Courses' region. Navigate through
@@ -11638,33 +11644,29 @@ Original authors: Sean Weeks, Alan Weeks
 																					of
 																					<span
 																						class="results-total-schedules"
-																						>2</span
+																						>1</span
 																					>
 																				</div>
 																			</div>
 																		</td>
 																		<td>
 																			<a
-																				class="results-action-next"
+																				class="results-action-next results-nava-disabled"
 																				title="Next Result"
-																				href="javascript:void(0);"
-																				onclick="UU.caseNextResult()"
 																			>
 																				<i
-																					class="nav-next results-nav-btn"
+																					class="nav-next results-nav-btn results-nav-disabled"
 																					aria-hidden="true"
 																				></i>
 																			</a>
 																		</td>
 																		<td>
 																			<a
-																				class="results-action-last"
+																				class="results-action-last results-nava-disabled"
 																				title="Last Result"
-																				href="javascript:void(0);"
-																				onclick="UU.caseLastResult()"
 																			>
 																				<i
-																					class="nav-last results-nav-btn"
+																					class="nav-last results-nav-btn results-nav-disabled"
 																					aria-hidden="true"
 																				></i>
 																			</a>
@@ -11703,7 +11705,10 @@ Original authors: Sean Weeks, Alan Weeks
 															id="flip_area"
 															style="display: block"
 														>
-															<div class="reg_schedule half">
+															<div
+																class="reg_schedule half"
+																style="display: grid"
+															>
 																<div class="reg_schedule1 noselect">
 																	<h3
 																		class="visuallyhidden"
@@ -12211,99 +12216,11 @@ Original authors: Sean Weeks, Alan Weeks
 																					title="Click and drag to choose where you don't want classes"
 																				>
 																					<div
-																						class="time_block bc1 bd1 bh1 tb_fstate_green"
-																						classname="time_block bc1 bd1 bh1 tb_fstate_green"
-																						title="Click to pin down course section."
-																						onmouseover="RR.highlightClass(1,true)"
-																						onmouseout="RR.highlightClass(1,false)"
-																						style="
-																							left: 20%;
-																							top: 265px;
-																							width: 19.7222%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>1</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2C03<br />LEC</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc1 bd1 bh1 tb_fstate_green"
-																						classname="time_block bc1 bd1 bh1 tb_fstate_green"
-																						title="Click to pin down course section."
-																						onmouseover="RR.highlightClass(1,true)"
-																						onmouseout="RR.highlightClass(1,false)"
-																						style="
-																							left: 60%;
-																							top: 265px;
-																							width: 19.7222%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>1</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2C03<br />LEC</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc1 bd1 bh1 tb_fstate_green"
-																						classname="time_block bc1 bd1 bh1 tb_fstate_green"
-																						title="Click to pin down course section."
-																						onmouseover="RR.highlightClass(1,true)"
-																						onmouseout="RR.highlightClass(1,false)"
-																						style="
-																							left: 80%;
-																							top: 265px;
-																							width: 19.7222%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>1</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2C03<br />LEC</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc1 bd1 bh1 tb_fstate_green"
-																						classname="time_block bc1 bd1 bh1 tb_fstate_green"
-																						title="Click to pin down course section."
-																						onmouseover="RR.highlightClass(1,true)"
-																						onmouseout="RR.highlightClass(1,false)"
-																						style="
-																							left: 0.277778%;
-																							top: 85px;
-																							width: 19.5%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>1</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2C03<br />TUT</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
-																						classname="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
+																						class="time_block bc1 bd1 bh1 bcpin tb_fstate_green"
+																						classname="time_block bc1 bd1 bh1 bcpin tb_fstate_green"
 																						title="Click to unpin course"
-																						onmouseover="RR.highlightClass(2,true)"
-																						onmouseout="RR.highlightClass(2,false)"
+																						onmouseover="RR.highlightClass(1,true)"
+																						onmouseout="RR.highlightClass(1,false)"
 																						style="
 																							left: 20%;
 																							top: 157px;
@@ -12313,7 +12230,7 @@ Original authors: Sean Weeks, Alan Weeks
 																					>
 																						<span
 																							class="mobile_nb"
-																							>2</span
+																							>1</span
 																						><span
 																							class="nonmobile"
 																							>MATH
@@ -12321,11 +12238,11 @@ Original authors: Sean Weeks, Alan Weeks
 																						>
 																					</div>
 																					<div
-																						class="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
-																						classname="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
+																						class="time_block bc1 bd1 bh1 bcpin tb_fstate_green"
+																						classname="time_block bc1 bd1 bh1 bcpin tb_fstate_green"
 																						title="Click to unpin course"
-																						onmouseover="RR.highlightClass(2,true)"
-																						onmouseout="RR.highlightClass(2,false)"
+																						onmouseover="RR.highlightClass(1,true)"
+																						onmouseout="RR.highlightClass(1,false)"
 																						style="
 																							left: 60%;
 																							top: 157px;
@@ -12335,11 +12252,99 @@ Original authors: Sean Weeks, Alan Weeks
 																					>
 																						<span
 																							class="mobile_nb"
-																							>2</span
+																							>1</span
 																						><span
 																							class="nonmobile"
 																							>MATH
 																							2LA3<br />LEC</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc1 bd1 bh1 bcpin tb_fstate_green"
+																						classname="time_block bc1 bd1 bh1 bcpin tb_fstate_green"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(1,true)"
+																						onmouseout="RR.highlightClass(1,false)"
+																						style="
+																							left: 80%;
+																							top: 157px;
+																							width: 19.7222%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>1</span
+																						><span
+																							class="nonmobile"
+																							>MATH
+																							2LA3<br />LEC</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc1 bd1 bh1 bcpin tb_fstate_red"
+																						classname="time_block bc1 bd1 bh1 bcpin tb_fstate_red"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(1,true)"
+																						onmouseout="RR.highlightClass(1,false)"
+																						style="
+																							left: 60%;
+																							top: 193px;
+																							width: 19.7222%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>1</span
+																						><span
+																							class="nonmobile"
+																							>MATH
+																							2LA3<br />TUT</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
+																						classname="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(2,true)"
+																						onmouseout="RR.highlightClass(2,false)"
+																						style="
+																							left: 20%;
+																							top: 301px;
+																							width: 19.7222%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>2</span
+																						><span
+																							class="nonmobile"
+																							>COMPSCI
+																							2GA3<br />LEC</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
+																						classname="time_block bc2 bd2 bh2 bcpin tb_fstate_green"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(2,true)"
+																						onmouseout="RR.highlightClass(2,false)"
+																						style="
+																							left: 40%;
+																							top: 301px;
+																							width: 19.7222%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>2</span
+																						><span
+																							class="nonmobile"
+																							>COMPSCI
+																							2GA3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12350,7 +12355,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseout="RR.highlightClass(2,false)"
 																						style="
 																							left: 80%;
-																							top: 157px;
+																							top: 301px;
 																							width: 19.7222%;
 																							height: 29px;
 																						"
@@ -12360,8 +12365,8 @@ Original authors: Sean Weeks, Alan Weeks
 																							>2</span
 																						><span
 																							class="nonmobile"
-																							>MATH
-																							2LA3<br />LEC</span
+																							>COMPSCI
+																							2GA3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12372,7 +12377,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseout="RR.highlightClass(2,false)"
 																						style="
 																							left: 60%;
-																							top: 193px;
+																							top: 229px;
 																							width: 19.7222%;
 																							height: 29px;
 																						"
@@ -12382,8 +12387,30 @@ Original authors: Sean Weeks, Alan Weeks
 																							>2</span
 																						><span
 																							class="nonmobile"
-																							>MATH
-																							2LA3<br />TUT</span
+																							>COMPSCI
+																							2GA3<br />TUT</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc3 bd3 bh3 bcpin tb_fstate_green"
+																						classname="time_block bc3 bd3 bh3 bcpin tb_fstate_green"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(3,true)"
+																						onmouseout="RR.highlightClass(3,false)"
+																						style="
+																							left: 0.277778%;
+																							top: 301px;
+																							width: 19.5%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>3</span
+																						><span
+																							class="nonmobile"
+																							>COMPSCI
+																							2LC3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12394,7 +12421,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseout="RR.highlightClass(3,false)"
 																						style="
 																							left: 20%;
-																							top: 301px;
+																							top: 337px;
 																							width: 19.7222%;
 																							height: 29px;
 																						"
@@ -12405,7 +12432,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2GA3<br />LEC</span
+																							2LC3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12415,7 +12442,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseover="RR.highlightClass(3,true)"
 																						onmouseout="RR.highlightClass(3,false)"
 																						style="
-																							left: 40%;
+																							left: 60%;
 																							top: 301px;
 																							width: 19.7222%;
 																							height: 29px;
@@ -12427,29 +12454,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2GA3<br />LEC</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc3 bd3 bh3 bcpin tb_fstate_green"
-																						classname="time_block bc3 bd3 bh3 bcpin tb_fstate_green"
-																						title="Click to unpin course"
-																						onmouseover="RR.highlightClass(3,true)"
-																						onmouseout="RR.highlightClass(3,false)"
-																						style="
-																							left: 80%;
-																							top: 301px;
-																							width: 19.7222%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>3</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2GA3<br />LEC</span
+																							2LC3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12459,10 +12464,10 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseover="RR.highlightClass(3,true)"
 																						onmouseout="RR.highlightClass(3,false)"
 																						style="
-																							left: 60%;
-																							top: 229px;
+																							left: 80%;
+																							top: 193px;
 																							width: 19.7222%;
-																							height: 29px;
+																							height: 65px;
 																						"
 																					>
 																						<span
@@ -12471,7 +12476,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2GA3<br />TUT</span
+																							2LC3<br />TUT</span
 																						>
 																					</div>
 																					<div
@@ -12482,7 +12487,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseout="RR.highlightClass(4,false)"
 																						style="
 																							left: 0.277778%;
-																							top: 301px;
+																							top: 265px;
 																							width: 19.5%;
 																							height: 29px;
 																						"
@@ -12493,7 +12498,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2LC3<br />LEC</span
+																							2ME3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12503,7 +12508,29 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseover="RR.highlightClass(4,true)"
 																						onmouseout="RR.highlightClass(4,false)"
 																						style="
-																							left: 20%;
+																							left: 40%;
+																							top: 265px;
+																							width: 19.7222%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>4</span
+																						><span
+																							class="nonmobile"
+																							>COMPSCI
+																							2ME3<br />LEC</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc4 bd4 bh4 bcpin tb_fstate_green"
+																						classname="time_block bc4 bd4 bh4 bcpin tb_fstate_green"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(4,true)"
+																						onmouseout="RR.highlightClass(4,false)"
+																						style="
+																							left: 80%;
 																							top: 337px;
 																							width: 19.7222%;
 																							height: 29px;
@@ -12515,29 +12542,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2LC3<br />LEC</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc4 bd4 bh4 bcpin tb_fstate_green"
-																						classname="time_block bc4 bd4 bh4 bcpin tb_fstate_green"
-																						title="Click to unpin course"
-																						onmouseover="RR.highlightClass(4,true)"
-																						onmouseout="RR.highlightClass(4,false)"
-																						style="
-																							left: 60%;
-																							top: 301px;
-																							width: 19.7222%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>4</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2LC3<br />LEC</span
+																							2ME3<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12547,8 +12552,8 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseover="RR.highlightClass(4,true)"
 																						onmouseout="RR.highlightClass(4,false)"
 																						style="
-																							left: 80%;
-																							top: 193px;
+																							left: 40%;
+																							top: 337px;
 																							width: 19.7222%;
 																							height: 65px;
 																						"
@@ -12559,7 +12564,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2LC3<br />TUT</span
+																							2ME3<br />TUT</span
 																						>
 																					</div>
 																					<div
@@ -12569,29 +12574,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseover="RR.highlightClass(5,true)"
 																						onmouseout="RR.highlightClass(5,false)"
 																						style="
-																							left: 0.277778%;
-																							top: 265px;
-																							width: 19.5%;
-																							height: 29px;
-																						"
-																					>
-																						<span
-																							class="mobile_nb"
-																							>5</span
-																						><span
-																							class="nonmobile"
-																							>COMPSCI
-																							2ME3<br />LEC</span
-																						>
-																					</div>
-																					<div
-																						class="time_block bc5 bd5 bh5 bcpin tb_fstate_green"
-																						classname="time_block bc5 bd5 bh5 bcpin tb_fstate_green"
-																						title="Click to unpin course"
-																						onmouseover="RR.highlightClass(5,true)"
-																						onmouseout="RR.highlightClass(5,false)"
-																						style="
-																							left: 40%;
+																							left: 20%;
 																							top: 265px;
 																							width: 19.7222%;
 																							height: 29px;
@@ -12603,7 +12586,29 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2ME3<br />LEC</span
+																							2C03<br />LEC</span
+																						>
+																					</div>
+																					<div
+																						class="time_block bc5 bd5 bh5 bcpin tb_fstate_green"
+																						classname="time_block bc5 bd5 bh5 bcpin tb_fstate_green"
+																						title="Click to unpin course"
+																						onmouseover="RR.highlightClass(5,true)"
+																						onmouseout="RR.highlightClass(5,false)"
+																						style="
+																							left: 60%;
+																							top: 265px;
+																							width: 19.7222%;
+																							height: 29px;
+																						"
+																					>
+																						<span
+																							class="mobile_nb"
+																							>5</span
+																						><span
+																							class="nonmobile"
+																							>COMPSCI
+																							2C03<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12614,7 +12619,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseout="RR.highlightClass(5,false)"
 																						style="
 																							left: 80%;
-																							top: 337px;
+																							top: 265px;
 																							width: 19.7222%;
 																							height: 29px;
 																						"
@@ -12625,7 +12630,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2ME3<br />LEC</span
+																							2C03<br />LEC</span
 																						>
 																					</div>
 																					<div
@@ -12635,10 +12640,10 @@ Original authors: Sean Weeks, Alan Weeks
 																						onmouseover="RR.highlightClass(5,true)"
 																						onmouseout="RR.highlightClass(5,false)"
 																						style="
-																							left: 40%;
-																							top: 337px;
+																							left: 20%;
+																							top: 229px;
 																							width: 19.7222%;
-																							height: 65px;
+																							height: 29px;
 																						"
 																					>
 																						<span
@@ -12647,7 +12652,7 @@ Original authors: Sean Weeks, Alan Weeks
 																						><span
 																							class="nonmobile"
 																							>COMPSCI
-																							2ME3<br />TUT</span
+																							2C03<br />TUT</span
 																						>
 																					</div>
 																				</div>
@@ -12806,8 +12811,8 @@ Original authors: Sean Weeks, Alan Weeks
 																									classname="schedule-period bc1 bd1 bh1"
 																									onmouseover="RR.highlightClass(1,true)"
 																									onmouseout="RR.highlightClass(1,false)"
-																									onclick="addPin(event,5,'MCMST--2259_3779-3860-',true,'no');"
-																									title="Click to pin down course section."
+																									onclick="addPin(event,0,'MCMST--2259_2105-2107-',false,'no');"
+																									title="Click to unpin course"
 																									style="
 																										margin-left: calc(
 																											106.452% +
@@ -12822,10 +12827,10 @@ Original authors: Sean Weeks, Alan Weeks
 																									<span
 																										class="mobileNUmber"
 																										>1-</span
-																									>Data
-																									Structures
-																									and
-																									Algorithms
+																									>Applications
+																									of
+																									Linear
+																									Algebra
 																								</div>
 																							</td>
 																							<td></td>
@@ -12842,7 +12847,7 @@ Original authors: Sean Weeks, Alan Weeks
 																									classname="schedule-period bc2 bd2 bh2"
 																									onmouseover="RR.highlightClass(2,true)"
 																									onmouseout="RR.highlightClass(2,false)"
-																									onclick="addPin(event,1,'MCMST--2259_2105-2107-',false,'no');"
+																									onclick="addPin(event,1,'MCMST--2259_2951-2952-',false,'no');"
 																									title="Click to unpin course"
 																									style="
 																										margin-left: calc(
@@ -12858,10 +12863,8 @@ Original authors: Sean Weeks, Alan Weeks
 																									<span
 																										class="mobileNUmber"
 																										>2-</span
-																									>Applications
-																									of
-																									Linear
-																									Algebra
+																									>Computer
+																									Architecture
 																								</div>
 																							</td>
 																							<td></td>
@@ -12878,7 +12881,7 @@ Original authors: Sean Weeks, Alan Weeks
 																									classname="schedule-period bc3 bd3 bh3"
 																									onmouseover="RR.highlightClass(3,true)"
 																									onmouseout="RR.highlightClass(3,false)"
-																									onclick="addPin(event,2,'MCMST--2259_2951-2952-',false,'no');"
+																									onclick="addPin(event,2,'MCMST--2259_3484-3485-',false,'no');"
 																									title="Click to unpin course"
 																									style="
 																										margin-left: calc(
@@ -12894,8 +12897,11 @@ Original authors: Sean Weeks, Alan Weeks
 																									<span
 																										class="mobileNUmber"
 																										>3-</span
-																									>Computer
-																									Architecture
+																									>Logical
+																									Reasoning
+																									for
+																									Computer
+																									Science
 																								</div>
 																							</td>
 																							<td></td>
@@ -12912,7 +12918,7 @@ Original authors: Sean Weeks, Alan Weeks
 																									classname="schedule-period bc4 bd4 bh4"
 																									onmouseover="RR.highlightClass(4,true)"
 																									onmouseout="RR.highlightClass(4,false)"
-																									onclick="addPin(event,3,'MCMST--2259_3484-3485-',false,'no');"
+																									onclick="addPin(event,3,'MCMST--2259_3489-3490-',false,'no');"
 																									title="Click to unpin course"
 																									style="
 																										margin-left: calc(
@@ -12928,11 +12934,10 @@ Original authors: Sean Weeks, Alan Weeks
 																									<span
 																										class="mobileNUmber"
 																										>4-</span
-																									>Logical
-																									Reasoning
-																									for
-																									Computer
-																									Science
+																									>Introduction
+																									to
+																									Software
+																									Development
 																								</div>
 																							</td>
 																							<td></td>
@@ -12949,7 +12954,7 @@ Original authors: Sean Weeks, Alan Weeks
 																									classname="schedule-period bc5 bd5 bh5"
 																									onmouseover="RR.highlightClass(5,true)"
 																									onmouseout="RR.highlightClass(5,false)"
-																									onclick="addPin(event,4,'MCMST--2259_3489-3490-',false,'no');"
+																									onclick="addPin(event,4,'MCMST--2259_3668-3779-',false,'no');"
 																									title="Click to unpin course"
 																									style="
 																										margin-left: calc(
@@ -12965,10 +12970,10 @@ Original authors: Sean Weeks, Alan Weeks
 																									<span
 																										class="mobileNUmber"
 																										>5-</span
-																									>Introduction
-																									to
-																									Software
-																									Development
+																									>Data
+																									Structures
+																									and
+																									Algorithms
 																								</div>
 																							</td>
 																							<td></td>
@@ -13129,6 +13134,9 @@ Original authors: Sean Weeks, Alan Weeks
 																			>
 																				<div
 																					class="crnListWarning crnListWarningInfo not_already_have"
+																					style="
+																						display: none;
+																					"
 																				>
 																					You are not
 																					enrolled for
@@ -13136,9 +13144,6 @@ Original authors: Sean Weeks, Alan Weeks
 																				</div>
 																				<div
 																					class="crnListWarning crnListWarningGood already_have"
-																					style="
-																						display: none;
-																					"
 																				>
 																					You are already
 																					enrolled for
@@ -13241,7 +13246,8 @@ Original authors: Sean Weeks, Alan Weeks
 																							class="button_get_schedule mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
 																							type="button"
 																							onclick="requestScheduleCheckPromissory();"
-																							title="Go to the confirmation page to review details"
+																							disabled="disabled"
+																							title="You are already enrolled for this schedule"
 																							data-upgraded=",MaterialButton"
 																						>
 																							Get this
@@ -13334,403 +13340,16 @@ Original authors: Sean Weeks, Alan Weeks
 																						class="td course_cell_legend one_col"
 																					>
 																						<div
-																							class="course_header bc1 bh1"
-																							role="checkbox"
-																							aria-checked="false"
-																							aria-label="Click to pin down course section. Pinning a section will filter the schedule results to only contain schedules containing the pinned section until the pin is removed."
-																							title="Click to pin down course section."
-																							tabindex="0"
-																							onkeydown="if(event.keyCode == 32){addPin(event,5,'MCMST--2259_3779-3860-',true,'bc1');}"
-																							onclick="addPin(event,5,'MCMST--2259_3779-3860-',true,'bc1');"
-																							onmouseout="RR.highlightClass(1,false);"
-																							onmouseover="RR.highlightClass(1,true);"
-																						>
-																							<div
-																								class="header_cell"
-																							>
-																								<h4
-																									style="
-																										float: left;
-																									"
-																									class="course_title"
-																									aria-label="COMPSCI 2C03 Data Structures and Algorithms running from Sep 2  to  Dec 4 on Tue, Thu, Fri from 2:30 PM to 3:20 PMMon : 9:30 AM to 10:20 AM&lt;br&gt;&lt;/h4&gt;. Given this timetable schedule result, there may be one or more sections that occur at this time below. Click to pin down course section."
-																								>
-																									COMPSCI
-																									2C03
-																								</h4>
-																								<div
-																									style="
-																										float: right;
-																									"
-																									title="Session Code: 1"
-																								>
-																									<span
-																										class="term_label"
-																										>2025
-																										Fall: </span
-																									>Sep
-																									2
-																									-
-																									Dec
-																									4
-																								</div>
-																								<div
-																									style="
-																										float: right;
-																										clear: right;
-																									"
-																									class="session_label"
-																								>
-																									Regular
-																									Academic
-																									&nbsp;&nbsp;
-																								</div>
-																								<div
-																									style="
-																										float: left;
-																										clear: left;
-																									"
-																								>
-																									<span
-																										class="mobileNUmber"
-																										>1-</span
-																									><span
-																										>Data
-																										Structures
-																										and
-																										Algorithms</span
-																									>
-																								</div>
-																								<div
-																									style="
-																										clear: both;
-																									"
-																								></div>
-																								<div
-																									id="hoursInLegend"
-																								>
-																									Tue,
-																									Thu,
-																									Fri
-																									:
-																									2:30
-																									PM
-																									to
-																									3:20
-																									PM<br />Mon
-																									:
-																									9:30
-																									AM
-																									to
-																									10:20
-																									AM<br />
-																								</div>
-																							</div>
-																						</div>
-																						<label
-																							class="vsbselectionnew"
-																							><h5
-																								class="visuallyhidden"
-																							>
-																								LEC
-																								C02
-																								-
-																								TUT
-																								T07
-																							</h5>
-																							<div
-																								class="selection_row"
-																								data-cnfid="5"
-																								data-selkey="MCMST--2259_3779-3860-"
-																								data-inst="MCMST"
-																								data-ac="UGRD"
-																							>
-																								<div
-																									class="selection_table"
-																								>
-																									<table
-																										class="inner_legend_table"
-																										style="
-																											padding: 0px;
-																											border-spacing: 0px;
-																											width: 100%;
-																										"
-																									>
-																										<tbody>
-																											<tr>
-																												<td
-																													rowspan="4"
-																													valign="middle"
-																													align="center"
-																													width="25"
-																													title="Class is open"
-																													class="legendSelect bg_green empty is-checked"
-																												>
-																													<span
-																														class="sel_radio"
-																														data-cnfid="5"
-																														data-selkey="MCMST--2259_3779-3860-"
-																														data-crns="3779 (3860)"
-																														data-color="green"
-																													></span>
-																												</td>
-																												<td>
-																													<strong
-																														class="leftnclear type_block"
-																														>LEC
-																														C02</strong
-																													><label
-																														for="rad_MCMST--2259_3779-3860-"
-																														><span
-																															class="leftnclear"
-																															><span
-																																class="crn_label"
-																																>Class
-																																Number:&nbsp;</span
-																															></span
-																														><span
-																															class="crn_value"
-																															style="
-																																float: left;
-																															"
-																															>3779</span
-																														></label
-																													>
-																													<table
-																														class="leftnclear nowrap full_table"
-																													>
-																														<tbody>
-																															<tr>
-																																<td
-																																	class="bg_green full_indic"
-																																></td>
-																																<td>
-																																	<span
-																																		class="leftnclear seats_available nowrap"
-																																		>Seats:
-																																		<span
-																																			class="seatText"
-																																			>Available</span
-																																		></span
-																																	>
-																																</td>
-																															</tr>
-																														</tbody>
-																													</table>
-																												</td>
-																												<td
-																													align="right"
-																												>
-																													<div
-																														title="Campus: McMaster University"
-																														class="campus_block rightnclear"
-																													>
-																														McMaster
-																														University
-																													</div>
-																													<div
-																														class="instructional_method_block rightnclear"
-																														title="Instruction Mode"
-																													>
-																														In
-																														Person
-																													</div>
-																													<div
-																														class="rightnclear"
-																													>
-																														<span
-																															class="location_block"
-																															title="Building and Room Number"
-																															>Michael
-																															G.
-																															DeGroote
-																															Cntr
-																															-
-																															MDCL_1105<br
-																														/></span>
-																													</div>
-																													<div
-																														class="rightnclear"
-																														title="Instructor(s)"
-																													>
-																														Vincent
-																														Maccio
-																													</div>
-																													<div
-																														class="credits_block rightnclear"
-																													>
-																														<span
-																															title="Units"
-																															>3.0</span
-																														>/<span
-																															title="Academic Progress Units"
-																															>3.0</span
-																														>
-																														Units
-																													</div>
-																												</td>
-																											</tr>
-																											<tr>
-																												<td
-																													colspan="2"
-																													class="notes"
-																												>
-																													<div
-																														class="leftnclear"
-																													></div>
-																													<div
-																														class="leftnclear"
-																													></div>
-																													<div
-																														class="leftnclear"
-																													>
-																														Refer
-																														to
-																														course
-																														Description.<br />
-																													</div>
-																												</td>
-																											</tr>
-																											<tr>
-																												<td>
-																													<strong
-																														class="leftnclear type_block"
-																														>TUT
-																														T07</strong
-																													><label
-																														for="rad_MCMST--2259_3779-3860-"
-																														><span
-																															class="leftnclear"
-																															><span
-																																class="crn_label"
-																																>Class
-																																Number:&nbsp;</span
-																															></span
-																														><span
-																															class="crn_value"
-																															style="
-																																float: left;
-																															"
-																															>3860</span
-																														></label
-																													>
-																													<table
-																														class="leftnclear nowrap full_table"
-																													>
-																														<tbody>
-																															<tr>
-																																<td
-																																	class="bg_green full_indic"
-																																></td>
-																																<td>
-																																	<span
-																																		class="leftnclear seats_available nowrap"
-																																		>Seats:
-																																		<span
-																																			class="seatText"
-																																			>Available</span
-																																		></span
-																																	>
-																																</td>
-																															</tr>
-																														</tbody>
-																													</table>
-																												</td>
-																												<td
-																													align="right"
-																												>
-																													<div
-																														title="Campus: McMaster University"
-																														class="campus_block rightnclear"
-																													>
-																														McMaster
-																														University
-																													</div>
-																													<div
-																														class="instructional_method_block rightnclear"
-																														title="Instruction Mode"
-																													>
-																														In
-																														Person
-																													</div>
-																													<div
-																														class="rightnclear"
-																													>
-																														<span
-																															class="location_block"
-																															title="Building and Room Number"
-																															>A.N.
-																															Bourns
-																															Bldg
-																															-
-																															ABB_166<br
-																														/></span>
-																													</div>
-																													<div
-																														class="rightnclear"
-																														title="Instructor(s)"
-																													>
-																														Staff
-																													</div>
-																												</td>
-																											</tr>
-																											<tr>
-																												<td
-																													colspan="2"
-																													class="notes"
-																												>
-																													<div
-																														class="leftnclear"
-																													></div>
-																													<div
-																														class="leftnclear"
-																													></div>
-																													<div
-																														class="leftnclear"
-																													></div>
-																												</td>
-																											</tr>
-																										</tbody>
-																									</table>
-																								</div>
-																								<div
-																									style="
-																										clear: both;
-																									"
-																								></div></div
-																						></label>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div
-																			class="course_box show-books block_animation show_extras be0"
-																			style=""
-																			data-atomicid="null"
-																		>
-																			<div
-																				class="legend_table computer-only table"
-																				style="
-																					padding: 0px;
-																					border-spacing: 0px;
-																					border: 0px;
-																				"
-																			>
-																				<div class="tr">
-																					<div
-																						class="td course_cell_legend one_col"
-																					>
-																						<div
-																							class="course_header bc2 bh2 bcpin"
+																							class="course_header bc1 bh1 bcpin"
 																							role="checkbox"
 																							aria-checked="false"
 																							aria-label=""
 																							title="Click to unpin course"
 																							tabindex="0"
-																							onkeydown="if(event.keyCode == 32){addPin(event,1,'MCMST--2259_2105-2107-',false,'bc2');}"
-																							onclick="addPin(event,1,'MCMST--2259_2105-2107-',false,'bc2');"
-																							onmouseout="RR.highlightClass(2,false);"
-																							onmouseover="RR.highlightClass(2,true);"
+																							onkeydown="if(event.keyCode == 32){addPin(event,0,'MCMST--2259_2105-2107-',false,'bc1');}"
+																							onclick="addPin(event,0,'MCMST--2259_2105-2107-',false,'bc1');"
+																							onmouseout="RR.highlightClass(1,false);"
+																							onmouseover="RR.highlightClass(1,true);"
 																						>
 																							<div
 																								class="header_cell"
@@ -13780,7 +13399,7 @@ Original authors: Sean Weeks, Alan Weeks
 																								>
 																									<span
 																										class="mobileNUmber"
-																										>2-</span
+																										>1-</span
 																									><span
 																										>Applications
 																										of
@@ -13827,7 +13446,7 @@ Original authors: Sean Weeks, Alan Weeks
 																							</h5>
 																							<div
 																								class="selection_row"
-																								data-cnfid="1"
+																								data-cnfid="0"
 																								data-selkey="MCMST--2259_2105-2107-"
 																								data-inst="MCMST"
 																								data-ac="UGRD"
@@ -13855,7 +13474,7 @@ Original authors: Sean Weeks, Alan Weeks
 																												>
 																													<span
 																														class="sel_radio"
-																														data-cnfid="1"
+																														data-cnfid="0"
 																														data-selkey="MCMST--2259_2105-2107-"
 																														data-crns="2105 (2107)"
 																														data-color="red"
@@ -14127,16 +13746,16 @@ Original authors: Sean Weeks, Alan Weeks
 																						class="td course_cell_legend one_col"
 																					>
 																						<div
-																							class="course_header bc3 bh3 bcpin"
+																							class="course_header bc2 bh2 bcpin"
 																							role="checkbox"
 																							aria-checked="false"
 																							aria-label=""
 																							title="Click to unpin course"
 																							tabindex="0"
-																							onkeydown="if(event.keyCode == 32){addPin(event,2,'MCMST--2259_2951-2952-',false,'bc3');}"
-																							onclick="addPin(event,2,'MCMST--2259_2951-2952-',false,'bc3');"
-																							onmouseout="RR.highlightClass(3,false);"
-																							onmouseover="RR.highlightClass(3,true);"
+																							onkeydown="if(event.keyCode == 32){addPin(event,1,'MCMST--2259_2951-2952-',false,'bc2');}"
+																							onclick="addPin(event,1,'MCMST--2259_2951-2952-',false,'bc2');"
+																							onmouseout="RR.highlightClass(2,false);"
+																							onmouseover="RR.highlightClass(2,true);"
 																						>
 																							<div
 																								class="header_cell"
@@ -14186,7 +13805,7 @@ Original authors: Sean Weeks, Alan Weeks
 																								>
 																									<span
 																										class="mobileNUmber"
-																										>3-</span
+																										>2-</span
 																									><span
 																										>Computer
 																										Architecture</span
@@ -14231,7 +13850,7 @@ Original authors: Sean Weeks, Alan Weeks
 																							</h5>
 																							<div
 																								class="selection_row"
-																								data-cnfid="2"
+																								data-cnfid="1"
 																								data-selkey="MCMST--2259_2951-2952-"
 																								data-inst="MCMST"
 																								data-ac="UGRD"
@@ -14259,7 +13878,7 @@ Original authors: Sean Weeks, Alan Weeks
 																												>
 																													<span
 																														class="sel_radio"
-																														data-cnfid="2"
+																														data-cnfid="1"
 																														data-selkey="MCMST--2259_2951-2952-"
 																														data-crns="2951 (2952)"
 																														data-color="red"
@@ -14530,16 +14149,16 @@ Original authors: Sean Weeks, Alan Weeks
 																						class="td course_cell_legend one_col"
 																					>
 																						<div
-																							class="course_header bc4 bh4 bcpin"
+																							class="course_header bc3 bh3 bcpin"
 																							role="checkbox"
 																							aria-checked="false"
 																							aria-label=""
 																							title="Click to unpin course"
 																							tabindex="0"
-																							onkeydown="if(event.keyCode == 32){addPin(event,3,'MCMST--2259_3484-3485-',false,'bc4');}"
-																							onclick="addPin(event,3,'MCMST--2259_3484-3485-',false,'bc4');"
-																							onmouseout="RR.highlightClass(4,false);"
-																							onmouseover="RR.highlightClass(4,true);"
+																							onkeydown="if(event.keyCode == 32){addPin(event,2,'MCMST--2259_3484-3485-',false,'bc3');}"
+																							onclick="addPin(event,2,'MCMST--2259_3484-3485-',false,'bc3');"
+																							onmouseout="RR.highlightClass(3,false);"
+																							onmouseover="RR.highlightClass(3,true);"
 																						>
 																							<div
 																								class="header_cell"
@@ -14589,7 +14208,7 @@ Original authors: Sean Weeks, Alan Weeks
 																								>
 																									<span
 																										class="mobileNUmber"
-																										>4-</span
+																										>3-</span
 																									><span
 																										>Logical
 																										Reasoning
@@ -14642,7 +14261,7 @@ Original authors: Sean Weeks, Alan Weeks
 																							</h5>
 																							<div
 																								class="selection_row"
-																								data-cnfid="3"
+																								data-cnfid="2"
 																								data-selkey="MCMST--2259_3484-3485-"
 																								data-inst="MCMST"
 																								data-ac="UGRD"
@@ -14670,7 +14289,7 @@ Original authors: Sean Weeks, Alan Weeks
 																												>
 																													<span
 																														class="sel_radio"
-																														data-cnfid="3"
+																														data-cnfid="2"
 																														data-selkey="MCMST--2259_3484-3485-"
 																														data-crns="3484 (3485)"
 																														data-color="red"
@@ -14944,16 +14563,16 @@ Original authors: Sean Weeks, Alan Weeks
 																						class="td course_cell_legend one_col"
 																					>
 																						<div
-																							class="course_header bc5 bh5 bcpin"
+																							class="course_header bc4 bh4 bcpin"
 																							role="checkbox"
 																							aria-checked="false"
 																							aria-label=""
 																							title="Click to unpin course"
 																							tabindex="0"
-																							onkeydown="if(event.keyCode == 32){addPin(event,4,'MCMST--2259_3489-3490-',false,'bc5');}"
-																							onclick="addPin(event,4,'MCMST--2259_3489-3490-',false,'bc5');"
-																							onmouseout="RR.highlightClass(5,false);"
-																							onmouseover="RR.highlightClass(5,true);"
+																							onkeydown="if(event.keyCode == 32){addPin(event,3,'MCMST--2259_3489-3490-',false,'bc4');}"
+																							onclick="addPin(event,3,'MCMST--2259_3489-3490-',false,'bc4');"
+																							onmouseout="RR.highlightClass(4,false);"
+																							onmouseover="RR.highlightClass(4,true);"
 																						>
 																							<div
 																								class="header_cell"
@@ -15003,7 +14622,7 @@ Original authors: Sean Weeks, Alan Weeks
 																								>
 																									<span
 																										class="mobileNUmber"
-																										>5-</span
+																										>4-</span
 																									><span
 																										>Introduction
 																										to
@@ -15055,7 +14674,7 @@ Original authors: Sean Weeks, Alan Weeks
 																							</h5>
 																							<div
 																								class="selection_row"
-																								data-cnfid="4"
+																								data-cnfid="3"
 																								data-selkey="MCMST--2259_3489-3490-"
 																								data-inst="MCMST"
 																								data-ac="UGRD"
@@ -15083,7 +14702,7 @@ Original authors: Sean Weeks, Alan Weeks
 																												>
 																													<span
 																														class="sel_radio"
-																														data-cnfid="4"
+																														data-cnfid="3"
 																														data-selkey="MCMST--2259_3489-3490-"
 																														data-crns="3489 (3490)"
 																														data-color="red"
@@ -15299,6 +14918,413 @@ Original authors: Sean Weeks, Alan Weeks
 																															Cntr
 																															-
 																															MDCL_1010<br
+																														/></span>
+																													</div>
+																													<div
+																														class="rightnclear"
+																														title="Instructor(s)"
+																													>
+																														Staff
+																													</div>
+																												</td>
+																											</tr>
+																											<tr>
+																												<td
+																													colspan="2"
+																													class="notes"
+																												>
+																													<div
+																														class="leftnclear"
+																													></div>
+																													<div
+																														class="leftnclear"
+																													></div>
+																													<div
+																														class="leftnclear"
+																													></div>
+																												</td>
+																											</tr>
+																										</tbody>
+																									</table>
+																								</div>
+																								<div
+																									style="
+																										clear: both;
+																									"
+																								></div></div
+																						></label>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div
+																			class="course_box show-books block_animation show_extras be0"
+																			style=""
+																			data-atomicid="null"
+																		>
+																			<div
+																				class="legend_table computer-only table"
+																				style="
+																					padding: 0px;
+																					border-spacing: 0px;
+																					border: 0px;
+																				"
+																			>
+																				<div class="tr">
+																					<div
+																						class="td course_cell_legend one_col"
+																					>
+																						<div
+																							class="course_header bc5 bh5 bcpin"
+																							role="checkbox"
+																							aria-checked="false"
+																							aria-label=""
+																							title="Click to unpin course"
+																							tabindex="0"
+																							onkeydown="if(event.keyCode == 32){addPin(event,4,'MCMST--2259_3668-3779-',false,'bc5');}"
+																							onclick="addPin(event,4,'MCMST--2259_3668-3779-',false,'bc5');"
+																							onmouseout="RR.highlightClass(5,false);"
+																							onmouseover="RR.highlightClass(5,true);"
+																						>
+																							<div
+																								class="header_cell"
+																							>
+																								<h4
+																									style="
+																										float: left;
+																									"
+																									class="course_title"
+																									aria-label="COMPSCI 2C03 Data Structures and Algorithms running from Sep 2  to  Dec 4 on Tue, Thu, Fri from 2:30 PM to 3:20 PMTue : 1:30 PM to 2:20 PM&lt;br&gt;&lt;/h4&gt;. Given this timetable schedule result, there may be one or more sections that occur at this time below. Click to unpin course"
+																								>
+																									COMPSCI
+																									2C03
+																								</h4>
+																								<div
+																									style="
+																										float: right;
+																									"
+																									title="Session Code: 1"
+																								>
+																									<span
+																										class="term_label"
+																										>2025
+																										Fall: </span
+																									>Sep
+																									2
+																									-
+																									Dec
+																									4
+																								</div>
+																								<div
+																									style="
+																										float: right;
+																										clear: right;
+																									"
+																									class="session_label"
+																								>
+																									Regular
+																									Academic
+																									&nbsp;&nbsp;
+																								</div>
+																								<div
+																									style="
+																										float: left;
+																										clear: left;
+																									"
+																								>
+																									<span
+																										class="mobileNUmber"
+																										>5-</span
+																									><span
+																										>Data
+																										Structures
+																										and
+																										Algorithms</span
+																									>
+																								</div>
+																								<div
+																									style="
+																										clear: both;
+																									"
+																								></div>
+																								<div
+																									id="hoursInLegend"
+																								>
+																									Tue,
+																									Thu,
+																									Fri
+																									:
+																									2:30
+																									PM
+																									to
+																									3:20
+																									PM<br />Tue
+																									:
+																									1:30
+																									PM
+																									to
+																									2:20
+																									PM<br />
+																								</div>
+																							</div>
+																						</div>
+																						<label
+																							class="vsbselectionnew"
+																							><h5
+																								class="visuallyhidden"
+																							>
+																								LEC
+																								C02
+																								-
+																								TUT
+																								T05
+																							</h5>
+																							<div
+																								class="selection_row"
+																								data-cnfid="4"
+																								data-selkey="MCMST--2259_3668-3779-"
+																								data-inst="MCMST"
+																								data-ac="UGRD"
+																							>
+																								<div
+																									class="selection_table"
+																								>
+																									<table
+																										class="inner_legend_table"
+																										style="
+																											padding: 0px;
+																											border-spacing: 0px;
+																											width: 100%;
+																										"
+																									>
+																										<tbody>
+																											<tr>
+																												<td
+																													rowspan="4"
+																													valign="middle"
+																													align="center"
+																													width="25"
+																													title="Class is closed"
+																													class="legendSelect bg_red empty is-checked"
+																												>
+																													<span
+																														class="sel_radio"
+																														data-cnfid="4"
+																														data-selkey="MCMST--2259_3668-3779-"
+																														data-crns="3779 (3668)"
+																														data-color="red"
+																													></span>
+																												</td>
+																												<td>
+																													<strong
+																														class="leftnclear type_block"
+																														>LEC
+																														C02</strong
+																													><span
+																														class="course_state"
+																														title=""
+																														>Enrolled</span
+																													><label
+																														for="rad_MCMST--2259_3668-3779-"
+																														><span
+																															class="leftnclear"
+																															><span
+																																class="crn_label"
+																																>Class
+																																Number:&nbsp;</span
+																															></span
+																														><span
+																															class="crn_value"
+																															style="
+																																float: left;
+																															"
+																															>3779</span
+																														></label
+																													>
+																													<table
+																														class="leftnclear nowrap full_table"
+																													>
+																														<tbody>
+																															<tr>
+																																<td
+																																	class="bg_green full_indic"
+																																></td>
+																																<td>
+																																	<span
+																																		class="leftnclear seats_available nowrap"
+																																		>Seats:
+																																		<span
+																																			class="seatText"
+																																			>Available</span
+																																		></span
+																																	>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</td>
+																												<td
+																													align="right"
+																												>
+																													<div
+																														title="Campus: McMaster University"
+																														class="campus_block rightnclear"
+																													>
+																														McMaster
+																														University
+																													</div>
+																													<div
+																														class="instructional_method_block rightnclear"
+																														title="Instruction Mode"
+																													>
+																														In
+																														Person
+																													</div>
+																													<div
+																														class="rightnclear"
+																													>
+																														<span
+																															class="location_block"
+																															title="Building and Room Number"
+																															>Michael
+																															G.
+																															DeGroote
+																															Cntr
+																															-
+																															MDCL_1105<br
+																														/></span>
+																													</div>
+																													<div
+																														class="rightnclear"
+																														title="Instructor(s)"
+																													>
+																														Vincent
+																														Maccio
+																													</div>
+																													<div
+																														class="credits_block rightnclear"
+																													>
+																														<span
+																															title="Units"
+																															>3.0</span
+																														>/<span
+																															title="Academic Progress Units"
+																															>3.0</span
+																														>
+																														Units
+																													</div>
+																												</td>
+																											</tr>
+																											<tr>
+																												<td
+																													colspan="2"
+																													class="notes"
+																												>
+																													<div
+																														class="leftnclear"
+																													></div>
+																													<div
+																														class="leftnclear"
+																													></div>
+																													<div
+																														class="leftnclear"
+																													>
+																														Refer
+																														to
+																														course
+																														Description.<br />
+																													</div>
+																												</td>
+																											</tr>
+																											<tr>
+																												<td>
+																													<strong
+																														class="leftnclear type_block"
+																														>TUT
+																														T05</strong
+																													><span
+																														class="course_state"
+																														title=""
+																														>Enrolled</span
+																													><label
+																														for="rad_MCMST--2259_3668-3779-"
+																														><span
+																															class="leftnclear"
+																															><span
+																																class="crn_label"
+																																>Class
+																																Number:&nbsp;</span
+																															></span
+																														><span
+																															class="crn_value"
+																															style="
+																																float: left;
+																															"
+																															>3668</span
+																														></label
+																													>
+																													<table
+																														class="leftnclear nowrap full_table"
+																													>
+																														<tbody>
+																															<tr>
+																																<td
+																																	class="bg_red full_indic"
+																																></td>
+																																<td>
+																																	<span
+																																		class="leftnclear nowrap"
+																																		title="All 45 seats are taken"
+																																		>Seats:
+																																		<span
+																																			class="fullText"
+																																			>Full</span
+																																		></span
+																																	><span
+																																		class="legend_waitlist leftnclear nowrap"
+																																		><span
+																																			title="There is no wait list for this class"
+																																			>Wait
+																																			List:
+																																			<span
+																																				class="fullText"
+																																				>None</span
+																																			></span
+																																		></span
+																																	>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</td>
+																												<td
+																													align="right"
+																												>
+																													<div
+																														title="Campus: McMaster University"
+																														class="campus_block rightnclear"
+																													>
+																														McMaster
+																														University
+																													</div>
+																													<div
+																														class="instructional_method_block rightnclear"
+																														title="Instruction Mode"
+																													>
+																														In
+																														Person
+																													</div>
+																													<div
+																														class="rightnclear"
+																													>
+																														<span
+																															class="location_block"
+																															title="Building and Room Number"
+																															>Eng
+																															Technology
+																															Bldg
+																															-
+																															ETB_124<br
 																														/></span>
 																													</div>
 																													<div
@@ -15572,7 +15598,7 @@ Original authors: Sean Weeks, Alan Weeks
 													</div>
 												</div>
 
-												<div class="reg_term">
+												<div class="reg_term" style="display: none">
 													<h2 class="visuallyhidden">
 														This is the select term menu, please select
 														your term from the options below.
@@ -16908,7 +16934,7 @@ Original authors: Sean Weeks, Alan Weeks
 				</div>
 			</div>
 
-			<!-- Active sessions: 326 -->
+			<!-- Active sessions: 252 -->
 		</div>
 
 		<!-- Added by prakash start for mobile sort -->
@@ -16998,16 +17024,30 @@ Original authors: Sean Weeks, Alan Weeks
 						</button>
 					</div>
 					<div class="popup-body">
-						<div class="tips-image">
+						<div class="tips-image" style="opacity: 1">
 							<img
 								id="slider_tip_img"
-								src="test_loggedin_semesterselected_files/tip_drag.png"
-								alt="Tiny screenshot to accompany tip text"
+								src="test_loggedin_semesterselected_files/tip_pin.gif"
+								alt="Pinning tip screenshot"
 							/>
 						</div>
-						<div class="popup-title">Block out times</div>
-						<div class="popup-subtitle">
-							<span class="slider_tip_text"> Loading... </span>
+						<div class="popup-title" style="opacity: 1">
+							<div class="nomobile">Pinning</div>
+							<div class="phoneOnly">Pinning</div>
+						</div>
+						<div class="popup-subtitle" style="opacity: 1">
+							<h4
+								class="visuallyhidden"
+								aria-label="Pinning.  Click on classes  to pin them down temporarily. This will narrow the number of results."
+							></h4>
+							<div class="nomobile">
+								<strong>Click on classes</strong> to pin them down temporarily. This
+								will narrow the number of results.
+							</div>
+							<div class="phoneOnly">
+								<strong>Tap on classes</strong> to pin them down temporarily. This
+								will narrow the number of results.
+							</div>
 						</div>
 						<div class="filter-popup-buttons">
 							<button
@@ -17024,7 +17064,21 @@ Original authors: Sean Weeks, Alan Weeks
 								Next
 							</button>
 						</div>
-						<div class="tips-carousel"></div>
+						<div class="tips-carousel">
+							<span class="tips-carousel-item" onclick="SLIDER.goTo(1)"
+								><i class="fa fa-circle"></i></span
+							><span class="tips-carousel-item" onclick="SLIDER.goTo(2)"
+								><i class="fa fa-circle selected"></i></span
+							><span class="tips-carousel-item" onclick="SLIDER.goTo(3)"
+								><i class="fa fa-circle"></i></span
+							><span class="tips-carousel-item" onclick="SLIDER.goTo(4)"
+								><i class="fa fa-circle"></i></span
+							><span class="tips-carousel-item" onclick="SLIDER.goTo(5)"
+								><i class="fa fa-circle"></i></span
+							><span class="tips-carousel-item" onclick="SLIDER.goTo(6)"
+								><i class="fa fa-circle"></i
+							></span>
+						</div>
 					</div>
 					<div class="tips-next nomobile">
 						<button
@@ -17357,10 +17411,10 @@ Original authors: Sean Weeks, Alan Weeks
 		<div class="check_media" style=""></div>
 		<!-- <canvas id="thumbtest" width="100" height="100" style="border:0px solid #000000;"> -->
 
-		<protonpass-root-6769
+		<protonpass-root-228a
 			data-protonpass-role="root"
 			data-protonpass-theme="dark"
-		></protonpass-root-6769>
+		></protonpass-root-228a>
 	</body>
 </html>
 `;
