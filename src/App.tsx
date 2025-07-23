@@ -11,6 +11,7 @@ import { createPortal } from "react-dom";
 import CookiesModal from "./components/CookiesModal";
 import { useEffect, useState } from "react";
 import localforage from "localforage";
+import Test from "./test/Test";
 
 const router = createBrowserRouter([
 	{
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
 			{
 				path: "/404",
 				element: <NotFound />,
+			},
+			{
+				path: "/test",
+				element: <Test />,
 			},
 		],
 	},
