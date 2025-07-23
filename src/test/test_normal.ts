@@ -1,4 +1,4 @@
-<!doctype html>
+export const test0 = `<!doctype html>
 <html lang="en" class="mdl-js">
 	<head>
 		<title>McMaster - MyTimetable</title>
@@ -108,3 +108,4 @@
 		></protonpass-root-1e44>
 	</body>
 </html>
+`;

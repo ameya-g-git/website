@@ -1,7 +1,7 @@
 import { useState } from "react";
-import test0 from "./test.html";
-import test1 from "./test_loggedin.html";
-import test2 from "./test_loggedin_semesterselected.html";
+import { test0 } from "./test_normal.ts";
+import { test1 } from "./test_loggedin.ts";
+import { test2 } from "./test_loggedin_semesterselected.ts";
 
 export default function Test() {
 	const [testNumber, setTestNumber] = useState(0);

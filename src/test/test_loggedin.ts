@@ -1,4 +1,4 @@
-<!doctype html>
+export const test1 = `<!doctype html>
 <!-- Copyright 2011-2023. This service is called Visual Schedule Builder, Register, or MC Navigate
 It is offered by VSB Software Inc, Digarc, and now Modern Campus. Visit: www.vsbuilder.com or www.moderncampus.com
 Original authors: Sean Weeks, Alan Weeks
@@ -8048,3 +8048,4 @@ Original authors: Sean Weeks, Alan Weeks
 		></protonpass-root-d01c>
 	</body>
 </html>
+`;
