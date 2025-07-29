@@ -196,8 +196,8 @@ export default function Home() {
 					</div>
 					<div className="my-[4vh] md:my-[6vh] [&>*]:my-1 [&>h3]:text-[2vh] [&>h3]:md:text-xl">
 						<h3>
-							aspiring software developer | multidisciplinary creative | graphic
-							designer | 3d artist | ui designer
+							full stack developer | multidisciplinary creative | graphic designer |
+							3d artist | ui designer
 						</h3>
 						<hr className="w-full border-black md:w-11/12" />
 						<h3 className="">
