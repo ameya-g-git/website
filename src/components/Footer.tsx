@@ -23,7 +23,7 @@ function FooterButton({ icon, link, alt }: footerButtonProps) {
 			to={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-white/20 bg-card-black/50 p-2 transition-all hover:bg-card-hover"
+			className="flex items-center justify-center w-12 h-12 p-2 transition-all border-2 rounded-lg border-white/20 bg-card-black/50 hover:bg-card-hover"
 		>
 			<img src={icon} alt={alt} className="h-full" />
 		</Link>
@@ -34,12 +34,15 @@ export default function Footer() {
 	const { screenWidth } = useWindowSize();
 
 	const firstLayer = (
-		<div className="flex flex-row items-center justify-end gap-1">
+		<div className="flex flex-row items-center gap-1 ml-12 md:-ml-12">
 			{Array(10)
 				.fill("ameyaGupta")
 				.map((_name, id) => {
-					return id === 8 ? (
-						<p key={`${id}p`} className="text-nowrap font-footer text-2xl text-yellow">
+					return id === 1 ? (
+						<p
+							key={`${id}p`}
+							className="text-xl text-nowrap font-footer text-yellow md:text-2xl"
+						>
 							© Ameya Gupta
 						</p>
 					) : (
@@ -55,14 +58,14 @@ export default function Footer() {
 	);
 
 	const secondLayer = (
-		<div className="-ml-80 flex flex-row items-center gap-2">
+		<div className="flex flex-row items-center gap-2 md:-ml-80">
 			{Array(10)
 				.fill("ameyaGupta")
 				.map((_name, id) => {
 					return id === 1 ? (
 						<p
 							key={id}
-							className="text-nowrap font-footer text-2xl text-yellow md:text-5xl"
+							className="text-2xl text-nowrap font-footer text-yellow md:text-5xl"
 						>
 							let's work together!
 						</p>
@@ -79,22 +82,22 @@ export default function Footer() {
 	);
 
 	const thirdLayer = (
-		<div className="-ml-[31.5rem] flex flex-row items-center gap-4">
+		<div className="-ml-60 flex flex-row items-center gap-4 md:-ml-[31.5rem]">
 			{Array(10)
 				.fill("ameyaGupta")
 				.map((_name, id) => {
 					return id === 1 ? (
 						<Fragment key={id}>
-							<p className="text-nowrap font-footer text-4xl text-yellow md:text-8xl">
+							<p className="text-5xl text-nowrap font-footer text-yellow md:text-8xl">
 								contact me
 							</p>
-							<img src={downarrow} className="w-30 flex" />
+							<img src={downarrow} className="flex w-16 md:w-30" />
 						</Fragment>
 					) : (
 						<img
 							key={id}
 							src={id % 2 === 0 ? nameFill : nameOutline}
-							className="h-32 opacity-20"
+							className="h-24 opacity-20 md:h-32"
 							alt=""
 						/>
 					);
@@ -106,7 +109,7 @@ export default function Footer() {
 		<footer id="footer" className="h-fit overflow-x-hidden bg-[#0A0A00]">
 			<div className="-ml-[9%] flex w-[120%] flex-col items-center gap-4 shadow-footer">
 				<img src={arrowSmiley} className="my-2 mt-8 w-28" alt="" />
-				<div className="flex flex-col [&>*]:-my-0.5">
+				<div className="-ml-48 flex flex-col md:ml-0 [&>*]:-my-1 md:[&>*]:-my-0.5">
 					{screenWidth > 480 && (
 						<>
 							{firstLayer}
@@ -115,13 +118,13 @@ export default function Footer() {
 						</>
 					)}
 				</div>
-				<div className="mb-8 flex h-fit w-full flex-col items-center justify-between px-16 md:flex-row md:px-56">
-					<div className="my-2 flex w-full flex-col items-center justify-between gap-4 text-center md:flex-row md:gap-0 md:text-left">
-						<p>
+				<div className="flex flex-col items-center justify-between w-full px-16 mb-8 h-fit md:flex-row md:px-56">
+					<div className="my-2 flex flex-col items-center gap-4 text-center md:flex-row md:gap-[16.5rem] md:text-left">
+						<p className="text-nowrap">
 							looking for entry-level positions to expand my skillset and make
 							valuable connections!
 						</p>
-						<div className="flex flex-row items-center gap-1 shadow-yellow before:bg-yellow">
+						<div className="flex flex-row items-center justify-center gap-1 shadow-yellow before:bg-yellow">
 							<FooterButton
 								icon={email}
 								link="mailto:ameya.guptag@gmail.com?subject=hi%20from%20your%20website!"
@@ -139,6 +142,7 @@ export default function Footer() {
 							/>
 							<FooterButton icon={resume} link="/assets/AG_resume.pdf" alt="resume" />
 						</div>
+						<div />
 					</div>
 					<p className="mt-4 text-nowrap md:-mr-4 md:w-64">
 						created with ❤︎/✒︎ on{" "}
