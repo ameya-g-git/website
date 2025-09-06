@@ -25,6 +25,7 @@ export async function loader() {
 		"website",
 		"armoire",
 		"mirrormult-figma-plugin",
+		"mac-cal",
 	]; // repositories to load
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made
 
@@ -230,6 +231,7 @@ export default function Projects() {
 						{...loaderData[0]}
 						newLanguages={["flask", "numpy", "tailwind"]}
 					/>
+					<ProjectCard top={50} {...loaderData[8]} />
 					<ProjectCard
 						{...loaderData[1]}
 						newLanguages={["vite", "react", "numpy"]}

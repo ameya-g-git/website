@@ -42,7 +42,7 @@ interface windowSize {
 }
 
 export async function loader() {
-	const repoNames: string[] = ["mirrormult-figma-plugin", "keep-it-real", "paper-strings"]; // repositories to load
+	const repoNames: string[] = ["hither-and-dither", "mirrormult-figma-plugin", "keep-it-real"]; // repositories to load
 	let makeRequest: boolean = true; // boolean to hold whether or not a request needs to be made
 
 	const repoDetails = await localforage.keys().then(async (keys) => {
