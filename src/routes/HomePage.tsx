@@ -127,7 +127,7 @@ export default function Home() {
 
 	return (
 		<>
-			<section id="banner" role="banner" className="relative h-screen w-full overflow-hidden">
+			<section id="banner" role="banner" className="relative w-full h-screen overflow-hidden">
 				{screenWidth >= 1200 && (
 					<div
 						role="presentation"
@@ -165,14 +165,14 @@ export default function Home() {
 				)}
 				<div
 					role="presentation"
-					className="py-18 absolute top-1/2 box-border -translate-y-1/2 px-8 text-black md:px-20 md:py-48 md:pt-8"
+					className="box-border absolute px-8 text-black -translate-y-1/2 py-18 top-1/2 md:px-20 md:py-48 md:pt-8"
 				>
-					<div className="mt-4 inline-flex items-center gap-1">
+					<div className="inline-flex items-center gap-1 mt-4">
 						<Player
 							src="https://lottie.host/1dd41cb5-2633-4dc5-99ba-03b545ea86ce/5x9D1FO1SB.json"
 							loop
 							autoplay
-							className="h-8 w-16 md:h-16"
+							className="w-16 h-8 md:h-16"
 						/>
 						<h2 className="text-xl md:text-4xl">hi! i'm</h2>
 					</div>
@@ -185,7 +185,7 @@ export default function Home() {
 								className="absolute -ml-[1vw] -mt-[7vh] max-h-[32vh]"
 							/>
 						)}
-						<div className="flex h-full flex-row items-baseline">
+						<div className="flex flex-row items-baseline h-full">
 							<h1 className={nameStyles}>ameya</h1>
 							<p className="text-sm">:3</p>
 						</div>
@@ -213,9 +213,9 @@ export default function Home() {
 			</section>
 			<main className="flex h-fit w-full flex-col gap-16 bg-gradient-to-b from-[#0A0A00] via-[#191919] to-[#0A0A00] p-6 [&_h2]:text-3xl">
 				<section id="projects" className="flex flex-col items-end gap-4">
-					<span className="mb-12 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
+					<span className="flex flex-col items-start w-full h-8 gap-2 mb-12 md:m-0 md:flex-row md:items-end">
 						<h2>here's what i've been</h2>
-						<div className="flex h-full flex-row gap-2">
+						<div className="flex flex-row h-full gap-2">
 							<img
 								className="h-full"
 								src={dev_icon}
@@ -225,7 +225,11 @@ export default function Home() {
 						</div>
 					</span>
 					<div className={projectSectionStyles}>
-						<ProjectCard {...cardData[0]} top={50} />
+						<ProjectCard
+							{...cardData[0]}
+							newLanguages={["flask", "numpy", "tailwind"]}
+							top={50}
+						/>
 						<ProjectCard
 							{...cardData[1]}
 							top={50}
@@ -247,26 +251,26 @@ export default function Home() {
 				</section>
 
 				<section id="technologies" className="flex flex-col items-baseline gap-4">
-					<span className="mb-8 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
+					<span className="flex flex-col items-start w-full h-8 gap-2 mb-8 md:m-0 md:flex-row md:items-end">
 						<h2>here are the</h2>
-						<div className="flex h-full flex-row gap-2">
+						<div className="flex flex-row h-full gap-2">
 							<img className="h-full" src={tech_icon} alt="Hammer icon" />
 							<h2>skills i've gained!</h2>
 						</div>
 					</span>
-					<div className="box-border flex w-full flex-col items-stretch gap-3 md:flex-row">
-						<div id="languages" className="flex flex-grow flex-col gap-2">
-							<h2 className="my-2 h-12 text-2xl text-white/50">languages</h2>
-							<div className="grid h-full grid-flow-row grid-rows-7 gap-2">
+					<div className="box-border flex flex-col items-stretch w-full gap-3 md:flex-row">
+						<div id="languages" className="flex flex-col flex-grow gap-2">
+							<h2 className="h-12 my-2 text-2xl text-white/50">languages</h2>
+							<div className="grid h-full grid-flow-row gap-2 grid-rows-7">
 								{languages.map((lang, i) => (
 									<ToolCard key={i} name={lang} />
 								))}
 							</div>
 						</div>
 
-						<div id="tools" className="flex flex-grow flex-col gap-2">
+						<div id="tools" className="flex flex-col flex-grow gap-2">
 							<h2 className="my-2 text-2xl text-white/50">tools</h2>
-							<div className="grid grid-flow-row grid-rows-7 gap-2">
+							<div className="grid grid-flow-row gap-2 grid-rows-7">
 								{tools.map((tool, i) => (
 									<ToolCard
 										key={i}
@@ -277,9 +281,9 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div id="frameworks" className="flex flex-grow flex-col gap-2">
+						<div id="frameworks" className="flex flex-col flex-grow gap-2">
 							<h2 className="my-2 text-2xl text-white/50">frameworks</h2>
-							<div className="grid grid-flow-row grid-rows-7 gap-2">
+							<div className="grid grid-flow-row gap-2 grid-rows-7">
 								{frameworks.map((framework, i) => (
 									<ToolCard key={i} name={framework} />
 								))}
@@ -289,14 +293,14 @@ export default function Home() {
 				</section>
 
 				<section id="design" className="flex flex-col items-baseline gap-4">
-					<span className="mb-12 flex h-8 w-full flex-col items-start gap-2 md:m-0 md:flex-row md:items-end">
+					<span className="flex flex-col items-start w-full h-8 gap-2 mb-12 md:m-0 md:flex-row md:items-end">
 						<h2>check out some of my</h2>
-						<div className="flex h-full flex-row gap-2">
+						<div className="flex flex-row h-full gap-2">
 							<img className="h-full" src={pen_icon} alt="Pen icon" />
 							<h2>design work too!</h2>
 						</div>
 					</span>
-					<div className="flex w-full flex-col justify-stretch gap-4 md:flex-row">
+					<div className="flex flex-col w-full gap-4 justify-stretch md:flex-row">
 						<DesignCard
 							path="/portfolio/gfx"
 							img={gd_card}
