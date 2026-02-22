@@ -822,20 +822,20 @@ object {
   margin-left: -1rem;
 }
 
+.-ml-48 {
+  margin-left: -12rem;
+}
+
 .-ml-6 {
   margin-left: -1.5rem;
 }
 
-.-ml-80 {
-  margin-left: -20rem;
+.-ml-60 {
+  margin-left: -15rem;
 }
 
 .-ml-\[1vw\] {
   margin-left: -1vw;
-}
-
-.-ml-\[31\.5rem\] {
-  margin-left: -31.5rem;
 }
 
 .-ml-\[9\%\] {
@@ -864,6 +864,10 @@ object {
 
 .mb-\[5vh\] {
   margin-bottom: 5vh;
+}
+
+.ml-12 {
+  margin-left: 3rem;
 }
 
 .ml-\[71vw\] {
@@ -900,50 +904,6 @@ object {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.-ml-96 {
-  margin-left: -24rem;
-}
-
-.-ml-\[26rem\] {
-  margin-left: -26rem;
-}
-
-.-ml-48 {
-  margin-left: -12rem;
-}
-
-.-ml-56 {
-  margin-left: -14rem;
-}
-
-.-ml-60 {
-  margin-left: -15rem;
-}
-
-.-ml-3 {
-  margin-left: -0.75rem;
-}
-
-.-ml-8 {
-  margin-left: -2rem;
-}
-
-.-ml-36 {
-  margin-left: -9rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
-.ml-12 {
-  margin-left: 3rem;
 }
 
 .box-border {
@@ -1002,8 +962,8 @@ object {
   height: 4rem;
 }
 
-.h-32 {
-  height: 8rem;
+.h-24 {
+  height: 6rem;
 }
 
 .h-5 {
@@ -1049,10 +1009,6 @@ object {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-24 {
-  height: 6rem;
 }
 
 .max-h-8 {
@@ -1374,10 +1330,6 @@ object {
   gap: 0.25rem;
 }
 
-.gap-12 {
-  gap: 3rem;
-}
-
 .gap-16 {
   gap: 4rem;
 }
@@ -1625,6 +1577,10 @@ object {
   padding-left: 1rem;
 }
 
+.pl-8 {
+  padding-left: 2rem;
+}
+
 .pr-8 {
   padding-right: 2rem;
 }
@@ -1676,6 +1632,11 @@ object {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-\[22vh\] {
   font-size: 22vh;
 }
@@ -1711,14 +1672,12 @@ object {
   line-height: 1.75rem;
 }
 
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
+.font-bold {
+  font-weight: 700;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.font-extrabold {
+  font-weight: 800;
 }
 
 .leading-none {
@@ -1756,6 +1715,18 @@ object {
   color: rgb(255 248 19 / var(--tw-text-opacity));
 }
 
+.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.text-white\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.text-white\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1766,6 +1737,10 @@ object {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.opacity-55 {
+  opacity: 0.55;
 }
 
 .shadow-footer {
@@ -1948,8 +1923,20 @@ object {
     margin-bottom: 6vh;
   }
 
+  .md\:-ml-12 {
+    margin-left: -3rem;
+  }
+
   .md\:-ml-72 {
     margin-left: -18rem;
+  }
+
+  .md\:-ml-80 {
+    margin-left: -20rem;
+  }
+
+  .md\:-ml-\[31\.5rem\] {
+    margin-left: -31.5rem;
   }
 
   .md\:-mr-4 {
@@ -1958,6 +1945,10 @@ object {
 
   .md\:mb-\[2vh\] {
     margin-bottom: 2vh;
+  }
+
+  .md\:ml-0 {
+    margin-left: 0px;
   }
 
   .md\:ml-\[51rem\] {
@@ -1976,30 +1967,6 @@ object {
     margin-top: 3rem;
   }
 
-  .md\:-ml-80 {
-    margin-left: -20rem;
-  }
-
-  .md\:-ml-\[31\.5rem\] {
-    margin-left: -31.5rem;
-  }
-
-  .md\:ml-0 {
-    margin-left: 0px;
-  }
-
-  .md\:-ml-36 {
-    margin-left: -9rem;
-  }
-
-  .md\:-ml-24 {
-    margin-left: -6rem;
-  }
-
-  .md\:-ml-12 {
-    margin-left: -3rem;
-  }
-
   .md\:h-12 {
     height: 3rem;
   }
@@ -2012,16 +1979,16 @@ object {
     height: 6rem;
   }
 
+  .md\:h-32 {
+    height: 8rem;
+  }
+
   .md\:h-\[12\.5rem\] {
     height: 12.5rem;
   }
 
   .md\:h-\[4\.5rem\] {
     height: 4.5rem;
-  }
-
-  .md\:h-32 {
-    height: 8rem;
   }
 
   .md\:w-1\/2 {
@@ -2056,46 +2023,6 @@ object {
 
   .md\:justify-center {
     justify-content: center;
-  }
-
-  .md\:gap-3 {
-    gap: 0.75rem;
-  }
-
-  .md\:gap-48 {
-    gap: 12rem;
-  }
-
-  .md\:gap-24 {
-    gap: 6rem;
-  }
-
-  .md\:gap-12 {
-    gap: 3rem;
-  }
-
-  .md\:gap-8 {
-    gap: 2rem;
-  }
-
-  .md\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .md\:gap-56 {
-    gap: 14rem;
-  }
-
-  .md\:gap-64 {
-    gap: 16rem;
-  }
-
-  .md\:gap-72 {
-    gap: 18rem;
-  }
-
-  .md\:gap-\[17rem\] {
-    gap: 17rem;
   }
 
   .md\:gap-\[16\.5rem\] {
@@ -2186,9 +2113,9 @@ object {
   }
 }
 
-.\[\&\>\*\]\:-my-0\.5>* {
-  margin-top: -0.125rem;
-  margin-bottom: -0.125rem;
+.\[\&\>\*\]\:-my-1>* {
+  margin-top: -0.25rem;
+  margin-bottom: -0.25rem;
 }
 
 .\[\&\>\*\]\:my-1>* {
@@ -2196,25 +2123,10 @@ object {
   margin-bottom: 0.25rem;
 }
 
-.\[\&\>\*\]\:-my-1>* {
-  margin-top: -0.25rem;
-  margin-bottom: -0.25rem;
-}
-
-.\[\&\>\*\]\:-my-2>* {
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
-}
-
 @media (min-width: 768px) {
   .md\:\[\&\>\*\]\:-my-0\.5>* {
     margin-top: -0.125rem;
     margin-bottom: -0.125rem;
-  }
-
-  .md\:\[\&\>\*\]\:-my-1>* {
-    margin-top: -0.25rem;
-    margin-bottom: -0.25rem;
   }
 }
 

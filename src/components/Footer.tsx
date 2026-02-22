@@ -23,9 +23,9 @@ function FooterButton({ icon, link, alt }: footerButtonProps) {
 			to={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="flex items-center justify-center w-12 h-12 p-2 transition-all border-2 rounded-lg border-white/20 bg-card-black/50 hover:bg-card-hover"
+			className="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-white/20 bg-card-black/50 p-2 text-2xl font-bold text-white/70 transition-all hover:bg-card-hover"
 		>
-			<img src={icon} alt={alt} className="h-full" />
+			{icon.includes("/") ? <img src={icon} alt={alt} className="h-full" /> : icon}
 		</Link>
 	);
 }
@@ -34,14 +34,14 @@ export default function Footer() {
 	const { screenWidth } = useWindowSize();
 
 	const firstLayer = (
-		<div className="flex flex-row items-center gap-1 ml-12 md:-ml-12">
+		<div className="ml-12 flex flex-row items-center gap-1 md:-ml-12">
 			{Array(10)
 				.fill("ameyaGupta")
 				.map((_name, id) => {
 					return id === 1 ? (
 						<p
 							key={`${id}p`}
-							className="text-xl text-nowrap font-footer text-yellow md:text-2xl"
+							className="text-nowrap font-footer text-xl text-yellow md:text-2xl"
 						>
 							© Ameya Gupta
 						</p>
@@ -65,7 +65,7 @@ export default function Footer() {
 					return id === 1 ? (
 						<p
 							key={id}
-							className="text-2xl text-nowrap font-footer text-yellow md:text-5xl"
+							className="text-nowrap font-footer text-2xl text-yellow md:text-5xl"
 						>
 							let's work together!
 						</p>
@@ -88,10 +88,10 @@ export default function Footer() {
 				.map((_name, id) => {
 					return id === 1 ? (
 						<Fragment key={id}>
-							<p className="text-5xl text-nowrap font-footer text-yellow md:text-8xl">
+							<p className="text-nowrap font-footer text-5xl text-yellow md:text-8xl">
 								contact me
 							</p>
-							<img src={downarrow} className="flex w-16 md:w-30" />
+							<img src={downarrow} className="md:w-30 flex w-16" />
 						</Fragment>
 					) : (
 						<img
@@ -103,6 +103,34 @@ export default function Footer() {
 					);
 				})}
 		</div>
+	);
+
+	/* WEBRING WIDGET */
+
+	const WEBRING_URL = "https://mac-csse-webring.vercel.app/";
+	const MY_SITE = "ameyagupta.netlify.app";
+
+	const webringWidget = (
+		<p
+			style={{
+				display: "inline-flex",
+				alignItems: "center",
+				gap: "0.5rem",
+				fontSize: "1rem",
+			}}
+		>
+			<FooterButton
+				icon="←"
+				link={`${WEBRING_URL}#${MY_SITE}?nav=prev`}
+				alt="Previous site"
+			></FooterButton>
+			<FooterButton
+				link={WEBRING_URL}
+				icon={`${WEBRING_URL}assets/Uni_mcmaster_logo.svg.png`}
+				alt="McMaster CS & SE Webring"
+			></FooterButton>
+			<FooterButton icon="→" link={`${WEBRING_URL}#${MY_SITE}?nav=next`} alt="Next site" />
+		</p>
 	);
 
 	return (
@@ -118,7 +146,7 @@ export default function Footer() {
 						</>
 					)}
 				</div>
-				<div className="flex flex-col items-center justify-between w-full px-16 mb-8 h-fit md:flex-row md:px-56">
+				<div className="mb-8 flex h-fit w-full flex-col items-center justify-between px-16 md:flex-row md:px-56">
 					<div className="my-2 flex flex-col items-center gap-4 text-center md:flex-row md:gap-[16.5rem] md:text-left">
 						<p className="text-nowrap">
 							looking for entry-level positions to expand my skillset and make
@@ -144,16 +172,19 @@ export default function Footer() {
 						</div>
 						<div />
 					</div>
-					<p className="mt-4 text-nowrap md:-mr-4 md:w-64">
-						created with ❤︎/✒︎ on{" "}
-						<a
-							className="underline"
-							target="_blank"
-							href="https://github.com/ameya-g-git/website"
-						>
-							github
-						</a>
-					</p>
+					<div className="flex flex-row gap-4">
+						{webringWidget}
+						<p className="mt-4 text-nowrap md:-mr-4 md:w-64">
+							<span className="pl-8">created with ❤︎/✒︎ on </span>
+							<a
+								className="underline "
+								target="_blank"
+								href="https://github.com/ameya-g-git/website"
+							>
+								github
+							</a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</footer>
