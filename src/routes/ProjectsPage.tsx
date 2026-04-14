@@ -103,6 +103,7 @@ export default function Projects() {
 	const languageIcons = languages.map((lang, i) => {
 		return (
 			<object
+				tabIndex={-1}
 				key={`${lang}-${i}`}
 				width={50}
 				height={50}
@@ -121,6 +122,7 @@ export default function Projects() {
 	const toolIcons = tools.map((tool, i) => {
 		return (
 			<object
+				tabIndex={-1}
 				key={`${tool}-${i}`}
 				width={50}
 				height={50}
@@ -139,6 +141,7 @@ export default function Projects() {
 	const frameworkIcons = frameworks.map((framework, i) => {
 		return (
 			<object
+				tabIndex={-1}
 				key={`${framework}-${i}`}
 				width={50}
 				height={50}
