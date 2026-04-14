@@ -11,6 +11,7 @@ import glaggle from "/assets/portfolio_icons/glaggle.svg";
 import boom from "/assets/portfolio_icons/boom.svg";
 import pen_icon from "/assets/home_icons/pen_icon.svg";
 import paintbrush_icon from "/assets/paintbrush.svg";
+import camera_icon from "/assets/camera.svg";
 
 import ScrollingImage from "../components/ScrollingImage";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -32,19 +33,45 @@ export default function PortfolioPage() {
 	const HEIGHT = 1080;
 
 	const icons = [head, glaggle, boom, eye2, star, scribble, sparkle];
+	const areas = [
+		{ icon: camera_icon, path: "/portfolio/photos", title: "photography" },
+		{ icon: pen_icon, path: "/portfolio/gfx", title: "graphic design" },
+		{ icon: paintbrush_icon, path: "/portfolio/ui", title: "ui design" },
+	];
 
 	const iconElements = icons.map((icon, i) => (
-		<img src={icon} style={{ "--delay": `${i * 200}ms` } as React.CSSProperties} />
+		<img key={i} src={icon} style={{ "--delay": `${i * 200}ms` } as React.CSSProperties} />
 	));
 
 	const navAnim: Variants = {
-		start: { backgroundColor: "#101010", borderWidth: "2px", borderColor: "#FFFFFF4E" },
-		end: { backgroundColor: "#FFF813", borderWidth: "2px", borderColor: "#FFF813" },
+		start: {
+			backgroundColor: "#101010",
+			borderWidth: "2px",
+			borderColor: "#FFFFFF4E",
+		},
+		active: {
+			backgroundColor: "#FFF813",
+			borderWidth: "2px",
+			borderColor: "#FFF813",
+		},
+		hover: {
+			backgroundColor: "#FFF813",
+			borderWidth: "2px",
+			borderColor: "#FFF813",
+		},
+		exit: { backgroundColor: "#101010", borderWidth: "2px", borderColor: "#FFFFFF4E" },
+	};
+
+	const iconAnim: Variants = {
+		start: { filter: "", marginRight: "-0.5rem" },
+		active: { filter: "brightness(0)", marginRight: "-0.5rem" },
+		hover: { filter: "brightness(0)", marginRight: 0 },
 	};
 
 	const titleAnim: Variants = {
-		start: { filter: "" },
-		end: { filter: "brightness(0)" },
+		start: { width: 0, filter: "" },
+		active: { width: 0, filter: "" },
+		hover: { width: "auto", filter: "brightness(0)", marginLeft: "0.5rem" },
 	};
 
 	const pathAnim: Variants = {
@@ -58,20 +85,35 @@ export default function PortfolioPage() {
 	function PortfolioLink({ icon, title, path }: linkProps) {
 		return (
 			<motion.a
-				initial={pathname === path ? "end" : "start"}
-				whileHover="end"
+				initial={pathname === path ? "active" : "start"}
+				whileFocus="hover"
+				whileHover="hover"
 				variants={navAnim}
 				transition={{
 					duration: 0.2,
 				}}
-				href="#images"
-				onClick={(_e) => navigate(path)}
-				className="flex w-full grow flex-row items-center gap-4 rounded-lg px-8 py-4 text-3xl text-white shadow-yellow hover:shadow-sm md:text-4xl"
+				href="javascript:void(0)"
+				onClick={() => navigate(path)}
+				// layout
+				// layoutId={path}
+				className="flex w-fit flex-row items-center gap-2 rounded-lg px-4 py-4 text-3xl text-white shadow-yellow hover:shadow-sm md:text-4xl"
 			>
-				<motion.img variants={titleAnim} src={icon} className="block h-10" alt="" />
-				<motion.h1 className="flex-grow text-center" variants={titleAnim}>
+				<motion.img
+					key={"img_" + title}
+					variants={iconAnim}
+					src={icon}
+					className="block h-12"
+					alt={title}
+					layout
+				/>
+				<motion.h2
+					key={"text_" + title}
+					className="overflow-hidden text-nowrap"
+					variants={titleAnim}
+					layout
+				>
 					{title}
-				</motion.h1>
+				</motion.h2>
 			</motion.a>
 		);
 	}
@@ -186,9 +228,13 @@ export default function PortfolioPage() {
 				<h2 className="text-center text-xl md:text-2xl">
 					always experimenting with new media and styles!
 				</h2>
-				<div className="flex w-96 cursor-pointer flex-col items-center gap-4 rounded-full px-4 md:w-1/2 md:flex-row md:justify-center">
-					<PortfolioLink icon={pen_icon} title="graphic design" path="/portfolio/gfx" />
-					<PortfolioLink icon={paintbrush_icon} title="ui design" path="/portfolio/ui" />
+				<div className="flex w-2/3 cursor-pointer flex-col items-center gap-4 rounded-full px-4 md:justify-center lg:w-2/3 lg:flex-row">
+					{areas.map((a) => (
+						<PortfolioLink key={a.title} {...a} />
+					))}
+					{/* 
+					  // TODO: add little title below buttons on mobile screens
+						*/}
 				</div>
 				<Outlet />
 			</section>

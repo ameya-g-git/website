@@ -11,6 +11,7 @@ import { createPortal } from "react-dom";
 import CookiesModal from "./components/CookiesModal";
 import { useEffect, useState } from "react";
 import localforage from "localforage";
+import PortfolioPhotos from "./routes/PortfolioPhotos";
 
 const router = createBrowserRouter([
 	{
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
 				children: [
 					{ index: true, path: "/portfolio/gfx", element: <PortfolioGFX /> },
 					{ path: "/portfolio/ui", element: <PortfolioUI /> },
+					{ path: "/portfolio/photos", element: <PortfolioPhotos /> },
 					{ path: "/portfolio/*", element: <Navigate to="/gfx" /> },
 				],
 			},

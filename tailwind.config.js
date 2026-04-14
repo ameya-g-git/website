@@ -17,6 +17,7 @@ export default {
 				orbit: "orbit 30s linear var(--delay, 0ms) infinite",
 				"orbit-rev": "orbit 30s linear var(--delay, 0ms) infinite reverse",
 				"nav-load": "nav-load 1s linear infinite",
+				flash: "flash 1s cubic-bezier(0, 0.97, 0.58, 1) 100ms",
 			},
 			keyframes: {
 				"infinite-scroll": {
@@ -36,6 +37,10 @@ export default {
 				"nav-load": {
 					"0%, 100%": { "border-bottom-width": "4px" },
 					"50%": { "border-bottom-width": "0px" },
+				},
+				flash: {
+					from: { filter: "brightness(5) contrast(0.2)" },
+					to: { filter: "brightness(1) contrast(1)" },
 				},
 			},
 			colors: {
