@@ -134,10 +134,10 @@ export default function Footer() {
 	);
 
 	return (
-		<footer id="footer" className="h-fit overflow-x-hidden bg-[#0A0A00]">
-			<div className="-ml-[9%] flex w-[120%] flex-col items-center gap-4 shadow-footer">
+		<footer tabIndex={-1} id="footer" className="h-fit overflow-x-hidden bg-[#0A0A00]">
+			<div className="flex flex-col items-center gap-4 shadow-footer">
 				<img src={arrowSmiley} className="my-2 mt-8 w-28" alt="" />
-				<div className="-ml-48 flex flex-col md:ml-0 [&>*]:-my-1 md:[&>*]:-my-0.5">
+				<div className="ml-36 flex w-[120%] flex-col [&>*]:-my-1 md:[&>*]:-my-0.5">
 					{screenWidth > 480 && (
 						<>
 							{firstLayer}
@@ -146,7 +146,7 @@ export default function Footer() {
 						</>
 					)}
 				</div>
-				<div className="mb-8 flex h-fit w-full flex-col items-center justify-between px-16 md:flex-row md:px-56">
+				<div className="mb-8 flex h-fit w-full flex-col items-center justify-between px-16 lg:flex-row">
 					<div className="my-2 flex flex-col items-center gap-4 text-center md:flex-row md:gap-[16.5rem] md:text-left">
 						<p className="text-nowrap">
 							looking for entry-level positions to expand my skillset and make

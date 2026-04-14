@@ -3,92 +3,98 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    margin-right: 5px !important;
-    width: 10px;
+	margin-right: 5px !important;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: black
+	background: black;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff40; 
+	background: #ffffff40;
 }
 ::-webkit-scrollbar-thumb {
-    width: 4px;
-    background: #FFFFFF60;
-    border-radius: 5px;
+	width: 4px;
+	background: #ffffff60;
+	border-radius: 5px;
+}
+
+*:focus {
+	/* outline: transparent !important; */
+	outline-style: dashed !important;
+	outline-color: #fff813;
+	outline-offset: 4px;
 }
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-    }
+	html {
+		scroll-behavior: smooth;
+	}
 
-    body {
-        color: white;
-        background-color: #FFF813;
-        margin: 0;
-        overflow: overlay;
-    }
-    
-    button {
-        background-color: #FFF813;
-        color: black;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        box-sizing: border-box;
-        transition: all 300ms ease-out;
-        filter: none;
-    }
+	body {
+		color: white;
+		background-color: #fff813;
+		margin: 0;
+		overflow: overlay;
+	}
 
-    img {
-        pointer-events: none;
-        user-select: none;
-    }
+	button {
+		background-color: #fff813;
+		color: black;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		box-sizing: border-box;
+		transition: all 300ms ease-out;
+		filter: none;
+	}
 
-    button:hover {
-        filter: drop-shadow(0 0 8px #FFF81380);
-    }
+	img {
+		pointer-events: none;
+		user-select: none;
+	}
 
-    #orbit object svg path {
-        stroke: #FFF813;
-        stroke-width: 5px;
-    }
+	button:hover {
+		filter: drop-shadow(0 0 8px #fff81380);
+	}
 
-    object {
-        --radius: 0s,
-        --delay: 0s,
-    }
+	#orbit object svg path {
+		stroke: #fff813;
+		stroke-width: 5px;
+	}
 
-    @font-face {
-        font-family: 'PP Neue Montreal';
-        font-style: normal;
-        font-weight: 400;
-        /* font-display: swap; */
-        src: url(/assets/fonts/PPNeueMontreal-Book.otf);
-    }
+	object {
+		--radius: 0s, --delay: 0s;
+	}
 
-    @font-face {
-        font-family: 'PP Neue Montreal Italic';
-        font-style: italic;
-        font-weight: 400;
-        /* font-display: swap; */
-        src: url(/assets/fonts/PPNeueMontreal-Italic.otf);
-    }
+	@font-face {
+		font-family: "PP Neue Montreal";
+		font-style: normal;
+		font-weight: 400;
+		/* font-display: swap; */
+		src: url(/assets/fonts/PPNeueMontreal-Book.otf);
+	}
 
-    @font-face {
-        font-family: 'Fraternite';
-        font-style: normal;
-        font-weight: 400;
-        /* font-display: swap; */
-        src: url(/assets/fonts/Fraternite.ttf);
-    }
+	@font-face {
+		font-family: "PP Neue Montreal Italic";
+		font-style: italic;
+		font-weight: 400;
+		/* font-display: swap; */
+		src: url(/assets/fonts/PPNeueMontreal-Italic.otf);
+	}
 
-    @font-face {
-        font-family: 'Illusion Serif';
-        font-style: normal;
-        font-weight: 400;
-        src: url(/assets/fonts/IllusionSerif-Regular.otf)
-    }
+	@font-face {
+		font-family: "Fraternite";
+		font-style: normal;
+		font-weight: 400;
+		/* font-display: swap; */
+		src: url(/assets/fonts/Fraternite.ttf);
+	}
+
+	@font-face {
+		font-family: "Illusion Serif";
+		font-style: normal;
+		font-weight: 400;
+		src: url(/assets/fonts/IllusionSerif-Regular.otf);
+	}
 }

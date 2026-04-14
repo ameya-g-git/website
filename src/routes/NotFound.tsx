@@ -2,7 +2,7 @@ import { motion, Variants } from "framer-motion";
 
 import ScrollingImage from "../components/ScrollingImage";
 
-import wave from "/assets/hero_shapes/wave.svg";
+import wave from "/assets/wave.svg";
 import four from "/assets/4.svg";
 import zero from "/assets/0.svg";
 import eyes from "/assets/eyes.svg";
@@ -22,7 +22,7 @@ export default function NotFound() {
 		<>
 			<section
 				id="banner"
-				role="main"
+				role="banner"
 				className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden text-black"
 			>
 				<div id="shapes" className="pointer-events-none absolute h-full w-full select-none">
@@ -117,9 +117,9 @@ export default function NotFound() {
 						</span>
 					</div>
 				</div>
-				<div className="absolute bottom-0 scale-150 md:scale-100">
+				<div className="absolute bottom-0 w-full scale-150 md:scale-100">
 					<ScrollingImage ltr={true} width="full">
-						<img src={wave} alt="" />
+						<img src={wave} className="w-screen" alt="" />
 					</ScrollingImage>
 				</div>
 			</section>

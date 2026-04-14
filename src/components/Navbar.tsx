@@ -18,7 +18,7 @@ export default function Navbar() {
 				to={`/${item === "portfolio" ? "portfolio/gfx" : item}`}
 				onClick={(_e) => document.getElementById("banner")?.scrollIntoView()}
 				className={({ isActive, isPending }) =>
-					`${navElementClasses} ${isActive || (item === "portfolio" && pathname === "/portfolio/ui") ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
+					`${navElementClasses} ${isActive || (item === "portfolio" && pathname.includes("/portfolio")) ? "border-b-4" : ""} ${isPending ? "animate-nav-load" : ""}`
 				}
 			>
 				{item ? item : "home"}

@@ -450,13 +450,13 @@ html {
 
 body {
   color: white;
-  background-color: #FFF813;
+  background-color: #fff813;
   margin: 0;
   overflow: overlay;
 }
 
 button {
-  background-color: #FFF813;
+  background-color: #fff813;
   color: black;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -473,22 +473,20 @@ img {
 }
 
 button:hover {
-  filter: drop-shadow(0 0 8px #FFF81380);
+  filter: drop-shadow(0 0 8px #fff81380);
 }
 
 #orbit object svg path {
-  stroke: #FFF813;
+  stroke: #fff813;
   stroke-width: 5px;
 }
 
 object {
-  --radius: 0s,
-        --delay: 0s,
-    
+  --radius: 0s, --delay: 0s;
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal';
+  font-family: "PP Neue Montreal";
 
   font-style: normal;
 
@@ -500,7 +498,7 @@ object {
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal Italic';
+  font-family: "PP Neue Montreal Italic";
 
   font-style: italic;
 
@@ -512,7 +510,7 @@ object {
 }
 
 @font-face {
-  font-family: 'Fraternite';
+  font-family: "Fraternite";
 
   font-style: normal;
 
@@ -524,13 +522,13 @@ object {
 }
 
 @font-face {
-  font-family: 'Illusion Serif';
+  font-family: "Illusion Serif";
 
   font-style: normal;
 
   font-weight: 400;
 
-  src: url(/assets/fonts/IllusionSerif-Regular.otf)
+  src: url(/assets/fonts/IllusionSerif-Regular.otf);
 }
 
 *, ::before, ::after {
@@ -705,6 +703,10 @@ object {
   left: 1%;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .right-1\/3 {
   right: 33.333333%;
 }
@@ -751,6 +753,10 @@ object {
 
 .top-\[28rem\] {
   top: 28rem;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .z-20 {
@@ -906,6 +912,26 @@ object {
   margin-top: auto;
 }
 
+.-ml-\[12\%\] {
+  margin-left: -12%;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-64 {
+  margin-left: 16rem;
+}
+
+.ml-24 {
+  margin-left: 6rem;
+}
+
+.ml-36 {
+  margin-left: 9rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -944,10 +970,6 @@ object {
 
 .h-1\/6 {
   height: 16.666667%;
-}
-
-.h-10 {
-  height: 2.5rem;
 }
 
 .h-12 {
@@ -994,8 +1016,20 @@ object {
   height: 46%;
 }
 
+.h-\[90\%\] {
+  height: 90%;
+}
+
 .h-\[98\%\] {
   height: 98%;
+}
+
+.h-\[calc\(100\%-4rem\)\] {
+  height: calc(100% - 4rem);
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-fit {
@@ -1043,6 +1077,10 @@ object {
   width: 4rem;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -1063,10 +1101,6 @@ object {
   width: 20rem;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .w-\[120\%\] {
   width: 120%;
 }
@@ -1079,12 +1113,20 @@ object {
   width: 30vw;
 }
 
+.w-\[75\%\] {
+  width: 75%;
+}
+
 .w-\[95\%\] {
   width: 95%;
 }
 
 .w-\[98\%\] {
   width: 98%;
+}
+
+.w-\[calc\(100\%-4rem\)\] {
+  width: calc(100% - 4rem);
 }
 
 .w-fit {
@@ -1118,6 +1160,10 @@ object {
 
 .max-w-\[75\%\] {
   max-width: 75%;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .max-w-lg {
@@ -1166,6 +1212,20 @@ object {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes flash {
+  from {
+    filter: brightness(5) contrast(0.2);
+  }
+
+  to {
+    filter: brightness(1) contrast(1);
+  }
+}
+
+.animate-flash {
+  animation: flash 1s cubic-bezier(0, 0.97, 0.58, 1) 100ms;
 }
 
 @keyframes float {
@@ -1395,6 +1455,38 @@ object {
   border-radius: 0.75rem;
 }
 
+.rounded-\[4rem\] {
+  border-radius: 4rem;
+}
+
+.rounded-\[2rem\] {
+  border-radius: 2rem;
+}
+
+.rounded-\[2\.5rem\] {
+  border-radius: 2.5rem;
+}
+
+.rounded-\[1\.75rem\] {
+  border-radius: 1.75rem;
+}
+
+.rounded-bl-\[2\.5rem\] {
+  border-bottom-left-radius: 2.5rem;
+}
+
+.rounded-br-\[2\.5rem\] {
+  border-bottom-right-radius: 2.5rem;
+}
+
+.rounded-tl-\[2\.5rem\] {
+  border-top-left-radius: 2.5rem;
+}
+
+.rounded-tr-\[2\.5rem\] {
+  border-top-right-radius: 2.5rem;
+}
+
 .border-0 {
   border-width: 0px;
 }
@@ -1407,8 +1499,24 @@ object {
   border-bottom-width: 4px;
 }
 
+.border-b-8 {
+  border-bottom-width: 8px;
+}
+
+.border-l-8 {
+  border-left-width: 8px;
+}
+
 .border-r-4 {
   border-right-width: 4px;
+}
+
+.border-r-8 {
+  border-right-width: 8px;
+}
+
+.border-t-8 {
+  border-top-width: 8px;
 }
 
 .border-black {
@@ -1676,10 +1784,6 @@ object {
   font-weight: 700;
 }
 
-.font-extrabold {
-  font-weight: 800;
-}
-
 .leading-none {
   line-height: 1;
 }
@@ -1710,21 +1814,13 @@ object {
   color: rgb(255 255 255 / 0.5);
 }
 
+.text-white\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
 .text-yellow {
   --tw-text-opacity: 1;
   color: rgb(255 248 19 / var(--tw-text-opacity));
-}
-
-.text-white\/80 {
-  color: rgb(255 255 255 / 0.8);
-}
-
-.text-white\/60 {
-  color: rgb(255 255 255 / 0.6);
-}
-
-.text-white\/70 {
-  color: rgb(255 255 255 / 0.7);
 }
 
 .underline {
@@ -1737,10 +1833,6 @@ object {
 
 .opacity-50 {
   opacity: 0.5;
-}
-
-.opacity-55 {
-  opacity: 0.55;
 }
 
 .shadow-footer {
@@ -1825,7 +1917,7 @@ object {
 }
 
 ::-webkit-scrollbar-track {
-  background: black
+  background: black;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -1834,12 +1926,27 @@ object {
 
 ::-webkit-scrollbar-thumb {
   width: 4px;
-  background: #FFFFFF60;
+  background: #ffffff60;
   border-radius: 5px;
+}
+
+*:focus {
+  /* outline: transparent !important; */
+  outline-style: dashed !important;
+  outline-color: #fff813;
+  outline-offset: 4px;
+}
+
+.\*\:aspect-square > * {
+  aspect-ratio: 1 / 1;
 }
 
 .\*\:h-auto > * {
   height: auto;
+}
+
+.\*\:w-24 > * {
+  width: 6rem;
 }
 
 .\*\:max-w-12 > * {
@@ -1858,6 +1965,10 @@ object {
 
 .\*\:animate-float > * {
   animation: float 5s ease-in-out var(--delay, 0ms) infinite;
+}
+
+.\*\:border-white\/40 > * {
+  border-color: rgb(255 255 255 / 0.4);
 }
 
 .\*\:text-sm > * {
@@ -1991,10 +2102,6 @@ object {
     height: 4.5rem;
   }
 
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
   .md\:w-11\/12 {
     width: 91.666667%;
   }
@@ -2107,9 +2214,31 @@ object {
 }
 
 @media (min-width: 1024px) {
+  .lg\:max-h-full {
+    max-height: 100%;
+  }
+
+  .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .lg\:w-auto {
+    width: auto;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:flex-row {
+    flex-direction: row;
   }
 }
 
