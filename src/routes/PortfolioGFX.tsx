@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "../components/Image";
+import PortfolioImage from "../components/PortfolioImage";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useKeyPress } from "../hooks/useKeyPress";
@@ -11,6 +11,8 @@ export default function PortfolioGFX() {
 
 		return bNum - aNum;
 	}); // sorted based on the first number
+
+	useKeyPress("Escape", (_) => setImagePortal({ show: false, img: "" }));
 
 	useKeyPress("ArrowLeft", (_) =>
 		imagePortal.show ? setImagePortal((prev) => ({ ...prev, img: prevImg(prev.img) })) : null,
@@ -67,7 +69,12 @@ export default function PortfolioGFX() {
 
 	const portalImg: Variants = {
 		start: { opacity: 0, scale: 0.75, translateY: "12rem" },
-		end: { opacity: 1, scale: 1, translateY: "0rem" },
+		end: {
+			opacity: 1,
+			scale: 1,
+			translateY: "0rem",
+			transition: { type: "spring", duration: 0.5 },
+		},
 		exit: { opacity: 0, scale: 0.75, translateY: "-12rem" },
 	};
 
@@ -86,7 +93,7 @@ export default function PortfolioGFX() {
 				className="flex w-full flex-row flex-wrap justify-center gap-4 px-4 py-4 md:px-12"
 			>
 				{images.map((src, i) => {
-					return <Image src={src} key={i} toggle={toggle} />;
+					return <PortfolioImage src={src} key={i} toggle={toggle} />;
 				})}
 			</div>
 			{createPortal(
@@ -133,7 +140,7 @@ export default function PortfolioGFX() {
 								<motion.img
 									key={imagePortal.img}
 									variants={portalImg}
-									className="shadow-3xl max-h-full max-w-[75%] rounded-lg"
+									className="shadow-3xl max-h-full max-w-[75%] rounded-3xl"
 									src={imagePortal.img}
 									alt={pathToImgName(imagePortal.img)}
 								/>

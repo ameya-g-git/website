@@ -7,7 +7,7 @@ interface props {
 	toggle: (src: string) => void;
 }
 
-export default function Image({ src, toggle }: props) {
+export default function PortfolioImage({ src, toggle }: props) {
 	const { screenWidth } = useWindowSize();
 
 	const imageStyles = clsx({
@@ -17,18 +17,17 @@ export default function Image({ src, toggle }: props) {
 	});
 
 	return (
-		<>
-			<div
-				onClick={(_e) => {
-					toggle(src);
-				}}
-				className={imageStyles}
-			>
-				<img
-					src={src}
-					className="pointer-events-auto max-h-96 w-full select-auto rounded-2xl object-cover"
-				/>
-			</div>
-		</>
+		<a
+			onClick={(_e) => {
+				toggle(src);
+			}}
+			className={imageStyles}
+			href="javascript:void(0)"
+		>
+			<img
+				src={src}
+				className="pointer-events-auto max-h-96 w-full select-auto rounded-2xl object-cover"
+			/>
+		</a>
 	);
 }
